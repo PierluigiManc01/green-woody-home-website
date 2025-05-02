@@ -14,7 +14,6 @@ const Footer: React.FC = () => {
               Your perfect retreat in nature, combining modern comfort with rustic charm.
             </p>
           </div>
-          
           <div>
             <h4 className="text-lg font-display font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -43,7 +42,6 @@ const Footer: React.FC = () => {
               <p>
                 <a href="mailto:gigi.mancinelli@gmail.com" className="hover:text-white transition-colors">info@greenwoody.home</a>
               </p>
-            </address>
           </div>
         </div>
         
