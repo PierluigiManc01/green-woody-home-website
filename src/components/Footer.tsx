@@ -37,13 +37,12 @@ const Footer: React.FC = () => {
           
           <div>
             <h4 className="text-lg font-display font-medium mb-4">Contact</h4>
-            <address className="not-italic text-gray-300 space-y-2">
-              <p>123 Forest Lane, Green Valley</p>
+            
               <p>
-                <a href="tel:+123456789" className="hover:text-white transition-colors">+1 (234) 567-8900</a>
+                <a href="tel:+393358158411" className="hover:text-white transition-colors">(+39) 335 8158411</a>
               </p>
               <p>
-                <a href="mailto:info@greenwoody.home" className="hover:text-white transition-colors">info@greenwoody.home</a>
+                <a href="mailto:gigi.mancinelli@gmail.com" className="hover:text-white transition-colors">info@greenwoody.home</a>
               </p>
             </address>
           </div>

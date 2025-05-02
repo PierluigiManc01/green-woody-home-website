@@ -5,7 +5,7 @@ import React from 'react';
 const images = [
   {
     id: 1,
-    src: "cozy-contact-haven/photos/GREEN WOODY HOME-04.jpg",
+    src: "photos/GREEN WOODY HOME-04.jpg",
     alt: "Wooden cabin exterior surrounded by trees",
   },
   {
@@ -25,12 +25,12 @@ const images = [
   },
   {
     id: 5,
-    src: "photos/GREEN WOODY HOME-20.jpg",
+    src: "photos/GREEN WOODY HOME-10.jpg",
     alt: "Bathroom with natural stone elements",
   },
   {
     id: 6,
-    src: "photos/GREEN WOODY HOME-10.jpg",
+    src: "photos/GREEN WOODY HOME-32.jpg",
     alt: "Outdoor deck with lounge chairs",
   }
 ];
