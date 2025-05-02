@@ -11,7 +11,6 @@ const Hero: React.FC = () => {
           style={{ backgroundImage: 'photos/DSC_0238 copy.jpg', filter: 'brightness(0.5)' }}
         ></div>
       </div>
-      
       <div className="container relative z-10 mx-auto px-4">
         <div className="max-w-2xl animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#4DF4CA' }}>
