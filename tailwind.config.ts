@@ -64,7 +64,7 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				bnb: {
-					'green': '#3F6D4E',
+					'green': '#4DF4CA',
 					'wood': '#A67C52',
 					'beige': '#F5F5DC',
 					'cream': '#FFFDD0',
