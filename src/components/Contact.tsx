@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
                 </div>
               </a>
               
-              <a href="#" target="_blank" rel="noopener noreferrer" className="contact-method">
+              <a href="https://www.booking.com/hotel/it/green-woody-home" target="_blank" rel="noopener noreferrer" className="contact-method">
                 <div className="w-10 h-10 rounded-full bg-bnb-wood flex items-center justify-center text-white">
                   <svg clipRule="evenodd" fillRule="evenodd" height="2445" strokeLinejoin="round" strokeMiterlimit="1.414" viewBox="-.092 .015 2732.125 2671.996" width="2500" xmlns="http://www.w3.org/2000/svg">
                     <path d="m2732.032 513.03c0-283.141-229.978-513.015-513.118-513.015h-1705.89c-283.138 0-513.116 229.874-513.116 513.015v1645.965c0 283.066 229.978 513.016 513.118 513.016h1705.889c283.14 0 513.118-229.95 513.118-513.016z" fill="#0c3b7c"/>

@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-bnb-dark text-white">
+    <footer className="bg-bnb-green2 text-white">
       <div className="container mx-auto py-12 px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
@@ -33,11 +33,9 @@ const Footer: React.FC = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          
+          </div>   
           <div>
-            <h4 className="text-lg font-display font-medium mb-4">Contact</h4>
-            
+            <h4 className="text-lg font-display font-medium mb-4">Contact</h4>            
               <p>
                 <a href="tel:+393358158411" className="hover:text-white transition-colors">(+39) 335 8158411</a>
               </p>
