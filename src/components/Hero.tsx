@@ -14,17 +14,17 @@ const Hero: React.FC = () => {
       
       <div className="container relative z-10 mx-auto px-4">
         <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#4DF4CA' }}>
             Welcome to Green Woody Home
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8">
+          <p className="text-xl md:text-2xl mb-8" style={{ color: '#4DF4CA' }}>
             Your perfect retreat in nature, combining modern comfort with rustic charm
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild className="bg-bnb-green hover:bg-bnb-green/90 text-white font-medium px-6 py-6">
+            <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-white font-medium px-6 py-6">
               <a href="#gallery">View Our Gallery</a>
             </Button>
-            <Button asChild variant="outline" className="bg-white/20 backdrop-blur-sm border-white hover:bg-white/30 text-white px-6 py-6">
+            <Button asChild variant="outline" className="bg-white/20 backdrop-blur-sm border-white hover:bg-white/30 px-6 py-6" style={{ color: '#4DF4CA' }}>
               <a href="#contact">Contact Us</a>
             </Button>
           </div>
