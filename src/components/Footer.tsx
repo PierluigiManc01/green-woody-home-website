@@ -35,8 +35,9 @@ const Footer: React.FC = () => {
             </ul>
           </div>   
           <div>
-            <h4 className="text-lg font-display font-medium mb-4">Contact</h4>            
-              <p>
+            <h4 className="text-lg font-display font-medium mb-4">Contact</h4>
+            <address className="not-italic">
+              <p className="mb-2">
                 <a href="tel:+393358158411" className="hover:text-white transition-colors">(+39) 335 8158411</a>
               </p>
               <p>
