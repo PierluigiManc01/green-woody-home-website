@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: 'photos/DSC_0238 copy.jpg', filter: 'brightness(0.5)' }}
+          style={{ backgroundImage: 'url(photos/DSC_0238 copy.jpg)', filter: 'brightness(0.6)' }}
         ></div>
       </div>
       <div className="container relative z-10 mx-auto px-4">
