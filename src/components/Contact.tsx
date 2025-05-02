@@ -53,8 +53,7 @@ const Contact: React.FC = () => {
                 <p className="font-medium">Email</p>
                 <p className="text-sm text-muted-foreground">info@greenwoody.home</p>
               </div>
-            </a>
-            
+            </a>           
             <div className="contact-method">
               <div className="w-10 h-10 rounded-full bg-bnb-green flex items-center justify-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
