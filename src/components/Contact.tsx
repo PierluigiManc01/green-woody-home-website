@@ -62,6 +62,11 @@ const Contact: React.FC = () => {
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
               </div>
+              <div>
+                <p className="font-medium">Address</p>
+                <p className="text-sm text-muted-foreground">Green Woody Home, Italy</p>
+              </div>
+            </div>
           </div>
           
           <div className="mt-10">
