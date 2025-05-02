@@ -1,0 +1,60 @@
+
+import React from 'react';
+
+const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
+  
+  return (
+    <footer className="bg-bnb-dark text-white">
+      <div className="container mx-auto py-12 px-4">
+        <div className="grid md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-display font-medium mb-4">Green Woody Home</h3>
+            <p className="text-gray-300 mb-4">
+              Your perfect retreat in nature, combining modern comfort with rustic charm.
+            </p>
+          </div>
+          
+          <div>
+            <h4 className="text-lg font-display font-medium mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#home" className="text-gray-300 hover:text-white transition-colors">Home</a>
+              </li>
+              <li>
+                <a href="#gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</a>
+              </li>
+              <li>
+                <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
+              </li>
+              <li>
+                <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                  Book on Airbnb
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-lg font-display font-medium mb-4">Contact</h4>
+            <address className="not-italic text-gray-300 space-y-2">
+              <p>123 Forest Lane, Green Valley</p>
+              <p>
+                <a href="tel:+123456789" className="hover:text-white transition-colors">+1 (234) 567-8900</a>
+              </p>
+              <p>
+                <a href="mailto:info@greenwoody.home" className="hover:text-white transition-colors">info@greenwoody.home</a>
+              </p>
+            </address>
+          </div>
+        </div>
+        
+        <div className="border-t border-white/20 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; {currentYear} Green Woody Home. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
