@@ -42,6 +42,7 @@ const Footer: React.FC = () => {
               <p>
                 <a href="mailto:gigi.mancinelli@gmail.com" className="hover:text-white transition-colors">info@greenwoody.home</a>
               </p>
+            </address>
           </div>
         </div>
         
