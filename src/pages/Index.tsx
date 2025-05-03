@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Gallery from '@/components/Gallery';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import CookieConsent from '@/components/CookieConsent';
 
 const Index: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Index: React.FC = () => {
         <Contact />
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 };

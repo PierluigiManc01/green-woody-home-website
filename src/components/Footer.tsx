@@ -1,8 +1,14 @@
 
 import React from 'react';
+import { resetCookieConsent } from '@/lib/cookieManager';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  
+  const handleResetCookieConsent = () => {
+    resetCookieConsent();
+    window.location.reload();
+  };
   
   return (
     <footer className="bg-bnb-dark_gray text-bnb-green2">
@@ -37,6 +43,14 @@ const Footer: React.FC = () => {
                 <a href="https://www.booking.com/hotel/it/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-gray transition-colors">
                   Book on Booking.com
                 </a>
+              </li>
+              <li>
+                <button 
+                  onClick={handleResetCookieConsent}
+                  className="text-black-300 hover:text-gray transition-colors cursor-pointer text-left"
+                >
+                  Cookie Settings
+                </button>
               </li>
             </ul>
           </div>   
