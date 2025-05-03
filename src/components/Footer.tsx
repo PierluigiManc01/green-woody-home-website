@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-bnb-dark_gray text-bnb-green2">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - about</h3>
-            <p className="text-sm text-black-300 mb-4">
+            <p className="text-sm text-black-300 leading-relaxed">
             In the heart of Rome's countryside, close to the sea, experience the city's historical beauty while staying in an enchanting woodland location powered entirely by solar energy. <br />
             By car, it's 30 minutes from the Colosseum, 20 minutes from FCO airport, and 15 minutes from the seaside.  <br />
             <strong>NB:</strong> A car is mandatory to reach the house.

@@ -41,7 +41,7 @@ const Gallery: React.FC = () => {
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Explore Our Space</h2>
         <p className="text-bnb-green2 text-muted-foreground max-w-2xl mx-auto">
-          Take a virtual tour through our beautiful space and imagine your stay in our nature retreat
+          Take a virtual tour through our beautiful space and imagine your stay in our nature retreat. More photos are available on our Airbnb and Booking.com listings.
         </p>
       </div>
       
