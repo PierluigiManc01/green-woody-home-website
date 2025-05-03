@@ -9,9 +9,12 @@ const Footer: React.FC = () => {
       <div className="container mx-auto py-12 px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-display font-medium mb-4">Green Woody Home</h3>
+            <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - about</h3>
             <p className="text-black-300 mb-4">
-              Your perfect retreat in nature, combining modern comfort with rustic charm.
+            In the heart of Rome countryside and close to the sea, you can experience the historical beauty of the city while staying in an enchanting location in the woods. By car it is 30 minutes away from the Colosseum, 20 mins from the airport (FCO) and 15 mins from the seaside.
+            At Green Woody Home we offer an eco-conscious living experience by providing energy and heat entirely powered by our solar panels. Your stay will be a truly “green” experience.
+            
+            NB: Having a car is mandatory to reach the house
             </p>
           </div>
           <div>
