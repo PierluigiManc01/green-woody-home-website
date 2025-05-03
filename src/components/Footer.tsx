@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-bnb-green2 text-white">
+    <footer className="bg-bnb-green2 text-gray">
       <div className="container mx-auto py-12 px-4">
         <div className="grid md:grid-cols-3 gap-8">
           <div>
@@ -18,21 +18,21 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-display font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-black-300 hover:text-white transition-colors">Home</a>
+                <a href="#home" className="text-black-300 hover:text-gray transition-colors">Home</a>
               </li>
               <li>
-                <a href="#gallery" className="text-black-300 hover:text-white transition-colors">Gallery</a>
+                <a href="#gallery" className="text-black-300 hover:text-gray transition-colors">Gallery</a>
               </li>
               <li>
-                <a href="#contact" className="text-black-300 hover:text-white transition-colors">Contact</a>
+                <a href="#contact" className="text-black-300 hover:text-gray transition-colors">Contact</a>
               </li>
               <li>
-                <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-white transition-colors">
+                <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-gray transition-colors">
                   Book on Airbnb
                 </a>
               </li>
               <li>
-                <a href="https://www.booking.com/hotel/it/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-white transition-colors">
+                <a href="https://www.booking.com/hotel/it/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-gray transition-colors">
                   Book on Booking.com
                 </a>
               </li>
@@ -42,10 +42,10 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-display font-medium mb-4">Contact</h4>
             <address className="not-italic">
               <p className="mb-2">
-                <a href="tel:+393358158411" className="hover:text-white transition-colors">(+06) 5847332</a>
+                <a href="tel:+393358158411" className="hover:text-gray transition-colors">(+06) 5847332</a>
               </p>
               <p>
-                <a href="mailto:gigi.mancinelli@gmail.com" className="hover:text-white transition-colors">info@greenwoody.home</a>
+                <a href="mailto:gigi.mancinelli@gmail.com" className="hover:text-gray transition-colors">info@greenwoody.home</a>
               </p>
             </address>
           </div>

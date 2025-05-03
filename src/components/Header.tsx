@@ -4,16 +4,15 @@ import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
-      {/* Logo */}
-      <div className="flex items-center">
-        <img
-          src="/logo.png" // Path to the logo in the public folder
-          alt="Green Woody Home Logo"
-          className="h-12 w-auto" // Adjust height and width as needed
-        />      
+    <header className="sticky top-0 z-50 w-full bg-gray-80 backdrop-blur-sm border-b">
+      <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center">
           <span className="font-display text-2xl font-medium text-bnb-green2">Green Woody Home</span>
+          <img
+            src="/logo.png" 
+            alt="Green Woody Home Logo"
+            className="h-8 w-auto ml-2" // Adjust size if needed
+          />
         </Link>
         
         <nav className="hidden md:flex space-x-6">
