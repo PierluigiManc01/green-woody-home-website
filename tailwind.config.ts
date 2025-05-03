@@ -68,8 +68,10 @@ export default {
 					'green2': '#8BF9B8',
 					'wood': '#A67C52',
 					'beige': '#F5F5DC',
+					'stone': '#F4F1EA',
 					'cream': '#FFFDD0',
-					'dark': '#2D3B32'
+					'dark': '#2D3B32',
+					'forest-brown': '#4B3F2F'
 				}
 			},
 			borderRadius: {
