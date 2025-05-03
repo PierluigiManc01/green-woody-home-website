@@ -141,12 +141,12 @@ const Contact: React.FC = () => {
           <form ref={form} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label htmlFor="first-name" className="text-sm font-medium">First Name</label>
-                <Input id="first-name" name="first_name" required />
+                <label htmlFor="firstname" className="text-sm font-medium">First Name</label>
+                <Input id="firstname" name="first_name" required />
               </div>
               <div className="space-y-2">
-                <label htmlFor="last-name" className="text-sm font-medium">Last Name</label>
-                <Input id="last-name" name="last_name" required />
+                <label htmlFor="lastname" className="text-sm font-medium">Last Name</label>
+                <Input id="lastname" name="last_name" required />
               </div>
             </div>
             

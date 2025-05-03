@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
             Your perfect retreat in nature, combining modern comfort with rustic charm
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-white font-medium px-6 py-6">
+            <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-gray font-medium px-6 py-6">
               <a href="#gallery">View Our Gallery</a>
             </Button>
             <Button asChild variant="outline" className="bg-white/20 backdrop-blur-sm border-white hover:bg-white/30 px-6 py-6" style={{ color: '#4DF4CA' }}>
