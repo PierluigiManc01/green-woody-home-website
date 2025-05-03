@@ -5,32 +5,32 @@ import React from 'react';
 const images = [
   {
     id: 1,
-    src: "photos/GREEN WOODY HOME-04.jpg",
+    src: "/photos/GREEN WOODY HOME-04.jpg",
     alt: "Wooden cabin exterior surrounded by trees",
   },
   {
     id: 2,
-    src: "photos/GREEN WOODY HOME-07.jpg",
+    src: "/photos/GREEN WOODY HOME-07.jpg",
     alt: "Cozy living room with wooden beams",
   },
   {
     id: 3,
-    src: "photos/GREEN WOODY HOME-25.jpg",
+    src: "/photos/GREEN WOODY HOME-25.jpg",
     alt: "Modern kitchen with wooden elements",
   },
   {
     id: 4,
-    src: "photos/GREEN WOODY HOME-36.jpg", 
+    src: "/photos/GREEN WOODY HOME-36.jpg", 
     alt: "Bedroom with large windows facing nature",
   },
   {
     id: 5,
-    src: "photos/GREEN WOODY HOME-10.jpg",
+    src: "/photos/GREEN WOODY HOME-10.jpg",
     alt: "Bathroom with natural stone elements",
   },
   {
     id: 6,
-    src: "photos/GREEN WOODY HOME-32.jpg",
+    src: "/photos/GREEN WOODY HOME-32.jpg",
     alt: "Outdoor deck with lounge chairs",
   }
 ];
