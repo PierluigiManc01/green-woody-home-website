@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-display font-medium mb-4">Green Woody Home</h3>
-            <p className="text-gray-300 mb-4">
+            <p className="text-black-300 mb-4">
               Your perfect retreat in nature, combining modern comfort with rustic charm.
             </p>
           </div>
@@ -18,17 +18,22 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-display font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="#home" className="text-black-300 hover:text-dark transition-colors">Home</a>
               </li>
               <li>
-                <a href="#gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</a>
+                <a href="#gallery" className="text-black-300 hover:text-dark transition-colors">Gallery</a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact</a>
+                <a href="#contact" className="text-black-300 hover:text-dark transition-colors">Contact</a>
               </li>
               <li>
-                <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-white transition-colors">
                   Book on Airbnb
+                </a>
+              </li>
+              <li>
+                <a href="https://www.booking.com/hotel/it/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-white transition-colors">
+                  Book on Booking.com
                 </a>
               </li>
             </ul>
@@ -37,10 +42,10 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-display font-medium mb-4">Contact</h4>
             <address className="not-italic">
               <p className="mb-2">
-                <a href="tel:+393358158411" className="hover:text-white transition-colors">(+39) 335 8158411</a>
+                <a href="tel:+393358158411" className="hover:text-dark transition-colors">(+06) 5847332</a>
               </p>
               <p>
-                <a href="mailto:gigi.mancinelli@gmail.com" className="hover:text-white transition-colors">info@greenwoody.home</a>
+                <a href="mailto:gigi.mancinelli@gmail.com" className="hover:text-dark transition-colors">info@greenwoody.home</a>
               </p>
             </address>
           </div>

@@ -10,15 +10,15 @@ const Hero: React.FC = () => {
           src="photos/DSC_0238 copy.jpg" 
           alt="Green Woody Home" 
           className="w-full h-full object-cover brightness-60"
-          style={{ filter: 'brightness(0.6)' }}
+          style={{ filter: 'brightness(0.7)' }}
         />
       </div>
       <div className="container relative z-10 mx-auto px-4">
         <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#4DF4CA' }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#8BF9B8' }}>
             Welcome to Green Woody Home
           </h1>
-          <p className="text-xl md:text-2xl mb-8" style={{ color: '#4DF4CA' }}>
+          <p className="text-xl md:text-2xl mb-8" style={{ color: '#8BF9B8' }}>
             Your perfect retreat in nature, combining modern comfort with rustic charm
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
