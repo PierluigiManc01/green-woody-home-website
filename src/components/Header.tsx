@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
-    <header className="sticky top-0 z-50 w-full bg-gray-80 backdrop-blur-sm border-b">
+    <header className="sticky top-0 z-50 w-full bg-gray backdrop-blur-sm border-b">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <Link to="/" className="flex items-center">
           <span className="font-display text-2xl font-medium text-bnb-green2">Green Woody Home</span>
@@ -16,13 +16,13 @@ const Header: React.FC = () => {
         </Link>
         
         <nav className="hidden md:flex space-x-6">
-          <a href="#home" className="font-medium text-foreground hover:text-bnb-green2 transition-colors">
+          <a href="#home" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Home
           </a>
-          <a href="#gallery" className="font-medium text-foreground hover:text-bnb-green2 transition-colors">
+          <a href="#gallery" className="font-medium text-bnb-green2 hover:text-white  transition-colors">
             Gallery
           </a>
-          <a href="#contact" className="font-medium text-foreground hover:text-bnb-green2 transition-colors">
+          <a href="#contact" className="font-medium text-bnb-green2 hover:text-white  transition-colors">
             Contact
           </a>
         </nav>

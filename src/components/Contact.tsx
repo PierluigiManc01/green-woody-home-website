@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section-container bg-bnb-stone">
+    <section id="contact" className="section-container bg-gray">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Get in Touch</h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
           
           <div className="space-y-4">
             <a href="tel:+393358158411" className="contact-method">
-              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-white">
+              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-gray">
                 <Phone size={20} />
               </div>
               <div>
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
             </a>
             
             <a href="mailto:gigi.mancinelli@gmail.com" className="contact-method">
-              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-white">
+              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-gray">
                 <Mail size={20} />
               </div>
               <div>
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
             </a>
            
             <a href="https://maps.app.goo.gl/X9LD4aB8ZLAtTfGK8" target="_blank" rel="noopener noreferrer" className="contact-method">
-              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-white">
+              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-gray">
                 <MapPin size={20} />
               </div>
               <div>
