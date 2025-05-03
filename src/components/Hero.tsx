@@ -5,11 +5,13 @@ import { Button } from '@/components/ui/button';
 const Hero: React.FC = () => {
   return (
     <section id="home" className="relative h-[90vh] flex items-center">
-      <div className="absolute inset-0 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: 'url(photos/DSC_0238 copy.jpg)', filter: 'brightness(0.6)' }}
-        ></div>
+      <div className="absolute inset-0">
+        <img 
+          src="photos/DSC_0238 copy.jpg" 
+          alt="Green Woody Home" 
+          className="w-full h-full object-cover brightness-60"
+          style={{ filter: 'brightness(0.6)' }}
+        />
       </div>
       <div className="container relative z-10 mx-auto px-4">
         <div className="max-w-2xl animate-fade-in">
