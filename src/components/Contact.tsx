@@ -57,7 +57,7 @@ const Contact: React.FC = () => {
           
           <div className="space-y-4">
             <a href="tel:+393358158411" className="contact-method">
-              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-gray">
+              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-dark_gray">
                 <Phone size={20} />
               </div>
               <div>
@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
             </a>
             
             <a href="mailto:gigi.mancinelli@gmail.com" className="contact-method">
-              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-gray">
+              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-dark_gray">
                 <Mail size={20} />
               </div>
               <div>
@@ -77,7 +77,7 @@ const Contact: React.FC = () => {
             </a>
            
             <a href="https://maps.app.goo.gl/X9LD4aB8ZLAtTfGK8" target="_blank" rel="noopener noreferrer" className="contact-method">
-              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-gray">
+              <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-dark_gray">
                 <MapPin size={20} />
               </div>
               <div>
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
               <Textarea id="message" name="message" rows={5} required />
             </div>
             
-            <Button type="submit" className="w-full bg-bnb-green2 hover:bg-bnb-green2/90">
+            <Button type="submit" className="w-full bg-bnb-green2 hover:bg-bnb-green2/90 text-dark_gray">
               Send Message
             </Button>
           </form>
