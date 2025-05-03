@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-bnb-dark_gray text-bnb-green2">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-3 gap-12">
           <div>
             <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - about</h3>
             <p className="text-sm text-black-300 leading-relaxed">
