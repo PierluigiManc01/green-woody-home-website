@@ -86,11 +86,7 @@ const Contact: React.FC = () => {
                     viewBox="0 0 1991.3 2143.2"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="m.001 1659.991h1364.531v1012.019h-1364.53z" fill="#0c3b7c"/>
-                    <g fillRule="nonzero">
-                      <path d="m1241.6 1768.638-220.052-.22v-263.12c0-56.22 21.808-85.48 69.917-92.165h150.136c107.068 0 176.328 67.507 176.328 176.766 0 112.219-67.507 178.63-176.328 178.739zm-220.052-709.694v-69.26c0-60.602 25.643-89.424 81.862-93.15h112.657c96.547 0 154.41 57.753 154.41 154.52 0 73.643-39.671 159.67-150.903 159.67h-198.026zm501.037 262.574-39.78-22.356 34.74-29.699c40.437-34.74 108.163-112.876 108.163-247.67 0-206.464-160.109-339.614-407.888-339.614h-282.738v-.11h-32.219c-73.424 2.74-132.273 62.466-133.04 136.329v1171.499h453.586c275.396 0 453.148-149.917 453.148-382.135 0-125.04-57.424-231.889-153.972-286.244" fill="#fff"/>
-                      <path d="m1794.688 1828.066c0-89.492 72.178-161.894 161.107-161.894 89.154 0 161.669 72.402 161.669 161.894 0 89.379-72.515 161.894-161.67 161.894-88.928 0-161.106-72.515-161.106-161.894" fill="#00bafc"/>
-                    </g>
+                    <path d="m1241.6 1768.638-220.052-.22v-263.12c0-56.22 21.808-85.48 69.917-92.165h150.136c107.068 0 176.328 67.507 176.328 176.766 0 112.219-67.507 178.63-176.328 178.739zm-220.052-709.694v-69.26c0-60.602 25.643-89.424 81.862-93.15h112.657c96.547 0 154.41 57.753 154.41 154.52 0 73.643-39.671 159.67-150.903 159.67h-198.026zm501.037 262.574-39.78-22.356 34.74-29.699c40.437-34.74 108.163-112.876 108.163-247.67 0-206.464-160.109-339.614-407.888-339.614h-282.738v-.11h-32.219c-73.424 2.74-132.273 62.466-133.04 136.329v1171.499h453.586c275.396 0 453.148-149.917 453.148-382.135 0-125.04-57.424-231.889-153.972-286.244" fill="#fff"/>
                   </svg>
                 </div>
                 <div>
@@ -98,22 +94,9 @@ const Contact: React.FC = () => {
                   <p className="text-sm text-muted-foreground">Check availability on Booking.com</p>
                 </div>
               </a>
-              
-              <a href="#" target="_blank" rel="noopener noreferrer" className="contact-method">
-                <div className="w-10 h-10 rounded-full bg-bnb-wood flex items-center justify-center text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-medium">Facebook</p>
-                  <p className="text-sm text-muted-foreground">Follow us on Facebook</p>
-                </div>
-              </a>
             </div>
           </div>
-        </div>
-        
+        </div>    
         <div>
           <h3 className="text-2xl font-display mb-6 text-bnb-dark">Send Us a Message</h3>
           <form onSubmit={handleSubmit} className="space-y-4">
