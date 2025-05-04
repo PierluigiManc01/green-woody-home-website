@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="section-container bg-bnb-sand">
+    <section id="about" className="section-container bg-bnb-beige">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">About Our Space</h2>
         
@@ -17,20 +17,20 @@ const About: React.FC = () => {
             
             <div className="grid grid-cols-2 gap-6 my-8">
               <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-bnb-green2">3</span>
-                <span className="text-sm text-bnb-beige">Bedrooms</span>
+                <span className="block text-3xl font-bold text-bnb-white">3</span>
+                <span className="text-sm text-bnb-white">Bedrooms</span>
               </div>
               <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-bnb-green2">3</span>
-                <span className="text-sm text-bnb-beige">Bathrooms</span>
+                <span className="block text-3xl font-bold text-bnb-white">3</span>
+                <span className="text-sm text-bnb-white">Bathrooms</span>
               </div>
               <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-bnb-green2">120</span>
-                <span className="text-sm text-bnb-beige">m² Living Space</span>
+                <span className="block text-3xl font-bold text-bnb-white">120</span>
+                <span className="text-sm text-bnb-white">m² Living Space</span>
               </div>
               <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-bnb-green2">1500</span>
-                <span className="text-sm text-bnb-beige">m² Garden</span>
+                <span className="block text-3xl font-bold text-bnb-white">1500</span>
+                <span className="text-sm text-bnb-white">m² Garden</span>
               </div>
             </div>
             
