@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#B6E6AC' }}>
             Welcome to 
           </h1>
-          <h1 className="text-6xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#B6E6AC' }} translate='no'>
+          <h1 className="text-8xl md:text-7xl lg:text-8xl font-bold mb-4" style={{ color: '#B6E6AC' }} translate='no'>
             Green Woody Home
           </h1>
           <p className="text-xl md:text-2xl mb-8" style={{ color: '#B6E6AC' }}>
