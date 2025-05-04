@@ -16,27 +16,24 @@ const About: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-2 gap-6 my-8">
-              <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-white">3</span>
-                <span className="text-sm text-white">Bedrooms</span>
+              <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
+                <span className="block text-3xl font-bold text-bnb-dark_gray">3</span>
+                <span className="text-sm text-bnb-dark_gray">Bedrooms</span>
               </div>
-              <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-white">3</span>
-                <span className="text-sm text-white">Bathrooms</span>
+              <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
+                <span className="block text-3xl font-bold text-bnb-dark_gray">3</span>
+                <span className="text-sm text-bnb-dark_gray">Bathrooms</span>
               </div>
-              <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-white">120</span>
-                <span className="text-sm text-white">m² Living Space</span>
+              <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
+                <span className="block text-3xl font-bold text-bnb-dark_gray">120</span>
+                <span className="text-sm text-bnb-dark_gray">m² Living Space</span>
               </div>
-              <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-white">1500</span>
-                <span className="text-sm text-white">m² Garden</span>
+              <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
+                <span className="block text-3xl font-bold text-bnb-dark_gray">1500</span>
+                <span className="text-sm text-bnb-dark_gray">m² Garden</span>
               </div>
             </div>
             
-            <Button asChild className="bg-bnb-green2 hover:bg-bnb-green/90 text-bnb-dark_gray">
-              <a href="#gallery">Explore Our Gallery</a>
-            </Button>
           </div>
           
           <div className="relative">
