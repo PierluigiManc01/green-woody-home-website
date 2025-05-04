@@ -81,12 +81,12 @@ const imageSets = [
     },
     {
       id: 14,
-      src: "/photos/GREEN WOODY HOME-19.jpg",
+      src: "/photos/GREEN WOODY HOME-32.jpg",
       alt: "Interior design detail",
     },
     {
       id: 15,
-      src: "/photos/GREEN WOODY HOME-32.jpg",
+      src: "/photos/GREEN WOODY HOME-19.jpg",
       alt: "Backyard view",
     },
     {

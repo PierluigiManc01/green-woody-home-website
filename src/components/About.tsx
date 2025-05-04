@@ -16,21 +16,21 @@ const About: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-2 gap-6 my-8">
-              <div className="text-center p-4 bg-bnb-beige rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-dark_gray rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">3</span>
-                <span className="text-sm text-bnb-dark_gray">Bedrooms</span>
+                <span className="text-sm text-bnb-beige">Bedrooms</span>
               </div>
-              <div className="text-center p-4 bg-bnb-beige rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-dark_gray rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">3</span>
-                <span className="text-sm text-bnb-dark_gray">Bathrooms</span>
+                <span className="text-sm text-bnb-beige">Bathrooms</span>
               </div>
-              <div className="text-center p-4 bg-bnb-beige rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-dark_gray rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">120</span>
-                <span className="text-sm text-bnb-dark_gray">m² Living Space</span>
+                <span className="text-sm text-bnb-beige">m² Living Space</span>
               </div>
-              <div className="text-center p-4 bg-bnb-beige rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-dark_gray rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">1500</span>
-                <span className="text-sm text-bnb-dark_gray">m² Garden</span>
+                <span className="text-sm text-bnb-beige">m² Garden</span>
               </div>
             </div>
             
