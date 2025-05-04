@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
           style={{ filter: 'brightness(0.7)' }}
         />
       </div>
-      <div className="container relative z-10 mx-auto px-4 -translate-y-18">
+      <div className="container relative z-10 mx-auto px-4 -translate-y-6">
         <div className="max-w-2xl animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#B6E6AC' }}>
             Welcome to Green Woody Home
@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
             <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-gray font-medium px-6 py-6">
               <a href="#gallery">View Our Gallery</a>
             </Button>
-            <Button asChild variant="outline" className="bg-white/20 backdrop-blur-sm border-white hover:bg-white/30 px-6 py-6" style={{ color: '#4DF4CA' }}>
+            <Button asChild variant="outline" className="bg-white/20 backdrop-blur-sm border-white hover:bg-white/30 px-6 py-6" style={{ color: '#B6E6AC' }}>
               <a href="#contact">Contact Us</a>
             </Button>
           </div>
