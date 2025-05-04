@@ -43,7 +43,7 @@ const About: React.FC = () => {
               className="rounded-lg shadow-md w-full h-full object-cover"
             />
             <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-bnb-green2 rounded-full -z-10"></div>
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-bnb-wood opacity-20 rounded-full -z-10"></div>
+            <div className="absolute -top-4 -right-4 w-28 h-28 bg-bnb-wood opacity-20 rounded-full -z-10"></div>
           </div>
         </div>
       </div>
