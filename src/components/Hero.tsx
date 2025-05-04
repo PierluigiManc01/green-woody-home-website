@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
       </div>
       <div className="container relative z-10 mx-auto px-4 -translate-y-24">
         <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#B6E6AC' }}>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4" style={{ color: '#B6E6AC' }}>
             Welcome to 
           </h1>
           <h1 className="text-6xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#B6E6AC' }} translate='no'>
