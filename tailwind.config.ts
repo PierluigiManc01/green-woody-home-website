@@ -71,6 +71,7 @@ export default {
 					'beige': '#D8C4A0',
 					'sand': '#BFAE8F',
 					'stone': '#F4F1EA',
+					'stone2': '#DBD8D2',
 					'cream': '#FFFDD0',
 					'dark': '#2D3B32',
 					'dark_gray': '#646B63',
