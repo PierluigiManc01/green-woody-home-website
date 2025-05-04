@@ -15,13 +15,13 @@ const imageSets = [
     },
     {
       id: 2,
-      src: "/photos/GREEN WOODY HOME-07.jpg",
+      src: "/photos/GREEN WOODY HOME-02.jpg",
       alt: "Cozy living room with wooden beams",
     },
     {
       id: 3,
-      src: "/photos/GREEN WOODY HOME-25.jpg",
-      alt: "Modern kitchen with wooden elements",
+      src: "/photos/DSC_0238 copy.jpg",
+      alt: "Exterior view of the cabin with garden",
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ const imageSets = [
     },
     {
       id: 6,
-      src: "/photos/GREEN WOODY HOME-32.jpg",
+      src: "/photos/GREEN WOODY HOME-03.jpg",
       alt: "Outdoor deck with lounge chairs",
     }
   ],
