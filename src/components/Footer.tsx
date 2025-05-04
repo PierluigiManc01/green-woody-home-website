@@ -21,7 +21,10 @@ const Footer: React.FC = () => {
             <ul className="list-disc list-inside text-sm text-black-300 leading-relaxed">
               <li>The Colosseum in 30 minutes</li>
               <li>FCO airport in 20 minutes</li>
+              <li>CIA airport in 20 minutes</li>
+              <li>PalaSport metro station in 10 minutes</li>
               <li>The seaside (Torvajanica) in 15 minutes</li>
+              <li>Castel Romano Designer Outlet in 5 minutes</li>
             </ul>
             <strong>NB:</strong> A car is mandatory to reach the house.
             </p>

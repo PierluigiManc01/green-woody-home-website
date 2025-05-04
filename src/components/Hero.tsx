@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
           style={{ filter: 'brightness(0.7)' }}
         />
       </div>
-      <div className="container relative z-10 mx-auto px-4 -translate-y-6">
+      <div className="container relative z-10 mx-auto px-4 -translate-y-24">
         <div className="max-w-2xl animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#B6E6AC' }}>
             Welcome to Green Woody Home

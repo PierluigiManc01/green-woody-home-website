@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
       <div className="grid md:grid-cols-2 gap-12">
         <div>
           <h3 className="text-2xl font-display mb-6 text-bnb-dark">Contact Methods</h3>
-          <p className="text-md text-muted-foreground">Click the buttons to contact us!</p>
+          <h4 className="text-md text-muted-foreground">Click the buttons to contact us!</h4>
           <div className="space-y-4">
             <a href="tel:+393358158411" className="contact-method">
               <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-dark_gray">
