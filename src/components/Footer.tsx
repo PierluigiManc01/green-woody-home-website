@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-bnb-dark_gray text-bnb-green2">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-3 gap-12">
           {/* First Column: Points of interest */}
           <div className="md:col-span-1">
             <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - points of interest</h3>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
           {/* Vertical Divider */}
-          <div className="hidden md:block border-l border-white"></div>
+          <div className="flex flex-col md:flex-row justify-between gap-12"></div>
 
           {/* Second and Third Columns */}
           <div className="md:col-span-2 flex flex-col md:flex-row gap-12">
