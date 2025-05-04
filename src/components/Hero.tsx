@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
               <a href="#gallery">View Our Gallery</a>
             </Button>
             <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-gray font-medium px-6 py-6">
-              <a href="#footer">Points of Interes</a>
+              <a href="#footer">Points of Interest</a>
             </Button>
             <Button asChild variant="outline" className="bg-white/20 backdrop-blur-sm border-white hover:bg-white/30 px-6 py-6" style={{ color: '#B6E6AC' }}>
               <a href="#contact">Contact Us</a>

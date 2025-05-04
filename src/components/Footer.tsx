@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   };
   
   return (
-    <footer className="bg-bnb-dark_gray text-bnb-green2">
+    <footer id="footer" className="bg-bnb-dark_gray text-bnb-green2">
       <div className="container mx-auto py-12 px-4">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
