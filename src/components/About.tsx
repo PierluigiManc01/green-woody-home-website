@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="section-container bg-bnb-stone">
+    <section id="about" className="section-container bg-bnb-sand">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">About Our Space</h2>
         
@@ -16,19 +16,19 @@ const About: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-2 gap-6 my-8">
-              <div className="text-center p-4 bg-bnb-dark_gray rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">3</span>
                 <span className="text-sm text-bnb-beige">Bedrooms</span>
               </div>
-              <div className="text-center p-4 bg-bnb-dark_gray rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">3</span>
                 <span className="text-sm text-bnb-beige">Bathrooms</span>
               </div>
-              <div className="text-center p-4 bg-bnb-dark_gray rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">120</span>
                 <span className="text-sm text-bnb-beige">m² Living Space</span>
               </div>
-              <div className="text-center p-4 bg-bnb-dark_gray rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-wood rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">1500</span>
                 <span className="text-sm text-bnb-beige">m² Garden</span>
               </div>

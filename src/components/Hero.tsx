@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
     <section id="home" className="relative h-[90vh] flex items-center">
       <div className="absolute inset-0">
         <img 
-          src="/photos/GREEN WOODY HOME-36.jpg" 
+          src="/photos/GREEN WOODY HOME-04.jpg" 
           alt="Green Woody Home" 
           className="w-full h-full object-cover brightness-60"
           style={{ filter: 'brightness(0.7)' }}

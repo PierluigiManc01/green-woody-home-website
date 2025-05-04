@@ -68,7 +68,7 @@ export default {
 					'dark_green': '#3F4C42',
 					'green2': '#B6E6AC',
 					'wood': '#A67C52',
-					'beige': '#F5F5DC',
+					'beige': '#D8C4A0',
 					'sand': '#BFAE8F',
 					'stone': '#F4F1EA',
 					'cream': '#FFFDD0',
