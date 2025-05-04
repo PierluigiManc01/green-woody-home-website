@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
               <Textarea id="message" name="message" rows={5} required />
             </div>
             
-            <Button type="submit" className="w-full bg-bnb-green2 hover:bg-bnb-green2/90 text-dark_gray">
+            <Button type="submit" className="w-full bg-bnb-green2 hover:bg-bnb-green2/70 text-dark_gray">
               Send Message
             </Button>
           </form>
