@@ -11,26 +11,25 @@ const About: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <p className="text-lg leading-relaxed">
-              Green Woody Home is a charming eco-conscious retreat nestled in Rome's countryside, 
-              offering the perfect blend of rustic charm and modern comfort. Between the beauty of the city and the breaths of the sea, enjoy your stay in an exclusive location . Fully powered by 
-              solar energy, our home respects nature while providing all the amenities you need.
+            Green Woody Home is an eco-friendly retreat nestled in the serene countryside of Rome, perfectly balancing nature and convenience. <br /> 
+            Fully powered by solar energy, our villa offers a sustainable escape just 30 minutes from the historic city center and 15 minutes from the seaside. Experience rustic charm, modern comfort, and a unique connection to nature—all in one exclusive location.
             </p>
             
             <div className="grid grid-cols-2 gap-6 my-8">
-              <div className="text-center p-4 bg-bnb-cream rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-beige rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">3</span>
                 <span className="text-sm text-bnb-dark_gray">Bedrooms</span>
               </div>
-              <div className="text-center p-4 bg-bnb-cream rounded-lg shadow-sm">
+              <div className="text-center p-4 bg-bnb-beige rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-green2">3</span>
                 <span className="text-sm text-bnb-dark_gray">Bathrooms</span>
               </div>
-              <div className="text-center p-4 bg-bnb-cream rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-bnb-green">120</span>
+              <div className="text-center p-4 bg-bnb-beige rounded-lg shadow-sm">
+                <span className="block text-3xl font-bold text-bnb-green2">120</span>
                 <span className="text-sm text-bnb-dark_gray">m² Living Space</span>
               </div>
-              <div className="text-center p-4 bg-bnb-cream rounded-lg shadow-sm">
-                <span className="block text-3xl font-bold text-bnb-green">1500</span>
+              <div className="text-center p-4 bg-bnb-beige rounded-lg shadow-sm">
+                <span className="block text-3xl font-bold text-bnb-green2">1500</span>
                 <span className="text-sm text-bnb-dark_gray">m² Garden</span>
               </div>
             </div>

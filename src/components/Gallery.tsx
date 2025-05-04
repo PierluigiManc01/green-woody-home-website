@@ -30,12 +30,12 @@ const imageSets = [
     },
     {
       id: 5,
-      src: "/photos/GREEN WOODY HOME-10.jpg",
+      src: "/photos/GREEN WOODY HOME-03.jpg",
       alt: "Bathroom with natural stone elements",
     },
     {
       id: 6,
-      src: "/photos/GREEN WOODY HOME-03.jpg",
+      src: "/photos/GREEN WOODY HOME-09.jpg",
       alt: "Outdoor deck with lounge chairs",
     }
   ],
@@ -43,32 +43,32 @@ const imageSets = [
   [
     {
       id: 7,
-      src: "/photos/GREEN WOODY HOME-03.jpg",
+      src: "/photos/GREEN WOODY HOME-07.jpg",
       alt: "Exterior view of the cabin",
     },
     {
       id: 8,
-      src: "/photos/GREEN WOODY HOME-08.jpg",
+      src: "/photos/GREEN WOODY HOME-10.jpg",
       alt: "Another living room angle",
     },
     {
       id: 9,
-      src: "/photos/GREEN WOODY HOME-20.jpg",
+      src: "/photos/GREEN WOODY HOME-08.jpg",
       alt: "Kitchen detail with wooden countertop",
     },
     {
       id: 10,
-      src: "/photos/GREEN WOODY HOME-21.jpg", 
+      src: "/photos/GREEN WOODY HOME-11.jpg", 
       alt: "Second bedroom view",
     },
     {
       id: 11,
-      src: "/photos/GREEN WOODY HOME-09.jpg",
+      src: "/photos/GREEN WOODY HOME-34.jpg",
       alt: "Second bathroom view",
     },
     {
       id: 12,
-      src: "/photos/GREEN WOODY HOME-11.jpg",
+      src: "/photos/GREEN WOODY HOME-16.jpg",
       alt: "Patio with garden view",
     }
   ],
@@ -81,27 +81,27 @@ const imageSets = [
     },
     {
       id: 14,
-      src: "/photos/GREEN WOODY HOME-02.jpg",
+      src: "/photos/GREEN WOODY HOME-19.jpg",
       alt: "Interior design detail",
     },
     {
       id: 15,
-      src: "/photos/GREEN WOODY HOME-04.jpg",
+      src: "/photos/GREEN WOODY HOME-32.jpg",
       alt: "Backyard view",
     },
     {
       id: 16,
-      src: "/photos/GREEN WOODY HOME-25.jpg", 
+      src: "/photos/GREEN WOODY HOME-21.jpg", 
       alt: "Kitchen appliances",
     },
     {
       id: 17,
-      src: "/photos/GREEN WOODY HOME-36.jpg",
+      src: "/photos/GREEN WOODY HOME-24.jpg",
       alt: "Master bedroom detail",
     },
     {
       id: 18,
-      src: "/photos/GREEN WOODY HOME-32.jpg",
+      src: "/photos/GREEN WOODY HOME-25.jpg",
       alt: "Exterior front view",
     }
   ]
