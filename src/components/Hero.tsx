@@ -15,8 +15,11 @@ const Hero: React.FC = () => {
       </div>
       <div className="container relative z-10 mx-auto px-4 -translate-y-24">
         <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#B6E6AC' }}>
-            Welcome to Green Woody Home
+          <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#B6E6AC' }}>
+            Welcome to 
+          </h1>
+          <h1 className="text-6xl md:text-5xl lg:text-6xl font-bold mb-4" style={{ color: '#B6E6AC' }} translate='no'>
+            Green Woody Home
           </h1>
           <p className="text-xl md:text-2xl mb-8" style={{ color: '#B6E6AC' }}>
             Your perfect retreat in nature, combining modern comfort with rustic charm
