@@ -65,9 +65,11 @@ export default {
 				},
 				bnb: {
 					'green': '#3F6D4E',
-					'green2': '#96EEBA',
+					'dark_green': '#3F4C42',
+					'green2': '#A1BFA3',
 					'wood': '#A67C52',
 					'beige': '#F5F5DC',
+					'sand': '#BFAE8F',
 					'stone': '#F4F1EA',
 					'cream': '#FFFDD0',
 					'dark': '#2D3B32',
