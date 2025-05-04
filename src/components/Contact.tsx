@@ -142,22 +142,22 @@ const Contact: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="firstname" className="text-sm font-medium">First Name</label>
-                <Input id="firstname" name="first_name" required />
+                <Input id="firstname" name="firstname" required />
               </div>
               <div className="space-y-2">
                 <label htmlFor="lastname" className="text-sm font-medium">Last Name</label>
-                <Input id="lastname" name="last_name" required />
+                <Input id="lastname" name="lastname" required />
               </div>
             </div>
             
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium">Email</label>
-              <Input id="email" name="user_email" type="email" required />
+              <Input id="email" name="email" type="email" required />
             </div>
             
             <div className="space-y-2">
               <label htmlFor="phone" className="text-sm font-medium">Phone (optional)</label>
-              <Input id="phone" name="user_phone" type="tel" />
+              <Input id="phone" name="phone" type="tel" />
             </div>
             
             <div className="space-y-2">
