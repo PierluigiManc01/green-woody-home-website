@@ -13,8 +13,9 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-bnb-dark_gray text-bnb-green2">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid md:grid-cols-3 gap-12">
-          <div>
+        <div className="grid md:grid-cols-4 gap-12">
+          {/* First Column: Points of interest */}
+          <div className="md:col-span-1">
             <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - points of interest</h3>
             <p className="text-sm text-black-300 leading-relaxed">
             <p>In the heart of Rome's countryside, close to the sea, by car you can reach:</p>
@@ -29,7 +30,11 @@ const Footer: React.FC = () => {
             <strong>NB:</strong> A car is mandatory to reach the house.
             </p>
           </div>
-          <div>
+          {/* Vertical Divider */}
+          <div className="hidden md:block border-l border-white"></div>
+
+          {/* Second and Third Columns */}
+          <div className="md:col-span-2 flex flex-col md:flex-row gap-12">
             <h4 className="text-lg font-display font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
