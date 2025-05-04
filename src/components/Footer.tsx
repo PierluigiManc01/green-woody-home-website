@@ -15,10 +15,14 @@ const Footer: React.FC = () => {
       <div className="container mx-auto py-12 px-4">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - about</h3>
+            <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - points of interest</h3>
             <p className="text-sm text-black-300 leading-relaxed">
-            In the heart of Rome's countryside, close to the sea, experience the city's historical beauty while staying in an enchanting woodland location powered entirely by solar energy. <br />
-            By car, it's 30 minutes from the Colosseum, 20 minutes from FCO airport, and 15 minutes from the seaside.  <br />
+            <p>In the heart of Rome's countryside, close to the sea, by car you can reach:</p>
+            <ul className="list-disc list-inside text-sm text-black-300 leading-relaxed">
+              <li>The Colosseum in 30 minutes</li>
+              <li>FCO airport in 20 minutes</li>
+              <li>The seaside (Torvajanica) in 15 minutes</li>
+            </ul>
             <strong>NB:</strong> A car is mandatory to reach the house.
             </p>
           </div>
