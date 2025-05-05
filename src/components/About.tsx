@@ -51,7 +51,7 @@ const About: React.FC = () => {
         <div className="mt-20 pt-10 max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">Points of Interest</h2> 
         <div className="grid md:grid-cols-3 gap-6 mt-8">
-          <div className="bg-bnb-dark_gray/70 p-5 rounded-lg shadow-sm border-l-4 border-bnb-green2">
+          <div className="bg-bnb-dark_gray/50 p-5 rounded-lg  ">
             <h3 className="font-bold text-lg text-bnb-green2">Colosseum</h3>
             <p className="text-sm mb-2 text-white">Ancient Roman amphitheater and iconic symbol of Imperial Rome.</p>
             <div className="flex items-center text-white">
@@ -63,7 +63,7 @@ const About: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-bnb-dark_gray/70 p-5 rounded-lg shadow-sm border-l-4 border-bnb-green2">
+          <div className="bg-bnb-dark_gray/50 p-5 rounded-lg  ">
             <h3 className="font-bold text-lg text-bnb-green2">Vatican City</h3>
             <p className="text-sm mb-2 text-white">Home to St. Peter's Basilica and the Vatican Museums with the Sistine Chapel.</p>
             <div className="flex items-center text-white">
@@ -75,7 +75,7 @@ const About: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-bnb-dark_gray/70 p-5 rounded-lg shadow-sm border-l-4 border-bnb-green2">
+          <div className="bg-bnb-dark_gray/50 p-5 rounded-lg  ">
             <h3 className="font-bold text-lg text-bnb-green2">Trevi Fountain</h3>
             <p className="text-sm mb-2 text-white">Baroque masterpiece and one of the most famous fountains in the world.</p>
             <div className="flex items-center text-white">
@@ -87,7 +87,7 @@ const About: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-bnb-dark_gray/70 p-5 rounded-lg shadow-sm border-l-4 border-bnb-green2">
+          <div className="bg-bnb-dark_gray/50 p-5 rounded-lg  ">
             <h3 className="font-bold text-lg text-bnb-green2">Ostia Beach</h3>
             <p className="text-sm mb-2 text-white">Nearest seaside destination with sandy beaches and crystal clear waters.</p>
             <div className="flex items-center text-white">
@@ -99,7 +99,7 @@ const About: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-bnb-dark_gray/70 p-5 rounded-lg shadow-sm border-l-4 border-bnb-green2">
+          <div className="bg-bnb-dark_gray/50 p-5 rounded-lg  ">
             <h3 className="font-bold text-lg text-bnb-green2">Tivoli Gardens</h3>
             <p className="text-sm mb-2 text-white">Renaissance garden with elaborate fountains and breathtaking views.</p>
             <div className="flex items-center text-white">
@@ -111,7 +111,7 @@ const About: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-bnb-dark_gray/70 p-5 rounded-lg shadow-sm border-l-4 border-bnb-green2">
+          <div className="bg-bnb-dark_gray/50 p-5 rounded-lg  ">
             <h3 className="font-bold text-lg text-bnb-green2">Appian Way</h3>
             <p className="text-sm mb-2 text-white">Ancient Roman road with historical ruins and catacombs to explore.</p>
             <div className="flex items-center text-white">
