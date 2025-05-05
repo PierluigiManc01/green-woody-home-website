@@ -30,17 +30,31 @@ const Header: React.FC = () => {
         
         <div className="md:hidden relative">
           {/* Mobile menu button with toggle functionality */}
-          <button 
-            className="p-2 text-bnb-green2 hover:text-white transition-colors"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <span className="sr-only">Open menu</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </button>
+          <>
+            <button 
+              className="p-2 text-bnb-green2 hover:text-white transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <span className="sr-only">Open menu</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
+            </button>
+            
+            {React.useEffect(() => {
+              const handleClickOutside = (event: MouseEvent) => {
+                const target = event.target as HTMLElement;
+                if (isMenuOpen && !target.closest('.mobile-menu-container')) {
+                  setIsMenuOpen(false);
+                }
+              };
+              
+              document.addEventListener('mousedown', handleClickOutside);
+              return () => document.removeEventListener('mousedown', handleClickOutside);
+            }, [isMenuOpen])}
+          </>
           
           {/* Mobile menu dropdown */}
           {isMenuOpen && (
