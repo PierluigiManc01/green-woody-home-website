@@ -11,15 +11,15 @@ const Footer: React.FC = () => {
   };
   
   return (
-    <footer id="footer" className="bg-bnb-dark_gray text-bnb-green2">
+    <footer id="footer" className="bg-bnb-dark_gray">
       <div className="container mx-auto py-12 px-4">
         <div className="grid md:grid-cols-5 gap-2">
           {/* First Column: Points of interest */}
           <div>
-            <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - points of interest</h3>
-            <p className="text-sm text-black-300 leading-relaxed">
+            <h3 className="text-xl text-white font-display font-medium mb-4">Green Woody Home - points of interest</h3>
+            <p className="text-sm text-bnb-green2 leading-relaxed">
             <p>In the heart of Rome's countryside, close to the sea, by car you can reach:</p>
-            <ul className="list-disc list-inside text-sm text-black-300 leading-relaxed">
+            <ul className="list-disc list-inside text-bnb-green2 leading-relaxed">
               <li>The Colosseum in 30 minutes</li>
               <li>FCO airport in 20 minutes</li>
               <li>CIA airport in 20 minutes</li>
@@ -35,24 +35,24 @@ const Footer: React.FC = () => {
 
           {/* Second and Third Columns */}
           <div>
-            <h4 className="text-lg font-display font-medium mb-4">Quick Links</h4>
+            <h4 className="text-lg text-white font-display font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-black-300 hover:text-gray transition-colors">Home</a>
+                <a href="#home" className="text-bnb-green2 hover:text-white transition-colors">Home</a>
               </li>
               <li>
-                <a href="#gallery" className="text-black-300 hover:text-gray transition-colors">Gallery</a>
+                <a href="#gallery" className="text-bnb-green2 hover:text-white transition-colors">Gallery</a>
               </li>
               <li>
-                <a href="#contact" className="text-black-300 hover:text-gray transition-colors">Contact</a>
+                <a href="#contact" className="text-bnb-green2 hover:text-white transition-colors">Contact</a>
               </li>
               <li>
-                <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-gray transition-colors">
+                <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-bnb-green2 hover:text-white transition-colors">
                   Book on Airbnb
                 </a>
               </li>
               <li>
-                <a href="https://www.booking.com/hotel/it/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-black-300 hover:text-gray transition-colors">
+                <a href="https://www.booking.com/hotel/it/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-bnb-green2 hover:text-white transition-colors">
                   Book on Booking.com
                 </a>
               </li>
@@ -67,23 +67,23 @@ const Footer: React.FC = () => {
             </ul>
           </div>   
           <div>
-            <h4 className="text-lg font-display font-medium mb-4">Contact</h4>
+            <h4 className="text-lg text-white font-display font-medium mb-4">Contact</h4>
             <address className="not-italic">
               <p className="mb-2">
-                <a href="tel:+393358158411" className="hover:text-gray transition-colors">(+06) 5847332</a>
+                <a href="tel:+393358158411" className="text-bnb-green2 hover:text-white transition-colors">(+06) 5847332</a>
               </p>
               <p>
-                <a href="mailto:gigi.mancinelli@gmail.com" className="hover:text-gray transition-colors">info@greenwoody.home</a>
+                <a href="mailto:gigi.mancinelli@gmail.com" className="text-bnb-green2 hover:text-white transition-colors">info@greenwoody.home</a>
               </p>
             </address>
           </div>
           <div>
           <h4 className="text-lg text-white font-display font-medium mb-4">Identification Codes</h4>
               <p className="mb-2">
-                <a className="hover:text-gray transition-colors">CIN: IT058091C2NI2MQGQ5</a>
+                <a className="text-bnb-green2 hover:text-white transition-colors">CIN: IT058091C2NI2MQGQ5</a>
               </p>
               <p>
-                <a className="hover:text-gray transition-colors">CIR: 058091-ALT-09921</a>
+                <a className="text-bnb-green2 hover:text-white transition-colors">CIR: 058091-ALT-09921</a>
               </p>
           </div>
         </div>
