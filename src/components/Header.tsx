@@ -1,9 +1,22 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
+      // Close the menu if the click is outside the menu container
+      if (isMenuOpen && !target.closest('.mobile-menu-container')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMenuOpen]);
   return (
     <header className="sticky top-0 z-50 w-full bg-bnb-dark_gray backdrop-blur-sm border-b">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
@@ -47,17 +60,25 @@ const Header: React.FC = () => {
           
           {/* Mobile menu dropdown */}
           {isMenuOpen && (
-            <div className="absolute top-12 right-0 bg-bnb-dark_gray border border-gray-700 rounded-md shadow-lg py-2 w-40">
-              <a href="#home" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800">
+            <div className="mobile-menu-container absolute top-12 right-0 bg-bnb-dark_gray border border-gray-700 rounded-md shadow-lg py-2 w-40">
+              <a href="#home" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </a>
-              <a href="#about" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800">
+              <a href="#about" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 About
               </a>
-              <a href="#gallery" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800">
+              <a href="#gallery" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+                onClick={() => setIsMenuOpen(false)}
+              > 
                 Gallery
               </a>
-              <a href="#contact" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800">
+              <a href="#contact" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Contact
               </a>
             </div>
