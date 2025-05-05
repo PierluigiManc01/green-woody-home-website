@@ -77,6 +77,15 @@ const Footer: React.FC = () => {
               </p>
             </address>
           </div>
+          <div>
+          <h4 className="text-lg font-display font-medium mb-4">Identification Codes</h4>
+              <p className="mb-2">
+                <a className="hover:text-gray transition-colors">CIN: IT058091C2NI2MQGQ5</a>
+              </p>
+              <p>
+                <a className="hover:text-gray transition-colors">CIR: 058091-ALT-09921</a>
+              </p>
+          </div>
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-gray-400">
