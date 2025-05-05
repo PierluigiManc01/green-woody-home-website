@@ -25,16 +25,16 @@ const Contact: React.FC = () => {
           () => {
             // Show success toast notification
             toast({
-              title: "Message sent!",
-              description: "We'll get back to you as soon as possible.",
+              title: "Messaggio inviato!",
+              description: "Ti risponderemo appena possibile.",
             });
             form.current.reset(); // Reset the form after successful submission
           },
           (error) => {
             console.log("FAILED...", error.text);
             toast({
-              title: "Failed to send message",
-              description: "Please try again later.",
+              title: "Invio del messaggio fallito",
+              description: "Per favore ritenta in seguito.",
               variant: "destructive",
             });
           }
@@ -142,27 +142,27 @@ const Contact: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="firstname" className="text-sm font-medium">First Name</label>
-                <Input id="firstname" name="firstname" required />
+                <Input id="firstname" name="firstname" placeholder='Mario' required />
               </div>
               <div className="space-y-2">
                 <label htmlFor="lastname" className="text-sm font-medium">Last Name</label>
-                <Input id="lastname" name="lastname" required />
+                <Input id="lastname" name="lastname" placeholder='Rossi' required />
               </div>
             </div>
             
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium">Email</label>
-              <Input id="email" name="email" type="email" required />
+              <Input id="email" name="email" type="email" placeholder='mario.rossi@gmail.com' required />
             </div>
             
             <div className="space-y-2">
               <label htmlFor="phone" className="text-sm font-medium">Phone (optional)</label>
-              <Input id="phone" name="phone" type="tel" />
+              <Input id="phone" name="phone" placeholder="3387392571" type="tel" />
             </div>
             
             <div className="space-y-2">
               <label htmlFor="message" className="text-sm font-medium">Message</label>
-              <Textarea id="message" name="message" rows={5} required />
+              <Textarea id="message" name="message" rows={5} placeholder='Hi! I would like to book the house for...' required />
             </div>
             
             <Button type="submit" className="w-full bg-bnb-green2 hover:bg-bnb-green2/70 text-dark_gray">
