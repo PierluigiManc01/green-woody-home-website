@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-bnb-dark_gray">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8">
+        <div className="flex flex-wrap justify-between gap-8">
           {/* First Column: Points of interest */}
-          <div>
+          <div className="w-full md:w-1/4">
             <h3 className="text-xl text-white font-display font-medium mb-4">Green Woody Home - points of interest</h3>
             <p className="text-sm text-bnb-green2 leading-relaxed">
             <p>In the heart of Rome's countryside, close to the sea, by car you can reach:</p>
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Second and Third Columns */}
-          <div>
+          <div className="w-full md:w-1/4">
             <h4 className="text-lg text-white font-display font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>   
-          <div>
+          <div className="w-full md:w-1/4">
             <h4 className="text-lg text-white font-display font-medium mb-4">Contact</h4>
             <address className="not-italic">
               <p className="mb-2">
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
             </address>
           </div>
           {/* Fourth Column: CIN e CIR */}
-          <div>
+          <div className="w-full md:w-1/4">
           <h4 className="text-lg text-white font-display font-medium mb-4">Identification Codes</h4>
               <p className="mb-2">
                 <a className="text-bnb-green2 hover:text-white transition-colors">CIN: IT058091C2NI2MQGQ5</a>
