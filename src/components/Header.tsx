@@ -11,7 +11,7 @@ const Header: React.FC = () => {
           <img
             src="/logo.png" 
             alt="Green Woody Home Logo"
-            className="h-8 w-auto ml-2" // Adjust size if needed
+            className="h-10 w-auto ml-2" 
           />
         </Link>
         
