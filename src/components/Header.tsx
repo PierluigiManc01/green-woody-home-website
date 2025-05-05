@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -46,32 +45,16 @@ const Header: React.FC = () => {
           {/* Mobile menu dropdown */}
           {isMenuOpen && (
             <div className="absolute top-12 right-0 bg-bnb-dark_gray border border-gray-700 rounded-md shadow-lg py-2 w-40">
-              <a 
-                href="#home" 
-                className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href="#home" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800">
                 Home
               </a>
-              <a 
-                href="#about" 
-                className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href="#about" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800">
                 About
               </a>
-              <a 
-                href="#gallery" 
-                className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href="#gallery" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800">
                 Gallery
               </a>
-              <a 
-                href="#contact" 
-                className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <a href="#contact" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800">
                 Contact
               </a>
             </div>
