@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-bnb-dark_gray">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid md:grid-cols-5 gap-2">
+        <div className="grid md:grid-cols-4 gap-6">
           {/* First Column: Points of interest */}
           <div>
             <h3 className="text-xl text-white font-display font-medium mb-4">Green Woody Home - points of interest</h3>
@@ -30,9 +30,7 @@ const Footer: React.FC = () => {
             <strong>NB:</strong> A car is mandatory to reach the house.
             </p>
           </div>
-          {/* Vertical Divider */}
-          <div className="hidden md:block border-l border-white h-3/4 self-center"></div>
-
+          
           {/* Second and Third Columns */}
           <div>
             <h4 className="text-lg text-white font-display font-medium mb-4">Quick Links</h4>
@@ -59,7 +57,7 @@ const Footer: React.FC = () => {
               <li>
                 <button 
                   onClick={handleResetCookieConsent}
-                  className="text-black-300 hover:text-gray transition-colors cursor-pointer text-left"
+                  className="text-white hover:text-gray transition-colors cursor-pointer text-left"
                 >
                   Cookie Settings
                 </button>
