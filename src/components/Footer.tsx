@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Second and Third Columns */}
-          <div className="flex-1 basis-full md:basis-1/4 flex-1 basis-full md:basis-1/4 flex flex-col items-center ">
+          <div className="flex-1 basis-full md:basis-1/4 flex-1 basis-full md:basis-1/4  items-center ">
             <h4 className="text-lg text-white font-display font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
               </li>
             </ul>
           </div>   
-          <div className="flex-1 basis-full md:basis-1/4 flex-1 basis-full md:basis-1/4 flex flex-col items-center ">
+          <div className="flex-1 basis-full md:basis-1/4 flex-1 basis-full md:basis-1/4  items-center ">
             <h4 className="text-lg text-white font-display font-medium mb-4">Contact</h4>
             <address className="not-italic">
               <p className="mb-2">
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
             </address>
           </div>
           {/* Fourth Column: CIN e CIR */}
-          <div className="flex-1 basis-full md:basis-1/4 flex-1 basis-full md:basis-1/4 flex flex-col items-center ">
+          <div className="flex-1 basis-full md:basis-1/4 flex-1 basis-full md:basis-1/4  items-center ">
           <h4 className="text-lg text-white font-display font-medium mb-4">Identification Codes</h4>
               <p className="mb-2">
                 <a className="text-bnb-green2 hover:text-white transition-colors">CIN: IT058091C2NI2MQGQ5</a>
