@@ -50,7 +50,7 @@ const About: React.FC = () => {
       <div id= "PoI" className="mt-20 pt-10 max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">Points of Interest</h2> 
         <p className="text-bnb-green2 text-muted-foreground max-w-2xl mx-auto">
-          Explore the rich history and culture of Rome and its surroundings. Here are some must-visit places within a short drive from Green Woody Home:
+          Explore the rich history and culture of Rome and its surroundings. Here are some must-visit places within a short drive from Green Woody Home: click to see where they are!
         </p>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Colosseo,+Roma,+RM/@41.8268438,12.3890226,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x132f61b6fc6433df:0x165f79d5d2332163!2m2!1d12.4922986!2d41.8905691!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">

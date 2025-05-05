@@ -20,6 +20,9 @@ const Header: React.FC = () => {
           <a href="#home" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Home
           </a>
+          <a href="#about" className="font-medium text-bnb-green2 hover:text-white transition-colors">
+            About
+          </a>
           <a href="#gallery" className="font-medium text-bnb-green2 hover:text-white  transition-colors">
             Gallery
           </a>

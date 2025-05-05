@@ -106,11 +106,11 @@
 }
 
 .image-gallery {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  @apply grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4;
 }
 
 .image-gallery img {
-  @apply w-full h-64 object-cover rounded-md transition-all duration-300 hover:opacity-95 hover:shadow-lg;
+  @apply w-full h-40 md:h-64 lg:h-80 object-cover rounded-md transition-all duration-300 hover:opacity-95 hover:shadow-lg;
 }
 
 .contact-method {

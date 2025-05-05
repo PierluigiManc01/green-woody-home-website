@@ -190,7 +190,7 @@ const Gallery: React.FC = () => {
           <Button 
             variant="outline" 
             size="icon" 
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white/80 hover:bg-white rounded-full z-10"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white/80 hover:bg-bnb-green2 rounded-full z-10"
             onClick={prevSet}
           >
             <ChevronLeft className="h-5 w-5" />
@@ -200,7 +200,7 @@ const Gallery: React.FC = () => {
           <Button 
             variant="outline" 
             size="icon" 
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white/80 hover:bg-white rounded-full z-10"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white/80 hover:bg-bnb-green2 rounded-full z-10"
             onClick={nextSet}
           >
             <ChevronRight className="h-5 w-5" />
