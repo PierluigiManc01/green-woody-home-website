@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-bnb-dark_gray">
       <div className="container mx-auto py-12 px-4">
-        <div className="flex flex-wrap justify-between sm:gap-4">
+        <div className="flex flex-wrap justify-between">
           {/* First Column: Points of interest */}
           <div className="flex-1 basis-full md:basis-1/4 flex flex-col">
             <h3 className="text-xl text-white font-display font-medium mb-4">Green Woody Home - points of interest</h3>
