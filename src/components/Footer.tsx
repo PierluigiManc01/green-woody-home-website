@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-bnb-dark_gray">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-x-8">
           {/* First Column: Points of interest */}
           <div>
             <h3 className="text-xl text-white font-display font-medium mb-4">Green Woody Home - points of interest</h3>
@@ -75,6 +75,7 @@ const Footer: React.FC = () => {
               </p>
             </address>
           </div>
+          {/* Fourth Column: CIN e CIR */}
           <div>
           <h4 className="text-lg text-white font-display font-medium mb-4">Identification Codes</h4>
               <p className="mb-2">
