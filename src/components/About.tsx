@@ -57,7 +57,7 @@ const About: React.FC = () => {
             <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Colosseum</h3>
               <p className="text-sm mb-2 text-white">Ancient Roman amphitheater and iconic symbol of Imperial Rome.</p>
-              <div className="flex items-center text-white">
+              <div className=" items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -70,7 +70,7 @@ const About: React.FC = () => {
             <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Vatican City</h3>
               <p className="text-sm mb-2 text-white">Home to St. Peter's Basilica and the Vatican Museums with the Sistine Chapel.</p>
-              <div className="flex items-center text-white">
+              <div className=" items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -83,7 +83,7 @@ const About: React.FC = () => {
             <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Trevi Fountain</h3>
               <p className="text-sm mb-2 text-white">Baroque masterpiece and one of the most famous fountains in the world.</p>
-              <div className="flex items-center text-white">
+              <div className=" items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -96,7 +96,7 @@ const About: React.FC = () => {
             <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Torvaianica - Marine Village</h3>
               <p className="text-sm mb-2 text-white">Nearest seaside destination with sandy beaches and crystal clear waters.</p>
-              <div className="flex items-center text-white">
+              <div className=" items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -109,7 +109,7 @@ const About: React.FC = () => {
             <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Fiumicino Airport</h3>
               <p className="text-sm mb-2 text-white">Main International airport in Rome.</p>
-              <div className="flex items-center text-white">
+              <div className=" items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -122,7 +122,7 @@ const About: React.FC = () => {
             <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Castel Romano Designer Outlet</h3>
               <p className="text-sm mb-2 text-white">Luxury apparel outlet by McArthurGlen.</p>
-              <div className=" items-center text-white">
+              <div className="items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
