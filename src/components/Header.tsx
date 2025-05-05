@@ -61,7 +61,7 @@ const Header: React.FC = () => {
           
           {/* Mobile menu dropdown */}
           {isMenuOpen && (
-            <div className="absolute top-12 right-0 bg-bnb-dark_gray border border-gray-700 rounded-md shadow-lg py-2 w-40">
+            <div className="mobile-menu-container absolute top-12 right-0 bg-bnb-dark_gray border border-gray-700 rounded-md shadow-lg py-2 w-40">
               <a 
                 href="#home" 
                 className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
