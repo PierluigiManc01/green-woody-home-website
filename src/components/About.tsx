@@ -47,8 +47,8 @@ const About: React.FC = () => {
         </div>
       </div>
 
-        <div  className="mt-20 pt-10 max-w-5xl mx-auto">
-        <h2 id= "PoI" className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">Points of Interest</h2> 
+      <div id= "PoI" className="mt-20 pt-10 max-w-5xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">Points of Interest</h2> 
         <p className="text-bnb-green2 text-muted-foreground max-w-2xl mx-auto">
           Explore the rich history and culture of Rome and its surroundings. Here are some must-visit places within a short drive from Green Woody Home:
         </p>
