@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-bnb-dark_gray text-bnb-green2">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid md:grid-cols-5 gap-6">
+        <div className="grid md:grid-cols-4 gap-2">
           {/* First Column: Points of interest */}
-          <div className="md:col-span-1">
+          <div>
             <h3 className="text-xl font-display font-medium mb-4">Green Woody Home - points of interest</h3>
             <p className="text-sm text-black-300 leading-relaxed">
             <p>In the heart of Rome's countryside, close to the sea, by car you can reach:</p>
