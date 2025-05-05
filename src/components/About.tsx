@@ -7,7 +7,6 @@ const About: React.FC = () => {
     <section id="about" className="section-container bg-gray/80">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">About Our Space</h2>
-        
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <p className="text-lg leading-relaxed">
@@ -55,7 +54,7 @@ const About: React.FC = () => {
         </p>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Colosseo,+Roma,+RM/@41.8268438,12.3890226,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x132f61b6fc6433df:0x165f79d5d2332163!2m2!1d12.4922986!2d41.8905691!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2" ">
+            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Colosseum</h3>
               <p className="text-sm mb-2 text-white">Ancient Roman amphitheater and iconic symbol of Imperial Rome.</p>
               <div className="flex items-center text-white">
@@ -68,7 +67,7 @@ const About: React.FC = () => {
             </div>
           </a>
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Basilica+di+San+Pietro,+Piazza+San+Pietro,+Citt%C3%A0+del+Vaticano/@41.8319928,12.3536945,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x132f6061b7149b59:0x724bf077cd875283!2m2!1d12.4539367!2d41.9021667!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2" ">
+            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Vatican City</h3>
               <p className="text-sm mb-2 text-white">Home to St. Peter's Basilica and the Vatican Museums with the Sistine Chapel.</p>
               <div className="flex items-center text-white">
@@ -81,7 +80,7 @@ const About: React.FC = () => {
             </div>
           </a>
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Fontana+di+Trevi,+Piazza+di+Trevi,+Roma,+RM/@41.8292617,12.3859549,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x132f6053278340d5:0xf676f1e1cc02bbb6!2m2!1d12.483313!2d41.9009325!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2" ">
+            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Trevi Fountain</h3>
               <p className="text-sm mb-2 text-white">Baroque masterpiece and one of the most famous fountains in the world.</p>
               <div className="flex items-center text-white">
@@ -94,7 +93,7 @@ const About: React.FC = () => {
             </div>
           </a>
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Torvaianica,+RM/@41.6909742,12.3786637,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x13259495b27fba5f:0xa364b19248f13614!2m2!1d12.4626387!2d41.6208388!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2" ">
+            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Torvaianica - Marine Village</h3>
               <p className="text-sm mb-2 text-white">Nearest seaside destination with sandy beaches and crystal clear waters.</p>
               <div className="flex items-center text-white">
@@ -107,7 +106,7 @@ const About: React.FC = () => {
             </div>
           </a>
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Aeroporto+di+Roma+-+Fiumicino+Leonardo+da+Vinci+(FCO),+00054+Fiumicino+RM/@41.7882109,12.2713693,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x1325f0793898141f:0xafe513b4e358316f!2m2!1d12.2519211!2d41.8034632!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2" ">
+            <div className="bg-bnb-dark_gray/40 p-5 rounded-lg hover:bg-bnb-green2">
               <h3 className="font-bold text-lg text-bnb-green2 hover:text-white">Fiumicino Airport</h3>
               <p className="text-sm mb-2 text-white">Main International airport in Rome.</p>
               <div className="flex items-center text-white">
