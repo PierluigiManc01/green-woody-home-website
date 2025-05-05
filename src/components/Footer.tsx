@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             </p>
           </div>
           {/* Vertical Divider */}
-          <div className="hidden md:block border-l border-white"></div>
+          <div className="hidden md:block border-l border-white h-auto"></div>
 
           {/* Second and Third Columns */}
           <div>
