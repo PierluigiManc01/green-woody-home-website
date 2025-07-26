@@ -42,9 +42,9 @@ const Header: React.FC = () => {
           <Link to="/services" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Services
           </Link>
-          <a href="#contact" className="font-medium text-bnb-green2 hover:text-white transition-colors">
+          <Link to="/contact" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Contact
-          </a>
+          </Link>
         </nav>
         
         <div className="md:hidden relative">
@@ -84,11 +84,11 @@ const Header: React.FC = () => {
               >
                 Services
               </Link>
-              <a href="#contact" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+              <Link to="/contact" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
-              </a>
+              </Link>
             </div>
           )}
         </div>

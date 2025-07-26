@@ -8,7 +8,7 @@ const GalleryPage: React.FC = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <Gallery />
+        <Gallery isHomepage={false} />
       </main>
       <Footer />
     </div>
