@@ -30,16 +30,19 @@ const Header: React.FC = () => {
         </Link>
         
         <nav className="hidden md:flex space-x-6">
-          <a href="#home" className="font-medium text-bnb-green2 hover:text-white transition-colors">
+          <Link to="/" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Home
-          </a>
+          </Link>
           <a href="#about" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             About
           </a>
-          <a href="#gallery" className="font-medium text-bnb-green2 hover:text-white  transition-colors">
+          <Link to="/gallery" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Gallery
-          </a>
-          <a href="#contact" className="font-medium text-bnb-green2 hover:text-white  transition-colors">
+          </Link>
+          <Link to="/services" className="font-medium text-bnb-green2 hover:text-white transition-colors">
+            Services
+          </Link>
+          <a href="#contact" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Contact
           </a>
         </nav>
@@ -61,21 +64,26 @@ const Header: React.FC = () => {
           {/* Mobile menu dropdown */}
           {isMenuOpen && (
             <div className="mobile-menu-container absolute top-12 right-0 bg-bnb-dark_gray border border-gray-700 rounded-md shadow-lg py-2 w-40">
-              <a href="#home" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+              <Link to="/" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
-              </a>
+              </Link>
               <a href="#about" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
-              <a href="#gallery" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+              <Link to="/gallery" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               > 
                 Gallery
-              </a>
+              </Link>
+              <Link to="/services" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Services
+              </Link>
               <a href="#contact" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
