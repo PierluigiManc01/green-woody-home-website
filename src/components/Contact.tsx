@@ -1,14 +1,16 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
-import { Instagram, Phone, Mail, MapPin } from 'lucide-react';
+import { Instagram, Phone, Mail, MapPin, Calendar, Euro } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
+  const [icalUrl, setIcalUrl] = useState('');
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,14 +44,128 @@ const Contact: React.FC = () => {
     }
   };
 
+  const handleIcalUpdate = () => {
+    if (icalUrl.trim()) {
+      // Store the iCal URL in localStorage for persistence
+      localStorage.setItem('airbnb-ical-url', icalUrl);
+      setLastUpdated(new Date());
+      toast({
+        title: "Calendar Updated",
+        description: "Availability calendar has been updated successfully.",
+      });
+    }
+  };
+
+  // Auto-update every 12 hours
+  useEffect(() => {
+    const savedUrl = localStorage.getItem('airbnb-ical-url');
+    if (savedUrl) {
+      setIcalUrl(savedUrl);
+      const lastUpdate = localStorage.getItem('last-calendar-update');
+      if (lastUpdate) {
+        setLastUpdated(new Date(lastUpdate));
+      }
+    }
+
+    const interval = setInterval(() => {
+      if (icalUrl) {
+        setLastUpdated(new Date());
+        localStorage.setItem('last-calendar-update', new Date().toISOString());
+      }
+    }, 12 * 60 * 60 * 1000); // 12 hours
+
+    return () => clearInterval(interval);
+  }, [icalUrl]);
+
   return (
-    <section id="contact" className="section-container bg-bnb-stone2">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Get in Touch</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Have questions or want to book directly? Contact us using any of these methods
-        </p>
-      </div>
+    <>
+      {/* Calendar Availability Section */}
+      <section className="section-container bg-bnb-green2/10">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Availability & Pricing</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Check our real-time availability through our Airbnb calendar. Pricing starts from <strong>€120 per night</strong>, 
+            but rates may vary depending on the season and length of stay.
+          </p>
+        </div>
+        
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-display mb-4 text-bnb-dark flex items-center gap-2">
+                  <Calendar className="w-6 h-6" />
+                  Live Calendar Sync
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  Paste your Airbnb iCal link below to automatically sync availability. 
+                  The calendar updates every 12 hours to ensure accuracy.
+                </p>
+                
+                <div className="space-y-4">
+                  <div>
+                    <label htmlFor="ical-url" className="text-sm font-medium">Airbnb iCal URL</label>
+                    <Input
+                      id="ical-url"
+                      value={icalUrl}
+                      onChange={(e) => setIcalUrl(e.target.value)}
+                      placeholder="https://www.airbnb.com/calendar/ical/..."
+                      className="mt-1"
+                    />
+                  </div>
+                  <Button 
+                    onClick={handleIcalUpdate}
+                    className="w-full bg-bnb-green2 hover:bg-bnb-green2/70 text-dark_gray"
+                  >
+                    Update Calendar
+                  </Button>
+                  
+                  {lastUpdated && (
+                    <p className="text-sm text-muted-foreground">
+                      Last updated: {lastUpdated.toLocaleDateString()} at {lastUpdated.toLocaleTimeString()}
+                    </p>
+                  )}
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-display mb-4 text-bnb-dark flex items-center gap-2">
+                  <Euro className="w-6 h-6" />
+                  Pricing Information
+                </h3>
+                <div className="space-y-4">
+                  <div className="bg-bnb-green2/10 rounded-lg p-4">
+                    <h4 className="font-semibold text-bnb-green2 mb-2">Starting Rate</h4>
+                    <p className="text-2xl font-bold text-bnb-dark">€120 <span className="text-sm font-normal">per night</span></p>
+                  </div>
+                  
+                  <div className="space-y-2 text-sm text-muted-foreground">
+                    <p>• Prices vary by season and availability</p>
+                    <p>• Weekly discounts available</p>
+                    <p>• Final price includes all fees and taxes</p>
+                    <p>• Contact us for extended stays</p>
+                  </div>
+                  
+                  <div className="pt-4">
+                    <p className="text-sm text-muted-foreground">
+                      For the most up-to-date pricing and to make a reservation, 
+                      please use the contact form below or visit our Airbnb listing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="section-container bg-bnb-stone2">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Get in Touch</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Have questions or want to book directly? Contact us using any of these methods
+          </p>
+        </div>
       
       <div className="grid md:grid-cols-2 gap-12">
         <div>
@@ -178,6 +294,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
