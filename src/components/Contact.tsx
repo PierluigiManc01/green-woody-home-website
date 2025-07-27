@@ -8,21 +8,18 @@ import { Instagram, Phone, Mail, MapPin, Calendar as CalendarIcon, Euro } from '
 import emailjs from '@emailjs/browser';
 import * as icalParser from 'ical-parser';
 
-// --- ADDED: The Airbnb iCal URL constant
-const ICAL_URL = 'https://www.airbnb.it/calendar/ical/885987155364658565.ics?s=4ee4c8df128452549fd46e38172bd1b6';
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
-  // --- useState for iCal is not needed anymore since ICAL_URL is a constant
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [unavailableDates, setUnavailableDates] = useState<Date[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [isLoading, setIsLoading] = useState(false);
 
-  // --- ADDED: Helper to enumerate all dates in a (inclusive) interval
+  // Helper to enumerate all dates in an inclusive date range
   const getAllDatesInRange = (start: Date, end: Date) => {
     const dates: Date[] = [];
-    const current = new Date(start);
+    let current = new Date(start);
     while (current <= end) {
       dates.push(new Date(current));
       current.setDate(current.getDate() + 1);
@@ -47,10 +44,10 @@ const Contact: React.FC = () => {
               title: "Messaggio inviato!",
               description: "Ti risponderemo appena possibile.",
             });
-            form.current.reset();
+            form.current?.reset();
           },
           (error) => {
-            console.log("FAILED...", error.text);
+            console.error("FAILED...", error.text);
             toast({
               title: "Invio del messaggio fallito",
               description: "Per favore ritenta in seguito.",
@@ -61,35 +58,38 @@ const Contact: React.FC = () => {
     }
   };
 
-  // --- CHANGED: Calendar fetch always uses ICAL_URL
   const fetchCalendarData = async () => {
     setIsLoading(true);
     try {
+      // Fetch from your Vercel serverless function endpoint
       const response = await fetch('/api/calendar');
+      if (!response.ok) throw new Error('Failed to fetch calendar data');
+
       const icalData = await response.text();
 
-      // Parse iCal data using ical-parser
+      // Parse iCal content
       const parsed = icalParser.parseString(icalData);
       const events = parsed.events || [];
 
-      let blocked: Date[] = [];
+      let blockedDates: Date[] = [];
 
-      events.forEach((event) => {
-        // Defensive: support both startDate.value and startDate
+      events.forEach(event => {
         const start = new Date(event.startDate?.value || event.startDate);
         const end = new Date(event.endDate?.value || event.endDate);
 
-        // iCal end is exclusive, so use end-1
-        const endDt = new Date(end);
-        endDt.setDate(endDt.getDate() - 1);
+        // ical end date is exclusive: subtract one day to include last day
+        const endInclusive = new Date(end);
+        endInclusive.setDate(endInclusive.getDate() - 1);
 
-        blocked = blocked.concat(getAllDatesInRange(start, endDt));
+        blockedDates = blockedDates.concat(getAllDatesInRange(start, endInclusive));
       });
 
-      setUnavailableDates(blocked);
+      setUnavailableDates(blockedDates);
       setLastUpdated(new Date());
+
+      // Cache locally
       localStorage.setItem('last-calendar-update', new Date().toISOString());
-      localStorage.setItem('unavailable-dates', JSON.stringify(blocked.map(d => d.toISOString())));
+      localStorage.setItem('unavailable-dates', JSON.stringify(blockedDates.map(d => d.toISOString())));
     } catch (error) {
       console.error('Error fetching calendar data:', error);
       toast({
@@ -102,27 +102,31 @@ const Contact: React.FC = () => {
     }
   };
 
-  // --- CHANGED: only use ICAL_URL; always refresh if 12h elapsed
   useEffect(() => {
     const refreshData = async () => {
       await fetchCalendarData();
     };
 
-    // From cache if available for quick UI
+    // Load cached dates from localStorage for instant UI
     const storedDates = localStorage.getItem('unavailable-dates');
     if (storedDates) {
-      setUnavailableDates(JSON.parse(storedDates).map((iso: string) => new Date(iso)));
+      try {
+        setUnavailableDates(JSON.parse(storedDates).map((iso: string) => new Date(iso)));
+      } catch {
+        // Ignore JSON errors, fallback to fetch new data
+      }
     }
     const last = localStorage.getItem('last-calendar-update');
     if (last) setLastUpdated(new Date(last));
 
+    // If more than 12 hours elapsed since last update, refresh
     const now = Date.now();
     const lastUpdate = last ? new Date(last).getTime() : 0;
-    if (!lastUpdate || now - lastUpdate > (12 * 60 * 60 * 1000)) {
+    if (!lastUpdate || now - lastUpdate > 12 * 60 * 60 * 1000) {
       refreshData();
     }
 
-    // 12-hour interval update
+    // Set refresh interval every 12 hours while component is mounted
     const interval = setInterval(refreshData, 12 * 60 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
@@ -163,13 +167,9 @@ const Contact: React.FC = () => {
                         mode="single"
                         selected={selectedDate}
                         onSelect={setSelectedDate}
-                        disabled={(date) => {
-                          // Disable past dates
+                        disabled={date => {
                           if (date < new Date()) return true;
-                          // Check if date is unavailable
-                          return unavailableDates.some(unavailableDate =>
-                            date.toDateString() === unavailableDate.toDateString()
-                          );
+                          return unavailableDates.some(ud => date.toDateString() === ud.toDateString());
                         }}
                         modifiers={{
                           unavailable: unavailableDates.filter(date => date >= new Date())
