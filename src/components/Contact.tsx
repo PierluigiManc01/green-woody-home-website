@@ -4,13 +4,18 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/components/ui/use-toast';
-import { Instagram, Phone, Mail, MapPin, Calendar, Euro } from 'lucide-react';
+import { Calendar } from '@/components/ui/calendar';
+import { Instagram, Phone, Mail, MapPin, Calendar as CalendarIcon, Euro } from 'lucide-react';
 import emailjs from '@emailjs/browser';
+import ICAL from 'ical.js';
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const [icalUrl, setIcalUrl] = useState('');
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+  const [unavailableDates, setUnavailableDates] = useState<Date[]>([]);
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,15 +49,45 @@ const Contact: React.FC = () => {
     }
   };
 
-  const handleIcalUpdate = () => {
-    if (icalUrl.trim()) {
-      // Store the iCal URL in localStorage for persistence
-      localStorage.setItem('airbnb-ical-url', icalUrl);
-      setLastUpdated(new Date());
-      toast({
-        title: "Calendar Updated",
-        description: "Availability calendar has been updated successfully.",
+  const fetchCalendarData = async (url: string) => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(url);
+      const icalData = await response.text();
+      
+      // Parse iCal data
+      const jcalData = ICAL.parse(icalData);
+      const comp = new ICAL.Component(jcalData);
+      const vevents = comp.getAllSubcomponents('vevent');
+      
+      const blockedDates: Date[] = [];
+      
+      vevents.forEach((vevent) => {
+        const event = new ICAL.Event(vevent);
+        const startDate = new Date(event.startDate.toJSDate());
+        const endDate = new Date(event.endDate.toJSDate());
+        
+        // Add all dates in the range as blocked
+        const currentDate = new Date(startDate);
+        while (currentDate < endDate) {
+          blockedDates.push(new Date(currentDate));
+          currentDate.setDate(currentDate.getDate() + 1);
+        }
       });
+      
+      setUnavailableDates(blockedDates);
+      setLastUpdated(new Date());
+      localStorage.setItem('last-calendar-update', new Date().toISOString());
+      
+    } catch (error) {
+      console.error('Error fetching calendar data:', error);
+      toast({
+        title: "Calendar Update Failed",
+        description: "Could not fetch calendar data. Please check the URL.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -61,6 +96,7 @@ const Contact: React.FC = () => {
     const savedUrl = localStorage.getItem('airbnb-ical-url');
     if (savedUrl) {
       setIcalUrl(savedUrl);
+      fetchCalendarData(savedUrl);
       const lastUpdate = localStorage.getItem('last-calendar-update');
       if (lastUpdate) {
         setLastUpdated(new Date(lastUpdate));
@@ -69,8 +105,7 @@ const Contact: React.FC = () => {
 
     const interval = setInterval(() => {
       if (icalUrl) {
-        setLastUpdated(new Date());
-        localStorage.setItem('last-calendar-update', new Date().toISOString());
+        fetchCalendarData(icalUrl);
       }
     }, 12 * 60 * 60 * 1000); // 12 hours
 
@@ -94,37 +129,65 @@ const Contact: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-display mb-4 text-bnb-dark flex items-center gap-2">
-                  <Calendar className="w-6 h-6" />
-                  Live Calendar Sync
+                  <CalendarIcon className="w-6 h-6" />
+                  Availability Calendar
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  Paste your Airbnb iCal link below to automatically sync availability. 
-                  The calendar updates every 12 hours to ensure accuracy.
+                  View our real-time availability. Unavailable dates are shown in red.
+                  Calendar updates automatically every 12 hours.
                 </p>
                 
                 <div className="space-y-4">
-                  <div>
-                    <label htmlFor="ical-url" className="text-sm font-medium">Airbnb iCal URL</label>
-                    <Input
-                      id="ical-url"
-                      value={icalUrl}
-                      onChange={(e) => setIcalUrl(e.target.value)}
-                      placeholder="https://www.airbnb.com/calendar/ical/..."
-                      className="mt-1"
-                    />
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    {isLoading ? (
+                      <div className="text-center py-8">
+                        <p className="text-muted-foreground">Loading calendar...</p>
+                      </div>
+                    ) : (
+                      <Calendar
+                        mode="single"
+                        selected={selectedDate}
+                        onSelect={setSelectedDate}
+                        disabled={(date) => {
+                          // Disable past dates
+                          if (date < new Date()) return true;
+                          
+                          // Disable unavailable dates
+                          return unavailableDates.some(unavailableDate => {
+                            return date.toDateString() === unavailableDate.toDateString();
+                          });
+                        }}
+                        modifiers={{
+                          unavailable: unavailableDates
+                        }}
+                        modifiersStyles={{
+                          unavailable: { 
+                            backgroundColor: '#ef4444', 
+                            color: 'white',
+                            textDecoration: 'line-through'
+                          }
+                        }}
+                        className="rounded-md border pointer-events-auto"
+                      />
+                    )}
                   </div>
-                  <Button 
-                    onClick={handleIcalUpdate}
-                    className="w-full bg-bnb-green2 hover:bg-bnb-green2/70 text-dark_gray"
-                  >
-                    Update Calendar
-                  </Button>
                   
                   {lastUpdated && (
                     <p className="text-sm text-muted-foreground">
                       Last updated: {lastUpdated.toLocaleDateString()} at {lastUpdated.toLocaleTimeString()}
                     </p>
                   )}
+                  
+                  <div className="flex items-center gap-4 text-sm">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-primary rounded"></div>
+                      <span>Available</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 bg-red-500 rounded"></div>
+                      <span>Unavailable</span>
+                    </div>
+                  </div>
                 </div>
               </div>
               
