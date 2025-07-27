@@ -33,9 +33,9 @@ const Header: React.FC = () => {
           <Link to="/" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Home
           </Link>
-          <Link to="/#about" className="font-medium text-bnb-green2 hover:text-white transition-colors">
+          <a href="#about" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             About
-          </Link>
+          </a>
           <Link to="/gallery" className="font-medium text-bnb-green2 hover:text-white transition-colors">
             Gallery
           </Link>
