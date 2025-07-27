@@ -138,7 +138,7 @@ const Contact: React.FC = () => {
                 </p>
                 
                 <div className="space-y-4">
-                  <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-gray-50 rounded-lg p-4 w-full">
                     {isLoading ? (
                       <div className="text-center py-8">
                         <p className="text-muted-foreground">Loading calendar...</p>
@@ -152,22 +152,33 @@ const Contact: React.FC = () => {
                           // Disable past dates
                           if (date < new Date()) return true;
                           
-                          // Disable unavailable dates
+                          // Check if date is unavailable
                           return unavailableDates.some(unavailableDate => {
                             return date.toDateString() === unavailableDate.toDateString();
                           });
                         }}
                         modifiers={{
-                          unavailable: unavailableDates
+                          unavailable: unavailableDates.filter(date => date >= new Date())
                         }}
-                        modifiersStyles={{
-                          unavailable: { 
-                            backgroundColor: '#ef4444', 
-                            color: 'white',
-                            textDecoration: 'line-through'
-                          }
+                        modifiersClassNames={{
+                          unavailable: "bg-red-500 text-white hover:bg-red-600 line-through"
                         }}
-                        className="rounded-md border pointer-events-auto"
+                        className="rounded-md border pointer-events-auto w-full scale-110 origin-center"
+                        classNames={{
+                          months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 w-full",
+                          month: "space-y-4 w-full",
+                          caption: "flex justify-center pt-1 relative items-center text-lg font-semibold",
+                          table: "w-full border-collapse space-y-1",
+                          head_row: "flex w-full",
+                          head_cell: "text-muted-foreground rounded-md w-12 h-12 font-normal text-sm flex items-center justify-center",
+                          row: "flex w-full mt-2",
+                          cell: "relative p-0 text-center text-sm focus-within:relative focus-within:z-20 w-12 h-12",
+                          day: "h-12 w-12 p-0 font-normal flex items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground",
+                          day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
+                          day_today: "bg-accent text-accent-foreground font-semibold",
+                          day_outside: "text-muted-foreground opacity-50",
+                          day_disabled: "text-muted-foreground opacity-50"
+                        }}
                       />
                     )}
                   </div>
