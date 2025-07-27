@@ -6,7 +6,7 @@ import { toast } from '@/components/ui/use-toast';
 import { Calendar } from '@/components/ui/calendar';
 import { Instagram, Phone, Mail, MapPin, Calendar as CalendarIcon, Euro } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import * as icalParser from 'ical-parser';
+import ICAL from 'ical.js';
 
 
 const Contact: React.FC = () => {
@@ -61,51 +61,27 @@ const Contact: React.FC = () => {
   const fetchCalendarData = async () => {
   setIsLoading(true);
   try {
-    console.log('🔄 Starting calendar fetch...');
-    
     const response = await fetch('/api/calendar');
-    console.log('📡 API Response:', {
-      status: response.status,
-      statusText: response.statusText,
-      headers: Object.fromEntries(response.headers.entries())
-    });
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
     const icalData = await response.text();
-    console.log('📅 Raw iCal data:', {
-      length: icalData.length,
-      firstChars: icalData.substring(0, 100),
-      containsVCALENDAR: icalData.includes('VCALENDAR'),
-      containsVEVENT: icalData.includes('VEVENT')
-    });
 
-    // Parse iCal content
-    console.log('🔍 Starting iCal parsing...');
-    const parsed = icalParser.parseString(icalData);
-    console.log('✅ Parsed result:', {
-      hasEvents: !!parsed.events,
-      eventCount: parsed.events?.length || 0,
-      events: parsed.events?.slice(0, 2) // Log first 2 events
-    });
+    // Parse iCal content with ical.js
+    const jcalData = ICAL.parse(icalData);
+    const comp = new ICAL.Component(jcalData);
+    const vevents = comp.getAllSubcomponents('vevent');
 
-    const events = parsed.events || [];
     let blockedDates = [];
 
-    events.forEach((event, index) => {
-      console.log(`📝 Processing event ${index}:`, {
-        startDate: event.startDate,
-        endDate: event.endDate,
-        summary: event.summary
-      });
-
-      const start = new Date(event.startDate?.value || event.startDate);
-      const end = new Date(event.endDate?.value || event.endDate);
+    vevents.forEach((vevent) => {
+      const event = new ICAL.Event(vevent);
+      const start = event.startDate.toJSDate();
+      const end = event.endDate.toJSDate();
 
       if (isNaN(start.getTime()) || isNaN(end.getTime())) {
-        console.warn('⚠️ Invalid date in event:', event);
         return;
       }
 
@@ -114,17 +90,6 @@ const Contact: React.FC = () => {
 
       const eventDates = getAllDatesInRange(start, endInclusive);
       blockedDates = blockedDates.concat(eventDates);
-      
-      console.log(`📅 Event ${index} dates:`, {
-        start: start.toDateString(),
-        end: endInclusive.toDateString(),
-        daysCount: eventDates.length
-      });
-    });
-
-    console.log('🎯 Final blocked dates:', {
-      count: blockedDates.length,
-      dates: blockedDates.slice(0, 5).map(d => d.toDateString())
     });
 
     setUnavailableDates(blockedDates);
@@ -133,15 +98,7 @@ const Contact: React.FC = () => {
     localStorage.setItem('last-calendar-update', new Date().toISOString());
     localStorage.setItem('unavailable-dates', JSON.stringify(blockedDates.map(d => d.toISOString())));
     
-    console.log('✅ Calendar update completed successfully');
-    
   } catch (error) {
-    console.error('❌ Calendar fetch error:', {
-      message: error.message,
-      stack: error.stack,
-      name: error.name
-    });
-    
     toast({
       title: "Calendar Update Failed",
       description: `Error: ${error.message}`,
@@ -151,7 +108,6 @@ const Contact: React.FC = () => {
     setIsLoading(false);
   }
 };
-
 
   useEffect(() => {
     const refreshData = async () => {
