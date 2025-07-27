@@ -107,8 +107,6 @@ const galleryCategories = {
   },
   bedrooms: { 
     title: "Bedrooms",
-    masterbedroom: {
-      title: "Master Bedroom",
       images: [
         {
           id: 16,
@@ -119,12 +117,7 @@ const galleryCategories = {
           id: 17,
           src: "/photos/GREEN WOODY HOME-22.jpg",
           alt: "Master bedroom interior design",
-        }
-      ]
-    },
-    secondbedroom: {
-      title: "Second Bedroom",
-      images: [
+        },
         {
           id: 18,
           src: "/photos/GREEN WOODY HOME-23.jpg",
@@ -135,11 +128,6 @@ const galleryCategories = {
           src: "/photos/GREEN WOODY HOME-28.jpg",
           alt: "Master bedroom with large windows facing nature",
         },
-      ],
-    },
-    thirdbedroom: {
-      title: "Third Bedroom",
-      images: [
         {
           id: 20,
           src: "/photos/GREEN WOODY HOME-18.jpg",
@@ -152,22 +140,14 @@ const galleryCategories = {
       }
     ]
   },
-},
   bathrooms: {
     title: "Bathrooms",
-    bathroom1: {
-      title: "En-Suite Bathroom 1",
     images: [
       {
         id: 22,
         src: "/photos/GREEN WOODY HOME-21.jpg",
         alt: "Bathroom with natural stone elements",
-      }
-    ]
-  },
-  bathroom2: {
-      title: "En-Suite Bathroom 2",
-    images: [
+      },
       {
         id: 24,
         src: "/photos/GREEN WOODY HOME-25.jpg",
@@ -182,12 +162,7 @@ const galleryCategories = {
         id: 26,
         src: "/photos/GREEN WOODY HOME-24.jpg",
         alt: "Second bathroom with modern fixtures",
-      }
-    ]
-  },
-  bathroom3: {
-      title: "Common Bathroom",
-    images: [
+      },
       {
         id: 27,
         src: "/photos/GREEN WOODY HOME-17.jpg",
@@ -204,7 +179,6 @@ const galleryCategories = {
         alt: "Sink with modern fixtures",
       }
     ]
-  },
   },
   other: {
     title: "Extras",
@@ -244,8 +218,8 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
       galleryCategories.exteriors.images[0],
       galleryCategories.exteriors.images[1],
       galleryCategories.livingRoom.images[0],
-      galleryCategories.bedrooms.masterbedroom.images[0],
-      galleryCategories.bathrooms.bathroom2.images[0],
+      galleryCategories.bedrooms.images[0],
+      galleryCategories.bathrooms.images[0],
       galleryCategories.other.images[1]
     ];
 
@@ -278,7 +252,6 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
               <a href="/gallery">View Full Gallery</a>
             </Button>
           </div>
-        </div>
       </section>
     );
   }
