@@ -59,48 +59,99 @@ const Contact: React.FC = () => {
   };
 
   const fetchCalendarData = async () => {
-    setIsLoading(true);
-    try {
-      // Fetch from your Vercel serverless function endpoint
-      const response = await fetch('https://greenwoodyhome.com/api/calendar');
-      if (!response.ok) throw new Error('Failed to fetch calendar data');
+  setIsLoading(true);
+  try {
+    console.log('🔄 Starting calendar fetch...');
+    
+    const response = await fetch('/api/calendar');
+    console.log('📡 API Response:', {
+      status: response.status,
+      statusText: response.statusText,
+      headers: Object.fromEntries(response.headers.entries())
+    });
 
-      const icalData = await response.text();
-
-      // Parse iCal content
-      const parsed = icalParser.parseString(icalData);
-      const events = parsed.events || [];
-
-      let blockedDates: Date[] = [];
-
-      events.forEach(event => {
-        const start = new Date(event.startDate?.value || event.startDate);
-        const end = new Date(event.endDate?.value || event.endDate);
-
-        // ical end date is exclusive: subtract one day to include last day
-        const endInclusive = new Date(end);
-        endInclusive.setDate(endInclusive.getDate() - 1);
-
-        blockedDates = blockedDates.concat(getAllDatesInRange(start, endInclusive));
-      });
-
-      setUnavailableDates(blockedDates);
-      setLastUpdated(new Date());
-
-      // Cache locally
-      localStorage.setItem('last-calendar-update', new Date().toISOString());
-      localStorage.setItem('unavailable-dates', JSON.stringify(blockedDates.map(d => d.toISOString())));
-    } catch (error) {
-      console.error('Error fetching calendar data:', error);
-      toast({
-        title: "Calendar Update Failed",
-        description: "Could not fetch calendar data. Please check the URL.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
-  };
+
+    const icalData = await response.text();
+    console.log('📅 Raw iCal data:', {
+      length: icalData.length,
+      firstChars: icalData.substring(0, 100),
+      containsVCALENDAR: icalData.includes('VCALENDAR'),
+      containsVEVENT: icalData.includes('VEVENT')
+    });
+
+    // Parse iCal content
+    console.log('🔍 Starting iCal parsing...');
+    const parsed = icalParser.parseString(icalData);
+    console.log('✅ Parsed result:', {
+      hasEvents: !!parsed.events,
+      eventCount: parsed.events?.length || 0,
+      events: parsed.events?.slice(0, 2) // Log first 2 events
+    });
+
+    const events = parsed.events || [];
+    let blockedDates = [];
+
+    events.forEach((event, index) => {
+      console.log(`📝 Processing event ${index}:`, {
+        startDate: event.startDate,
+        endDate: event.endDate,
+        summary: event.summary
+      });
+
+      const start = new Date(event.startDate?.value || event.startDate);
+      const end = new Date(event.endDate?.value || event.endDate);
+
+      if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+        console.warn('⚠️ Invalid date in event:', event);
+        return;
+      }
+
+      const endInclusive = new Date(end);
+      endInclusive.setDate(endInclusive.getDate() - 1);
+
+      const eventDates = getAllDatesInRange(start, endInclusive);
+      blockedDates = blockedDates.concat(eventDates);
+      
+      console.log(`📅 Event ${index} dates:`, {
+        start: start.toDateString(),
+        end: endInclusive.toDateString(),
+        daysCount: eventDates.length
+      });
+    });
+
+    console.log('🎯 Final blocked dates:', {
+      count: blockedDates.length,
+      dates: blockedDates.slice(0, 5).map(d => d.toDateString())
+    });
+
+    setUnavailableDates(blockedDates);
+    setLastUpdated(new Date());
+
+    localStorage.setItem('last-calendar-update', new Date().toISOString());
+    localStorage.setItem('unavailable-dates', JSON.stringify(blockedDates.map(d => d.toISOString())));
+    
+    console.log('✅ Calendar update completed successfully');
+    
+  } catch (error) {
+    console.error('❌ Calendar fetch error:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name
+    });
+    
+    toast({
+      title: "Calendar Update Failed",
+      description: `Error: ${error.message}`,
+      variant: "destructive",
+    });
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   useEffect(() => {
     const refreshData = async () => {
