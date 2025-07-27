@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
 
   // Auto-update every 12 hours
   useEffect(() => {
-    const savedUrl = localStorage.getItem('airbnb-ical-url');
+    const savedUrl = localStorage.getItem('https://www.airbnb.it/calendar/ical/885987155364658565.ics?s=4ee4c8df128452549fd46e38172bd1b6');
     if (savedUrl) {
       setIcalUrl(savedUrl);
       fetchCalendarData(savedUrl);
