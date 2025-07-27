@@ -9,9 +9,6 @@ import { Instagram, Phone, Mail, MapPin, Calendar as CalendarIcon, Euro } from '
 import emailjs from '@emailjs/browser';
 import * as icalParser from 'ical-parser';
 
-// --- ADDED: The Airbnb iCal URL constant
-const ICAL_URL = 'https://www.airbnb.it/calendar/ical/885987155364658565.ics?s=4ee4c8df128452549fd46e38172bd1b6';
-
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   // --- useState for iCal is not needed anymore since ICAL_URL is a constant
@@ -66,7 +63,7 @@ const Contact: React.FC = () => {
   const fetchCalendarData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(ICAL_URL);
+      const response = await fetch('http://localhost:3001/proxy-calendar');
       const icalData = await response.text();
 
       // Parse iCal data using ical-parser
