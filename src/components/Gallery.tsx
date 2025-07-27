@@ -11,22 +11,42 @@ const galleryCategories = {
     images: [
       {
         id: 1,
-        src: "/photos/GREEN WOODY HOME-04.jpg",
-        alt: "Wooden cabin exterior surrounded by trees",
+        src: "/photos/GREEN WOODY HOME-02.jpg",
+        alt: "Villa exterior surrounded by trees",
       },
       {
         id: 2,
-        src: "/photos/GREEN WOODY HOME-07.jpg",
+        src: "/photos/GREEN WOODY HOME-04.jpg",
         alt: "Exterior view of the cabin",
       },
       {
         id: 3,
         src: "/photos/DSC_0238 copy.jpg",
-        alt: "Exterior view of the cabin with garden",
+        alt: "Exterior view of the villa with garden",
       },
       {
         id: 4,
-        src: "/photos/GREEN WOODY HOME-25.jpg",
+        src: "/photos/GREEN WOODY HOME-03.jpg",
+        alt: "Exterior relaxing view",
+      },
+      {
+        id: 5,
+        src: "/photos/GREEN WOODY HOME-05.jpg",
+        alt: "Exterior relaxing view 2",
+      },
+      {
+        id: 4,
+        src: "/photos/GREEN WOODY HOME-03.jpg",
+        alt: "Exterior relaxing view",
+      },
+      {
+        id: 5,
+        src: "/photos/GREEN WOODY HOME-05.jpg",
+        alt: "Exterior relaxing view 2",
+      },
+      {
+        id: 6,
+        src: "/photos/GREEN WOODY HOME-36.jpg",
         alt: "Exterior front view",
       }
     ]
@@ -35,39 +55,33 @@ const galleryCategories = {
     title: "Living Room",
     images: [
       {
-        id: 5,
-        src: "/photos/GREEN WOODY HOME-02.jpg",
+        id: 7,
+        src: "/photos/GREEN WOODY HOME-06.jpg",
         alt: "Cozy living room with wooden beams",
       },
       {
-        id: 6,
-        src: "/photos/GREEN WOODY HOME-10.jpg",
+        id: 8,
+        src: "/photos/GREEN WOODY HOME-07.jpg",
         alt: "Another living room angle",
       },
       {
-        id: 7,
-        src: "/photos/GREEN WOODY HOME-32.jpg",
-        alt: "Living room interior design detail",
-      }
-    ]
-  },
-  bedrooms: {
-    title: "Bedrooms",
-    images: [
-      {
-        id: 8,
-        src: "/photos/GREEN WOODY HOME-36.jpg", 
-        alt: "Master bedroom with large windows facing nature",
-      },
-      {
         id: 9,
-        src: "/photos/GREEN WOODY HOME-11.jpg", 
-        alt: "Second bedroom view",
+        src: "/photos/GREEN WOODY HOME-30.jpg",
+        alt: "Living room interior design detail",
+      },{
+        id: 10,
+        src: "/photos/GREEN WOODY HOME-09.jpg",
+        alt: "Cozy living room with wooden beams",
       },
       {
-        id: 10,
-        src: "/photos/GREEN WOODY HOME-24.jpg",
-        alt: "Bedroom detail with comfortable bedding",
+        id: 11,
+        src: "/photos/GREEN WOODY HOME-10.jpg",
+        alt: "Another living room angle from kitchen",
+      },
+      {
+        id: 12,
+        src: "/photos/GREEN WOODY HOME-11.jpg",
+        alt: "Living room interior design detail",
       }
     ]
   },
@@ -75,54 +89,145 @@ const galleryCategories = {
     title: "Kitchen",
     images: [
       {
-        id: 11,
-        src: "/photos/GREEN WOODY HOME-08.jpg",
+        id: 13,
+        src: "/photos/GREEN WOODY HOME-07.jpg",
+        alt: "Another living room angle",
+      },
+      {
+        id: 14,
+        src: "/photos/GREEN WOODY HOME-12.jpg",
         alt: "Kitchen with wooden countertop and modern appliances",
       },
       {
-        id: 12,
-        src: "/photos/GREEN WOODY HOME-21.jpg", 
+        id: 15,
+        src: "/photos/GREEN WOODY HOME-13.jpg", 
         alt: "Kitchen appliances and dining area",
       }
     ]
   },
+  bedrooms: { 
+    title: "Bedrooms",
+    masterbedroom: {
+      title: "Master Bedroom",
+      images: [
+        {
+          id: 16,
+          src: "/photos/GREEN WOODY HOME-32.jpg",
+          alt: "Master bedroom with large windows",
+        },
+        {
+          id: 17,
+          src: "/photos/GREEN WOODY HOME-22.jpg",
+          alt: "Master bedroom interior design",
+        }
+      ]
+    },
+    secondbedroom: {
+      title: "Second Bedroom",
+      images: [
+        {
+          id: 18,
+          src: "/photos/GREEN WOODY HOME-23.jpg",
+          alt: "Master bedroom with large windows facing nature",
+        },
+        {
+          id: 19,
+          src: "/photos/GREEN WOODY HOME-28.jpg",
+          alt: "Master bedroom with large windows facing nature",
+        },
+      ],
+    },
+    thirdbedroom: {
+      title: "Third Bedroom",
+      images: [
+        {
+          id: 20,
+          src: "/photos/GREEN WOODY HOME-18.jpg",
+          alt: "Third bedroom bed view",
+        },
+          {
+        id: 21,
+        src: "/photos/GREEN WOODY HOME-20.jpg",
+        alt: "Bedroom detail with comfortable bedding",
+      }
+    ]
+  },
+},
   bathrooms: {
     title: "Bathrooms",
+    bathroom1: {
+      title: "En-Suite Bathroom 1",
     images: [
       {
-        id: 13,
-        src: "/photos/GREEN WOODY HOME-03.jpg",
+        id: 22,
+        src: "/photos/GREEN WOODY HOME-21.jpg",
+        alt: "Bathroom with natural stone elements",
+      }
+    ]
+  },
+  bathroom2: {
+      title: "En-Suite Bathroom 2",
+    images: [
+      {
+        id: 24,
+        src: "/photos/GREEN WOODY HOME-25.jpg",
         alt: "Bathroom with natural stone elements",
       },
       {
-        id: 14,
-        src: "/photos/GREEN WOODY HOME-34.jpg",
+        id: 25,
+        src: "/photos/GREEN WOODY HOME-38.jpg",
+        alt: "Second bathroom with modern fixtures",
+      },
+       {
+        id: 26,
+        src: "/photos/GREEN WOODY HOME-24.jpg",
         alt: "Second bathroom with modern fixtures",
       }
     ]
   },
-  outdoor: {
-    title: "Outdoor Areas",
+  bathroom3: {
+      title: "Common Bathroom",
     images: [
       {
-        id: 15,
-        src: "/photos/GREEN WOODY HOME-09.jpg",
+        id: 27,
+        src: "/photos/GREEN WOODY HOME-17.jpg",
+        alt: "Bathroom with natural stone elements",
+      },
+      {
+        id: 28,
+        src: "/photos/GREEN WOODY HOME-16.jpg",
+        alt: "Sink with modern fixtures",
+      },
+      {
+        id: 29,
+        src: "/photos/GREEN WOODY HOME-35-2.jpg",
+        alt: "Sink with modern fixtures",
+      }
+    ]
+  },
+  },
+  other: {
+    title: "Extras",
+    images: [
+      {
+        id: 35,
+        src: "/photos/GREEN WOODY HOME-29.jpg",
         alt: "Outdoor deck with lounge chairs",
       },
       {
-        id: 16,
-        src: "/photos/GREEN WOODY HOME-16.jpg",
-        alt: "Patio with garden view",
+        id: 36,
+        src: "/photos/GREEN WOODY HOME-14.jpg",
+        alt: "Vinyl music player in living room",
       },
       {
-        id: 17,
-        src: "/photos/GREEN WOODY HOME-22.jpg",
-        alt: "Garden view from the patio",
+        id: 37,
+        src: "/photos/GREEN WOODY HOME-26.jpg",
+        alt: "Washing machine in utility area",
       },
       {
-        id: 18,
-        src: "/photos/GREEN WOODY HOME-19.jpg",
-        alt: "Backyard view with nature",
+        id: 38,
+        src: "/photos/GREEN WOODY HOME-15.jpg",
+        alt: "Corridor to the bedrooms",
       }
     ]
   }
@@ -137,9 +242,11 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
     // Simplified version for homepage
     const previewImages = [
       galleryCategories.exteriors.images[0],
+      galleryCategories.exteriors.images[1],
       galleryCategories.livingRoom.images[0],
-      galleryCategories.bedrooms.images[0],
-      galleryCategories.outdoor.images[0]
+      galleryCategories.bedrooms.masterbedroom.images[0],
+      galleryCategories.bathrooms.bathroom2.images[0],
+      galleryCategories.other.images[1]
     ];
 
     return (
@@ -151,8 +258,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
           </p>
         </div>
         
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-4 mb-8">
             {previewImages.map((image) => (
               <div key={image.id} className="overflow-hidden rounded-lg">
                 <img 
@@ -165,10 +271,10 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
           </div>
           
           <div className="text-center">
-            <p className="text-bnb-green2 mb-4">
+            <p className="text-lg leading-relaxed text-bnb-dark_gray mb-4">
               More photos are available in our complete gallery
             </p>
-            <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-gray font-medium px-6 py-3">
+            <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-bnb-dark_gray font-medium px-6 py-3">
               <a href="/gallery">View Full Gallery</a>
             </Button>
           </div>
