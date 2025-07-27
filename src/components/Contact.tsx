@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
     setIsLoading(true);
     try {
       // Fetch from your Vercel serverless function endpoint
-      const response = await fetch('/api/calendar');
+      const response = await fetch('greenwoodyhome.com/api/calendar');
       if (!response.ok) throw new Error('Failed to fetch calendar data');
 
       const icalData = await response.text();
