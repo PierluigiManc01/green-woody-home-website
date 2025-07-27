@@ -143,21 +143,21 @@ const Services: React.FC = () => {
 
             <Card className="border-2">
               <CardHeader>
-                <CardTitle className="text-xl text-bnb-green2">Transportation Services</CardTitle>
+                <CardTitle className="text-xl text-bnb-green2">Castrum Legionis</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Reliable private vans to help you explore the area or reach your destination 
-                  with ease through our trusted partners. 
-                  Recall that our property is accessible almost only by car, so we strongly recommend arranging transportation in advance for your convenience.
+                  Step back into the history of the Gladiator of Rome and immerse yourself in the history of ancient Rome with a unique experience at Castrum Legionis. Just downhill from our property (200m away),
+                  you can experience a leap back in time becoming a gladiator for a day in a historical archeological setting where ancient civilization once lived.
+                  Wear authentic clothing and belts as you train on a field that could be the same as centuries ago.
                 </p>
                 <div className="flex items-center text-sm text-bnb-green2">
                   <CheckCircle className="h-4 w-4 mr-2" />
-                  Airport transfers
+                  Practice sword fighting, archery, and marching like real soldiers
                 </div>
                 <div className="flex items-center text-sm text-bnb-green2">
                   <CheckCircle className="h-4 w-4 mr-2" />
-                  Local taxi services (NCC)
+                  Breathe in the history of the ancient Roman Empire for a day in a unique archeological setting
                 </div>
               </CardContent>
             </Card>

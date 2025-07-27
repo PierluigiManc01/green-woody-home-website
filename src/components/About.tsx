@@ -9,7 +9,7 @@ const About: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">About Our Space</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
-            <p className="text-lg leading-relaxed">
+            <p className="text-lg leading-relaxed text-bnb-dark_gray">
             Green Woody Home is an eco-friendly retreat nestled in the serene countryside of Rome, perfectly balancing nature and convenience. <br /> 
             Fully powered by solar energy, our villa offers a sustainable escape just 30 minutes from the historic city center and 15 minutes from the seaside. Experience rustic charm, modern comfort, and a unique connection to nature—all in one exclusive location.
             </p>

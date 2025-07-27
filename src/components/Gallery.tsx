@@ -35,20 +35,15 @@ const galleryCategories = {
         alt: "Exterior relaxing view 2",
       },
       {
-        id: 4,
-        src: "/photos/GREEN WOODY HOME-03.jpg",
-        alt: "Exterior relaxing view",
-      },
-      {
-        id: 5,
-        src: "/photos/GREEN WOODY HOME-05.jpg",
-        alt: "Exterior relaxing view 2",
-      },
-      {
         id: 6,
         src: "/photos/GREEN WOODY HOME-36.jpg",
         alt: "Exterior front view",
-      }
+      },
+      {
+        id: 31,
+        src: "/photos/GREEN WOODY HOME-01.jpg",
+        alt: "Exterior entrance view",
+      },
     ]
   },
   livingRoom: {
@@ -217,7 +212,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
     const previewImages = [
       galleryCategories.exteriors.images[0],
       galleryCategories.exteriors.images[1],
-      galleryCategories.livingRoom.images[0],
+      galleryCategories.livingRoom.images[4],
       galleryCategories.bedrooms.images[0],
       galleryCategories.bathrooms.images[0],
       galleryCategories.other.images[1]
@@ -227,7 +222,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
       <section id="gallery" className="section-container bg-accent">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Explore Our Space</h2>
-          <p className="text-bnb-green2 text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg leading-relaxed text-bnb-dark_gray text-muted-foreground max-w-2xl mx-auto">
             Take a virtual tour through our beautiful space and imagine your stay in our nature retreat.
           </p>
         </div>
