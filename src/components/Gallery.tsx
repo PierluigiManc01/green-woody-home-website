@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Link } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Gallery categories with larger, organized images
 const galleryCategories = {
@@ -250,7 +250,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
               More photos are available in our complete gallery
             </p>
             <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-bnb-dark_gray font-medium px-6 py-3">
-              <Link to="/gallery">View Full Gallery</Link>
+              <a href="/gallery">View Full Gallery</a>
             </Button>
           </div>
       </section>
