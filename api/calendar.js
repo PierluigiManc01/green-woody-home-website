@@ -3,7 +3,7 @@ export default async function handler(req, res) {
   const BOOKING_URL = 'https://ical.booking.com/v1/export?t=37c9f884-f307-49df-a0b3-9e09e3e32d17';
 
   try {
-    const calendars = []; // ✅ Initialize the array properly
+    const calendars = [];
     
     // Fetch Airbnb calendar with error handling
     try {
@@ -20,7 +20,8 @@ export default async function handler(req, res) {
 
     // Fetch Booking calendar with error handling
     try {
-      if (BOOKING_URL && BOOKING_URL !== 'https://ical.booking.com/v1/export?t=37c9f884-f307-49df-a0b3-9e09e3e32d17') {
+      // ✅ Fixed: Simply check if BOOKING_URL exists
+      if (BOOKING_URL) {
         const bookingResponse = await fetch(BOOKING_URL);
         if (bookingResponse.ok) {
           const bookingData = await bookingResponse.text();
