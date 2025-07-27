@@ -56,7 +56,7 @@ const Services: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">
               Our Partnerships
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
               We collaborate with trusted partners to enhance your experience and provide 
               additional services during your stay.
             </p>
@@ -165,7 +165,7 @@ const Services: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-muted-foreground">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
               Interested in any of these services? Contact us to arrange bookings and get more information 
               about our partnerships and special offers.
             </p>

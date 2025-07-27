@@ -197,7 +197,13 @@ const galleryCategories = {
         id: 38,
         src: "/photos/GREEN WOODY HOME-15.jpg",
         alt: "Corridor to the bedrooms",
+      },
+      {
+        id: 39,
+        src: "/photos/Il-Castello-di-Decima-hero.jpg",
+        alt: "Castle view in Decima",
       }
+      
     ]
   }
 };
@@ -215,7 +221,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
       galleryCategories.livingRoom.images[4],
       galleryCategories.bedrooms.images[0],
       galleryCategories.bathrooms.images[0],
-      galleryCategories.other.images[1]
+      galleryCategories.other.images[4]
     ];
 
     return (
