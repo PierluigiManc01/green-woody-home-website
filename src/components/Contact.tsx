@@ -7,7 +7,7 @@ import { toast } from '@/components/ui/use-toast';
 import { Calendar } from '@/components/ui/calendar';
 import { Instagram, Phone, Mail, MapPin, Calendar as CalendarIcon, Euro } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import ICAL from 'ical.js';
+import * as icalParser from 'ical-parser';
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -55,17 +55,15 @@ const Contact: React.FC = () => {
       const response = await fetch(url);
       const icalData = await response.text();
       
-      // Parse iCal data
-      const jcalData = ICAL.parse(icalData);
-      const comp = new ICAL.Component(jcalData);
-      const vevents = comp.getAllSubcomponents('vevent');
+      // Parse iCal data using ical-parser
+      const parsed = icalParser.parseString(icalData);
+      const events = parsed.events;
       
       const blockedDates: Date[] = [];
       
-      vevents.forEach((vevent) => {
-        const event = new ICAL.Event(vevent);
-        const startDate = new Date(event.startDate.toJSDate());
-        const endDate = new Date(event.endDate.toJSDate());
+      events.forEach((event) => {
+        const startDate = new Date(event.startDate?.value || event.startDate);
+        const endDate = new Date(event.endDate?.value || event.endDate);
         
         // Add all dates in the range as blocked
         const currentDate = new Date(startDate);
