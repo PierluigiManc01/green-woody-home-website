@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
   const fetchCalendarData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/proxy-calendar');
+      const response = await fetch('pages/api/calendar');
       const icalData = await response.text();
 
       // Parse iCal data using ical-parser
