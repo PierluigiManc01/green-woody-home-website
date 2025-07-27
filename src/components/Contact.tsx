@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,33 +8,46 @@ import { Instagram, Phone, Mail, MapPin, Calendar as CalendarIcon, Euro } from '
 import emailjs from '@emailjs/browser';
 import * as icalParser from 'ical-parser';
 
+// --- ADDED: The Airbnb iCal URL constant
+const ICAL_URL = 'https://www.airbnb.it/calendar/ical/885987155364658565.ics?s=4ee4c8df128452549fd46e38172bd1b6';
+
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
-  const [icalUrl, setIcalUrl] = useState('');
+  // --- useState for iCal is not needed anymore since ICAL_URL is a constant
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [unavailableDates, setUnavailableDates] = useState<Date[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [isLoading, setIsLoading] = useState(false);
 
+  // --- ADDED: Helper to enumerate all dates in a (inclusive) interval
+  const getAllDatesInRange = (start: Date, end: Date) => {
+    const dates: Date[] = [];
+    const current = new Date(start);
+    while (current <= end) {
+      dates.push(new Date(current));
+      current.setDate(current.getDate() + 1);
+    }
+    return dates;
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (form.current) {
       emailjs
         .sendForm(
           "service_kfqi9r6",
-          "template_bzd6sal", 
+          "template_bzd6sal",
           form.current,
           "OcfiSI6EWgrMuMT6d"
         )
         .then(
           () => {
-            // Show success toast notification
             toast({
               title: "Messaggio inviato!",
               description: "Ti risponderemo appena possibile.",
             });
-            form.current.reset(); // Reset the form after successful submission
+            form.current.reset();
           },
           (error) => {
             console.log("FAILED...", error.text);
@@ -49,34 +61,35 @@ const Contact: React.FC = () => {
     }
   };
 
-  const fetchCalendarData = async (url: string) => {
+  // --- CHANGED: Calendar fetch always uses ICAL_URL
+  const fetchCalendarData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(url);
+      const response = await fetch('http://localhost:3001/proxy-calendar');
       const icalData = await response.text();
-      
+
       // Parse iCal data using ical-parser
       const parsed = icalParser.parseString(icalData);
-      const events = parsed.events;
-      
-      const blockedDates: Date[] = [];
-      
+      const events = parsed.events || [];
+
+      let blocked: Date[] = [];
+
       events.forEach((event) => {
-        const startDate = new Date(event.startDate?.value || event.startDate);
-        const endDate = new Date(event.endDate?.value || event.endDate);
-        
-        // Add all dates in the range as blocked
-        const currentDate = new Date(startDate);
-        while (currentDate < endDate) {
-          blockedDates.push(new Date(currentDate));
-          currentDate.setDate(currentDate.getDate() + 1);
-        }
+        // Defensive: support both startDate.value and startDate
+        const start = new Date(event.startDate?.value || event.startDate);
+        const end = new Date(event.endDate?.value || event.endDate);
+
+        // iCal end is exclusive, so use end-1
+        const endDt = new Date(end);
+        endDt.setDate(endDt.getDate() - 1);
+
+        blocked = blocked.concat(getAllDatesInRange(start, endDt));
       });
-      
-      setUnavailableDates(blockedDates);
+
+      setUnavailableDates(blocked);
       setLastUpdated(new Date());
       localStorage.setItem('last-calendar-update', new Date().toISOString());
-      
+      localStorage.setItem('unavailable-dates', JSON.stringify(blocked.map(d => d.toISOString())));
     } catch (error) {
       console.error('Error fetching calendar data:', error);
       toast({
@@ -89,26 +102,30 @@ const Contact: React.FC = () => {
     }
   };
 
-  // Auto-update every 12 hours
+  // --- CHANGED: only use ICAL_URL; always refresh if 12h elapsed
   useEffect(() => {
-    const savedUrl = localStorage.getItem('https://www.airbnb.it/calendar/ical/885987155364658565.ics?s=4ee4c8df128452549fd46e38172bd1b6');
-    if (savedUrl) {
-      setIcalUrl(savedUrl);
-      fetchCalendarData(savedUrl);
-      const lastUpdate = localStorage.getItem('last-calendar-update');
-      if (lastUpdate) {
-        setLastUpdated(new Date(lastUpdate));
-      }
+    const refreshData = async () => {
+      await fetchCalendarData();
+    };
+
+    // From cache if available for quick UI
+    const storedDates = localStorage.getItem('unavailable-dates');
+    if (storedDates) {
+      setUnavailableDates(JSON.parse(storedDates).map((iso: string) => new Date(iso)));
+    }
+    const last = localStorage.getItem('last-calendar-update');
+    if (last) setLastUpdated(new Date(last));
+
+    const now = Date.now();
+    const lastUpdate = last ? new Date(last).getTime() : 0;
+    if (!lastUpdate || now - lastUpdate > (12 * 60 * 60 * 1000)) {
+      refreshData();
     }
 
-    const interval = setInterval(() => {
-      if (icalUrl) {
-        fetchCalendarData(icalUrl);
-      }
-    }, 12 * 60 * 60 * 1000); // 12 hours
-
+    // 12-hour interval update
+    const interval = setInterval(refreshData, 12 * 60 * 60 * 1000);
     return () => clearInterval(interval);
-  }, [icalUrl]);
+  }, []);
 
   return (
     <>
@@ -121,7 +138,7 @@ const Contact: React.FC = () => {
             but rates may vary depending on the season and length of stay.
           </p>
         </div>
-        
+
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="grid md:grid-cols-2 gap-8">
@@ -134,9 +151,9 @@ const Contact: React.FC = () => {
                   View our real-time availability. Unavailable dates are shown in red.
                   Calendar updates automatically every 12 hours.
                 </p>
-                
+
                 <div className="space-y-4">
-                <div className="bg-gray-50 rounded-lg p-4 w-full">
+                  <div className="bg-gray-50 rounded-lg p-4 w-full">
                     {isLoading ? (
                       <div className="text-center py-8">
                         <p className="text-muted-foreground">Loading calendar...</p>
@@ -149,11 +166,10 @@ const Contact: React.FC = () => {
                         disabled={(date) => {
                           // Disable past dates
                           if (date < new Date()) return true;
-                          
                           // Check if date is unavailable
-                          return unavailableDates.some(unavailableDate => {
-                            return date.toDateString() === unavailableDate.toDateString();
-                          });
+                          return unavailableDates.some(unavailableDate =>
+                            date.toDateString() === unavailableDate.toDateString()
+                          );
                         }}
                         modifiers={{
                           unavailable: unavailableDates.filter(date => date >= new Date())
@@ -180,13 +196,11 @@ const Contact: React.FC = () => {
                       />
                     )}
                   </div>
-                  
                   {lastUpdated && (
                     <p className="text-sm text-muted-foreground">
                       Last updated: {lastUpdated.toLocaleDateString()} at {lastUpdated.toLocaleTimeString()}
                     </p>
                   )}
-                  
                   <div className="flex items-center gap-4 text-sm">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 bg-primary rounded"></div>
