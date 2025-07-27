@@ -1,18 +1,32 @@
-// /api/calendar.js 
+// api/calendar.js - Combined endpoint
 export default async function handler(req, res) {
-  const ICAL_URL = 'https://www.airbnb.it/calendar/ical/885987155364658565.ics?s=4ee4c8df128452549fd46e38172bd1b6';
-
   try {
-    const response = await fetch(ICAL_URL);
-    if (!response.ok) {
-      return res.status(response.status).send('Failed to fetch calendar');
+    const [airbnbRes, bookingRes] = await Promise.all([
+      fetch('/api/airbnb_calendar'),
+      fetch('/api/booking_calendar')
+    ]);
+
+    let allEvents = [];
+
+    // Process Airbnb data
+    if (airbnbRes.ok) {
+      const airbnbData = await airbnbRes.text();
+      allEvents.push(airbnbData);
     }
-    const icalData = await response.text();
-    // Set headers for CORS if you want this endpoint opened to other sites:
-    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // Process Booking data  
+    if (bookingRes.ok) {
+      const bookingData = await bookingRes.text();
+      allEvents.push(bookingData);
+    }
+
+    // Combine calendars
+    const combinedData = allEvents.join('\n');
+    
     res.setHeader('Content-Type', 'text/calendar');
-    res.status(200).send(icalData);
+    res.status(200).send(combinedData);
+    
   } catch (err) {
-    res.status(500).send('Internal server error');
+    res.status(500).json({ error: err.message });
   }
 }
