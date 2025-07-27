@@ -67,38 +67,69 @@ const Contact: React.FC = () => {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
 
-    const icalData = await response.text();
+    const data = await response.json();
+    
+    // ✅ Check if calendars exists and is an array
+    if (!data.calendars || !Array.isArray(data.calendars)) {
+      throw new Error('Invalid calendar data structure received');
+    }
 
-    // Parse iCal content with ical.js
-    const jcalData = ICAL.parse(icalData);
-    const comp = new ICAL.Component(jcalData);
-    const vevents = comp.getAllSubcomponents('vevent');
+    const { calendars } = data;
+    let allBlockedDates = [];
 
-    let blockedDates = [];
+    // Process each calendar separately
+    calendars.forEach((calendar, index) => {
+      try {
+        // ✅ Validate calendar object structure
+        if (!calendar || !calendar.data || !calendar.source) {
+          console.warn(`Invalid calendar object at index ${index}`);
+          return;
+        }
+        
+        console.log(`Processing ${calendar.source} calendar...`);
+        
+        // Parse individual calendar
+        const jcalData = ICAL.parse(calendar.data);
+        const comp = new ICAL.Component(jcalData);
+        const vevents = comp.getAllSubcomponents('vevent');
 
-    vevents.forEach((vevent) => {
-      const event = new ICAL.Event(vevent);
-      const start = event.startDate.toJSDate();
-      const end = event.endDate.toJSDate();
+        vevents.forEach((vevent) => {
+          try {
+            const event = new ICAL.Event(vevent);
+            const start = event.startDate.toJSDate();
+            const end = event.endDate.toJSDate();
 
-      if (isNaN(start.getTime()) || isNaN(end.getTime())) {
-        return;
+            if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+              return;
+            }
+
+            const endInclusive = new Date(end);
+            endInclusive.setDate(endInclusive.getDate() - 1);
+
+            const eventDates = getAllDatesInRange(start, endInclusive);
+            allBlockedDates = allBlockedDates.concat(eventDates);
+          } catch (eventError) {
+            console.warn(`Error processing event in ${calendar.source}:`, eventError);
+          }
+        });
+      } catch (calendarError) {
+        console.warn(`Error processing ${calendar.source} calendar:`, calendarError);
       }
-
-      const endInclusive = new Date(end);
-      endInclusive.setDate(endInclusive.getDate() - 1);
-
-      const eventDates = getAllDatesInRange(start, endInclusive);
-      blockedDates = blockedDates.concat(eventDates);
     });
 
-    setUnavailableDates(blockedDates);
+    // Remove duplicate dates
+    const uniqueBlockedDates = allBlockedDates.filter((date, index, arr) => 
+      arr.findIndex(d => d.toDateString() === date.toDateString()) === index
+    );
+
+    setUnavailableDates(uniqueBlockedDates);
     setLastUpdated(new Date());
 
     localStorage.setItem('last-calendar-update', new Date().toISOString());
-    localStorage.setItem('unavailable-dates', JSON.stringify(blockedDates.map(d => d.toISOString())));
+    localStorage.setItem('unavailable-dates', JSON.stringify(uniqueBlockedDates.map(d => d.toISOString())));
     
   } catch (error) {
+    console.error('Calendar fetch error:', error);
     toast({
       title: "Calendar Update Failed",
       description: `Error: ${error.message}`,
@@ -108,6 +139,7 @@ const Contact: React.FC = () => {
     setIsLoading(false);
   }
 };
+
 
   useEffect(() => {
     const refreshData = async () => {

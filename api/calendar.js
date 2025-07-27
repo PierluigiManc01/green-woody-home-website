@@ -3,50 +3,44 @@ export default async function handler(req, res) {
   const BOOKING_URL = 'https://ical.booking.com/v1/export?t=37c9f884-f307-49df-a0b3-9e09e3e32d17';
 
   try {
-    // Fetch both calendars simultaneously
-    const [airbnbResponse, bookingResponse] = await Promise.all([
-      fetch(AIRBNB_URL),
-      fetch(BOOKING_URL)
-    ]);
-
-    let combinedIcalData = '';
-
-    // Process Airbnb calendar
-    if (airbnbResponse.ok) {
-      const airbnbData = await airbnbResponse.text();
-      combinedIcalData += airbnbData;
-    } else {
-      console.warn('Failed to fetch Airbnb calendar');
+    const calendars = []; // ✅ Initialize the array properly
+    
+    // Fetch Airbnb calendar with error handling
+    try {
+      const airbnbResponse = await fetch(AIRBNB_URL);
+      if (airbnbResponse.ok) {
+        const airbnbData = await airbnbResponse.text();
+        if (airbnbData.includes('BEGIN:VCALENDAR')) {
+          calendars.push({ source: 'airbnb', data: airbnbData });
+        }
+      }
+    } catch (error) {
+      console.warn('Airbnb calendar fetch failed:', error.message);
     }
 
-    // Process Booking.com calendar
-    if (bookingResponse.ok) {
-      const bookingData = await bookingResponse.text();
-      // Remove the header/footer from the second calendar and append events
-      const bookingEvents = bookingData
-        .split('\n')
-        .filter(line => 
-          !line.startsWith('BEGIN:VCALENDAR') && 
-          !line.startsWith('END:VCALENDAR') &&
-          !line.startsWith('VERSION:') &&
-          !line.startsWith('PRODID:') &&
-          line.trim() !== ''
-        )
-        .join('\n');
-      
-      combinedIcalData += '\n' + bookingEvents;
-    } else {
-      console.warn('Failed to fetch Booking.com calendar');
+    // Fetch Booking calendar with error handling
+    try {
+      if (BOOKING_URL && BOOKING_URL !== 'https://ical.booking.com/v1/export?t=37c9f884-f307-49df-a0b3-9e09e3e32d17') {
+        const bookingResponse = await fetch(BOOKING_URL);
+        if (bookingResponse.ok) {
+          const bookingData = await bookingResponse.text();
+          if (bookingData.includes('BEGIN:VCALENDAR')) {
+            calendars.push({ source: 'booking', data: bookingData });
+          }
+        }
+      }
+    } catch (error) {
+      console.warn('Booking calendar fetch failed:', error.message);
     }
 
-    // If we got at least one calendar, return it
-    if (combinedIcalData) {
-      res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Content-Type', 'text/calendar');
-      res.status(200).send(combinedIcalData);
-    } else {
-      res.status(500).json({ error: 'Failed to fetch any calendar data' });
+    // If no calendars fetched successfully
+    if (calendars.length === 0) {
+      return res.status(500).json({ error: 'Failed to fetch any calendar data' });
     }
+
+    // Return the calendars as JSON for frontend processing
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json({ calendars });
     
   } catch (err) {
     res.status(500).json({ 
