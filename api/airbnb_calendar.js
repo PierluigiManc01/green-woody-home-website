@@ -1,4 +1,3 @@
-// /api/calendar.js 
 export default async function handler(req, res) {
   const ICAL_URL = 'https://www.airbnb.it/calendar/ical/885987155364658565.ics?s=4ee4c8df128452549fd46e38172bd1b6';
 

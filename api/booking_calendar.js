@@ -1,4 +1,3 @@
-// /api/calendar.js 
 export default async function handler(req, res) {
   const ICAL_URL = 'https://ical.booking.com/v1/export?t=37c9f884-f307-49df-a0b3-9e09e3e32d17';
 

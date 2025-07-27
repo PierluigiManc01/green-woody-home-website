@@ -1,4 +1,3 @@
-// api/calendar.js - Combined endpoint
 export default async function handler(req, res) {
   try {
     const [airbnbRes, bookingRes] = await Promise.all([
