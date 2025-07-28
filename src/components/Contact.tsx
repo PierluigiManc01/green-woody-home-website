@@ -177,13 +177,13 @@ const Contact: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Availability & Pricing</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Check our real-time availability through our Airbnb calendar. Pricing starts from <strong>€120 per night</strong>, 
+            Check our real-time availability through our calendar. Pricing starts from <strong>€120 per night</strong>, 
             but rates may vary depending on the season and length of stay.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="bg-white rounded-lg shadow-lg p-4">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-display mb-4 text-bnb-dark flex items-center gap-2">
@@ -295,7 +295,7 @@ const Contact: React.FC = () => {
       <div className="grid md:grid-cols-2 gap-12">
         <div>
           <h3 className="text-2xl font-display mb-6 text-bnb-dark">Contact Methods</h3>
-          <h4 className="text-md text-muted-foreground">Click the buttons to contact us!</h4>
+          <h4 className="text-md text-muted-foreground"><strong>Click the buttons</strong> to contact us!</h4>
           <div className="space-y-4">
             <a href="tel:+393358158411" className="contact-method">
               <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-dark_gray">

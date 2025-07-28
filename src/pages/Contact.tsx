@@ -12,9 +12,10 @@ const ContactPage: React.FC = () => {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-bnb-green2 mb-4">Contact & Booking</h1>
             <p className="text-bnb-green2 text-muted-foreground max-w-3xl mx-auto text-lg">
-              Get in touch with us to inquire about pricing and availability. 
-              This contact form is primarily used for booking Green Woody Home when available. 
-              We'll respond promptly with rates, availability, and booking details.
+              Do you like the Green Woody Home and you want to book it? 
+              Check our real-time availability through our calendar and get in touch with us for booking inquiries.
+              This contact form is primarily used for booking Green Woody Home when available.
+              We'll respond promptly with rates and booking details.
             </p>
           </div>
         </section>

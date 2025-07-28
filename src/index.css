@@ -114,6 +114,6 @@
 }
 
 .contact-method {
-  @apply flex items-center gap-3 mb-4 p-4 bg-muted rounded-md hover:bg-bnb-green2 transition-colors;
+  @apply flex items-center gap-3 mb-4 p-4 bg-background rounded-md hover:bg-bnb-green2 transition-colors;
 }
 
