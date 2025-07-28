@@ -174,7 +174,7 @@ const Contact: React.FC = () => {
     <>
       {/* Calendar Availability Section */}
       <section className="section-container bg-bnb-green2/10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Availability & Pricing</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Check our real-time availability through our calendar. Pricing starts from <strong>€120 per night</strong>, 
@@ -182,9 +182,9 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-4">
-            <div className="grid md:grid-cols-2 gap-8">
+        <div className="w-[80%] mx-auto">
+          <div className="bg-white rounded-lg shadow-lg p-10">
+            <div className="grid md:grid-cols-2 gap-10">
               <div>
                 <h3 className="text-2xl font-display mb-4 text-bnb-dark flex items-center gap-2">
                   <CalendarIcon className="w-6 h-6" />
@@ -199,40 +199,42 @@ const Contact: React.FC = () => {
                   <div className="bg-gray-50 rounded-lg p-4 w-full">
                     {isLoading ? (
                       <div className="text-center py-8">
-                        <p className="text-muted-foreground">Loading calendar...</p>
+                      <p className="text-muted-foreground">Loading calendar...</p>
                       </div>
                     ) : (
+                      <div className="flex justify-center w-full">
                       <Calendar
                         mode="single"
                         selected={selectedDate}
                         onSelect={setSelectedDate}
                         disabled={date => {
-                          if (date < new Date()) return true;
-                          return unavailableDates.some(ud => date.toDateString() === ud.toDateString());
+                        if (date < new Date()) return true;
+                        return unavailableDates.some(ud => date.toDateString() === ud.toDateString());
                         }}
                         modifiers={{
-                          unavailable: unavailableDates.filter(date => date >= new Date())
+                        unavailable: unavailableDates.filter(date => date >= new Date())
                         }}
                         modifiersClassNames={{
-                          unavailable: "bg-red-500 text-white hover:bg-red-600 line-through"
+                        unavailable: "bg-red-500 text-white hover:bg-red-600 line-through"
                         }}
-                        className="rounded-md border pointer-events-auto w-full scale-110 origin-center"
+                        className="rounded-md border pointer-events-auto w-full max-w-sm mx-auto"
                         classNames={{
-                          months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 w-full",
-                          month: "space-y-4 w-full",
-                          caption: "flex justify-center pt-1 relative items-center text-base font-semibold",
-                          table: "w-full border-collapse space-y-1",
-                          head_row: "flex w-full",
-                          head_cell: "text-muted-foreground rounded-md w-8 h-8 md:w-10 md:h-10 font-normal text-xs md:text-sm flex items-center justify-center",
-                          row: "flex w-full mt-1",
-                          cell: "relative p-0 text-center text-xs md:text-sm focus-within:relative focus-within:z-20 w-8 h-8 md:w-10 md:h-10",
-                          day: "h-8 w-8 md:h-10 md:w-10 p-0 font-normal flex items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground text-xs md:text-sm",
-                          day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-                          day_today: "bg-accent text-accent-foreground font-semibold",
-                          day_outside: "text-muted-foreground opacity-50",
-                          day_disabled: "text-muted-foreground opacity-50"
+                        months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0 w-full",
+                        month: "space-y-4 w-full",
+                        caption: "flex justify-center pt-1 relative items-center text-base font-semibold",
+                        table: "w-full border-collapse space-y-1",
+                        head_row: "flex w-full",
+                        head_cell: "text-muted-foreground rounded-md flex-1 h-8 md:h-10 font-normal text-xs md:text-sm flex items-center justify-center",
+                        row: "flex w-full mt-1",
+                        cell: "relative p-0 text-center text-xs md:text-sm focus-within:relative focus-within:z-20 flex-1 h-8 md:h-10",
+                        day: "h-8 md:h-10 w-full p-0 font-normal flex items-center justify-center rounded-md hover:bg-accent hover:text-accent-foreground text-xs md:text-sm",
+                        day_selected: "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
+                        day_today: "bg-accent text-accent-foreground font-semibold",
+                        day_outside: "text-muted-foreground opacity-50",
+                        day_disabled: "text-muted-foreground opacity-50"
                         }}
                       />
+                      </div>
                     )}
                   </div>
                   {lastUpdated && (
