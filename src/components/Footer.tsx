@@ -19,13 +19,13 @@ const Footer: React.FC = () => {
             <h4 className="text-lg text-white font-display font-medium mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-bnb-green2 hover:text-white transition-colors">Home</a>
+                <a href="/" className="text-bnb-green2 hover:text-white transition-colors">Home</a>
               </li>
               <li>
-                <a href="#gallery" className="text-bnb-green2 hover:text-white transition-colors">Gallery</a>
+                <a href="/gallery" className="text-bnb-green2 hover:text-white transition-colors">Gallery</a>
               </li>
               <li>
-                <a href="#contact" className="text-bnb-green2 hover:text-white transition-colors">Contact</a>
+                <a href="/contact" className="text-bnb-green2 hover:text-white transition-colors">Contact</a>
               </li>
               <li>
                 <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-bnb-green2 hover:text-white transition-colors">
