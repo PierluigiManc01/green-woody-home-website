@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { resetCookieConsent } from '@/lib/cookieManager';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -22,10 +23,10 @@ const Footer: React.FC = () => {
                 <a href="/" className="text-bnb-green2 hover:text-white transition-colors">Home</a>
               </li>
               <li>
-                <a href="/gallery" className="text-bnb-green2 hover:text-white transition-colors">Gallery</a>
+                <Link to="/gallery" className="text-bnb-green2 hover:text-white transition-colors">Gallery</Link>
               </li>
               <li>
-                <a href="/contact" className="text-bnb-green2 hover:text-white transition-colors">Contact</a>
+                <Link to="/contact" className="text-bnb-green2 hover:text-white transition-colors">Contact</Link>
               </li>
               <li>
                 <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-bnb-green2 hover:text-white transition-colors">
