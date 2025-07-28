@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        <div className="w-full md:w-[80%] mx-auto">
+        <div className="w-full md:w-[90%] lg:w-[80%] mx-auto">
           <div className="bg-white rounded-lg shadow-lg p-10">
             <div className="grid md:grid-cols-2 gap-10">
               <div>
