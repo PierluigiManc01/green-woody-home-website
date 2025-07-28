@@ -1,9 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -31,21 +33,37 @@ const Header: React.FC = () => {
         
         <nav className="hidden md:flex space-x-6">
           <Link to="/" className="font-medium text-bnb-green2 hover:text-white transition-colors">
-            Home
+            {t('nav.home')}
           </Link>
           <a href="#about" className="font-medium text-bnb-green2 hover:text-white transition-colors">
-            About
+            {t('nav.about')}
           </a>
           <Link to="/gallery" className="font-medium text-bnb-green2 hover:text-white transition-colors">
-            Gallery
+            {t('nav.gallery')}
           </Link>
           <Link to="/services" className="font-medium text-bnb-green2 hover:text-white transition-colors">
-            Services
+            {t('nav.services')}
           </Link>
           <Link to="/contact" className="font-medium text-bnb-green2 hover:text-white transition-colors">
-            Contact
+            {t('nav.contact')}
           </Link>
         </nav>
+        
+        {/* Language Toggle Button */}
+        <div className="hidden md:flex items-center space-x-4">
+          <button
+            onClick={() => setLanguage(language === 'en' ? 'it' : 'en')}
+            className="flex items-center space-x-1 text-bnb-green2 hover:text-white transition-colors p-2"
+            title={language === 'en' ? 'Switch to Italian' : 'Cambia in Inglese'}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+              <path d="M2 12h20"/>
+            </svg>
+            <span className="text-sm font-medium">{language.toUpperCase()}</span>
+          </button>
+        </div>
         
         <div className="md:hidden relative">
           {/* Mobile menu button with toggle functionality */}
@@ -67,28 +85,43 @@ const Header: React.FC = () => {
               <Link to="/" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                {t('nav.home')}
               </Link>
               <a href="#about" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                {t('nav.about')}
               </a>
               <Link to="/gallery" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               > 
-                Gallery
+                {t('nav.gallery')}
               </Link>
               <Link to="/services" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                {t('nav.services')}
               </Link>
               <Link to="/contact" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                {t('nav.contact')}
               </Link>
+              <div className="border-t border-gray-700 my-2"></div>
+              <button
+                onClick={() => {
+                  setLanguage(language === 'en' ? 'it' : 'en');
+                  setIsMenuOpen(false);
+                }}
+                className="flex items-center space-x-2 px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800 w-full"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                  <path d="M2 12h20"/>
+                </svg>
+                <span className="text-sm">{language.toUpperCase()}</span>
+              </button>
             </div>
           )}
         </div>

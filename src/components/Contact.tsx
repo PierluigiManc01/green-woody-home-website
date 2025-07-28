@@ -7,6 +7,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { Instagram, Phone, Mail, MapPin, Calendar as CalendarIcon, Euro } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import ICAL from 'ical.js';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 
 const Contact: React.FC = () => {
@@ -15,6 +16,7 @@ const Contact: React.FC = () => {
   const [unavailableDates, setUnavailableDates] = useState<Date[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useLanguage();
 
   // Helper to enumerate all dates in an inclusive date range
   const getAllDatesInRange = (start: Date, end: Date) => {
@@ -41,16 +43,16 @@ const Contact: React.FC = () => {
         .then(
           () => {
             toast({
-              title: "Messaggio inviato!",
-              description: "Ti risponderemo appena possibile.",
+              title: t('contact.success'),
+              description: t('contact.success'),
             });
             form.current?.reset();
           },
           (error) => {
             console.error("FAILED...", error.text);
             toast({
-              title: "Invio del messaggio fallito",
-              description: "Per favore ritenta in seguito.",
+              title: t('contact.error'),
+              description: t('contact.error'),
               variant: "destructive",
             });
           }
@@ -175,10 +177,9 @@ const Contact: React.FC = () => {
       {/* Calendar Availability Section */}
       <section className="section-container bg-bnb-green2/10">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Availability & Pricing</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">{t('contact.availability')}</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Check our real-time availability through our calendar. Pricing starts from <strong>€120 per night</strong>, 
-            but rates may vary depending on the season and length of stay.
+            {t('contact.availability.check')}
           </p>
         </div>
 
@@ -188,11 +189,10 @@ const Contact: React.FC = () => {
               <div>
                 <h3 className="text-2xl font-display mb-4 text-bnb-dark flex items-center gap-2">
                   <CalendarIcon className="w-6 h-6" />
-                  Availability Calendar
+                  {t('contact.availability')}
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  View our real-time availability. Unavailable dates are shown in red.
-                  Calendar updates automatically every 12 hours.
+                  {t('contact.availability.check')}
                 </p>
 
                 <div className="space-y-4">
@@ -288,9 +288,9 @@ const Contact: React.FC = () => {
 
       <section id="contact" className="section-container bg-bnb-stone2">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Get in Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">{t('contact.title')}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions or want to book directly? Contact us using any of these methods
+            {t('contact.subtitle')}
           </p>
         </div>
       
@@ -380,11 +380,11 @@ const Contact: React.FC = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-2xl font-display mb-6 text-bnb-dark">Send Us a Message</h3>
+          <h3 className="text-2xl font-display mb-6 text-bnb-dark">{t('contact.title')}</h3>
           <form ref={form} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label htmlFor="firstname" className="text-sm font-medium">First Name</label>
+                <label htmlFor="firstname" className="text-sm font-medium">{t('contact.name')}</label>
                 <Input 
                   id="firstname" 
                   name="firstname" 
@@ -394,13 +394,13 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="lastname" className="text-sm font-medium">Last Name</label>
+                <label htmlFor="lastname" className="text-sm font-medium">{t('contact.name')}</label>
                 <Input id="lastname" name="lastname" placeholder='Rossi' className="placeholder:opacity-30"  required />
               </div>
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium">Email</label>
+              <label htmlFor="email" className="text-sm font-medium">{t('contact.email')}</label>
               <Input id="email" name="email" type="email" placeholder='mario.rossi@gmail.com' className="placeholder:opacity-30"  required />
             </div>
             
@@ -410,12 +410,12 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium">Message</label>
+              <label htmlFor="message" className="text-sm font-medium">{t('contact.message')}</label>
               <Textarea id="message" name="message" rows={5} placeholder='Hi! I would like to book the house for...' className="placeholder:opacity-30"  required />
             </div>
             
             <Button type="submit" className="w-full bg-bnb-green2 hover:bg-bnb-green2/70 text-dark_gray">
-              Send Message
+              {t('contact.send')}
             </Button>
           </form>
         </div>

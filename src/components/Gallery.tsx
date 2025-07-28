@@ -4,6 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Gallery categories with larger, organized images
 const galleryCategories = {
@@ -214,6 +215,8 @@ interface GalleryProps {
 }
 
 const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
+  const { t } = useLanguage();
+  
   if (isHomepage) {
     // Simplified version for homepage
     const previewImages = [
@@ -228,9 +231,9 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
     return (
       <section id="gallery" className="section-container bg-accent">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">Explore Our Space</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">{t('gallery.title')}</h2>
           <p className="text-lg leading-relaxed text-bnb-dark_gray text-muted-foreground max-w-2xl mx-auto">
-            Take a virtual tour through our beautiful space and imagine your stay in our nature retreat.
+            {t('gallery.subtitle')}
           </p>
         </div>
         
@@ -248,10 +251,10 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
           
           <div className="text-center">
             <p className="text-lg leading-relaxed text-bnb-dark_gray mb-4">
-              More photos are available in our complete gallery
+              {t('gallery.subtitle')}
             </p>
             <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-bnb-dark_gray font-medium px-6 py-3">
-              <Link to="/gallery">View Full Gallery</Link>
+              <Link to="/gallery">{t('gallery.viewFull')}</Link>
             </Button>
           </div>
       </section>
@@ -262,9 +265,9 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
   return (
     <section className="section-container bg-accent">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-bnb-green2 mb-4">Photo Gallery</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-bnb-green2 mb-4">{t('gallery.title')}</h1>
         <p className="text-bnb-green2 text-muted-foreground max-w-2xl mx-auto">
-          Discover every corner of Green Woody Home through our comprehensive photo collection
+          {t('gallery.subtitle')}
         </p>
       </div>
       

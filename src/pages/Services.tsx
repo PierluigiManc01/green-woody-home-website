@@ -3,8 +3,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, Wifi, Coffee, Car, Utensils, Bed, Snowflake, Tv, Bath, Waves } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services: React.FC = () => {
+  const { t } = useLanguage();
   const amenities = [
     { icon: <Wifi className="h-6 w-6" />, title: "Free WiFi", description: "High-speed internet throughout the property" },
     { icon: <Snowflake className="h-6 w-6" />, title: "Air Conditioning", description: "Climate control in all rooms" },
@@ -25,11 +27,10 @@ const Services: React.FC = () => {
         <section className="bg-gradient-to-b from-primary/10 to-background py-16 section-container">
           <div className="container mx-auto px-4 text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-bnb-green2 mb-6">
-              Our Services & Amenities
+              {t('services.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-              Experience comfort and convenience with our comprehensive range of services 
-              designed to make your stay memorable and relaxing. Everything you need for a comfortable stay is provided.
+              {t('services.subtitle')}
             </p>
           </div>
 

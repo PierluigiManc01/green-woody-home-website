@@ -1,35 +1,36 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
     <section id="about" className="section-container bg-gray/80">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">About Our Space</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">{t('about.title')}</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
-            <p className="text-lg leading-relaxed text-bnb-dark_gray">
-            Green Woody Home is an eco-friendly retreat nestled in the serene countryside of Rome, perfectly balancing nature and convenience. <br /> 
-            Fully powered by solar energy, our villa offers a sustainable escape just 30 minutes from the historic city center and 15 minutes from the seaside. Experience rustic charm, modern comfort, and a unique connection to nature—all in one exclusive location.
+            <p className="text-lg leading-relaxed text-bnb-dark_gray" dangerouslySetInnerHTML={{ __html: t('about.description') }}>
             </p>
             
             <div className="grid grid-cols-2 gap-6 my-8">
               <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-dark_gray">3</span>
-                <span className="text-sm text-bnb-dark_gray">Bedrooms</span>
+                <span className="text-sm text-bnb-dark_gray">{t('about.bedrooms')}</span>
               </div>
               <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-dark_gray">3</span>
-                <span className="text-sm text-bnb-dark_gray">Bathrooms</span>
+                <span className="text-sm text-bnb-dark_gray">{t('about.bathrooms')}</span>
               </div>
               <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-dark_gray">120</span>
-                <span className="text-sm text-bnb-dark_gray">m² Living Space</span>
+                <span className="text-sm text-bnb-dark_gray">{t('about.livingSpace')}</span>
               </div>
               <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-dark_gray">1500</span>
-                <span className="text-sm text-bnb-dark_gray">m² Garden</span>
+                <span className="text-sm text-bnb-dark_gray">{t('about.garden')}</span>
               </div>
             </div>
             
@@ -48,16 +49,16 @@ const About: React.FC = () => {
       </div>
 
       <div id= "PoI" className="mt-20 pt-10 max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">Points of Interest</h2> 
+        <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">{t('about.poi.title')}</h2> 
         <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
-          Explore the rich history and culture of Rome and its surroundings. Here are some must-visit places within a short drive from Green Woody Home: click to see where they are!
+          {t('about.poi.description')}
         </p>
         <div className="grid md:grid-cols-3 gap-6 mt-8">
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Colosseo,+Roma,+RM/@41.8268438,12.3890226,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x132f61b6fc6433df:0x165f79d5d2332163!2m2!1d12.4922986!2d41.8905691!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
             <div className="bg-bnb-dark_gray p-5 rounded-lg hover:bg-bnb-green2 h-40 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">Colosseum</h3>
-                <p className="text-sm mb-2 text-white">Ancient Roman amphitheater and iconic symbol of Imperial Rome.</p>
+                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">{t('about.poi.colosseum')}</h3>
+                <p className="text-sm mb-2 text-white">{t('about.poi.colosseum.desc')}</p>
               </div>
               <div className="flex items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -71,8 +72,8 @@ const About: React.FC = () => {
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Basilica+di+San+Pietro,+Piazza+San+Pietro,+Citt%C3%A0+del+Vaticano/@41.8319928,12.3536945,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x132f6061b7149b59:0x724bf077cd875283!2m2!1d12.4539367!2d41.9021667!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
             <div className="bg-bnb-dark_gray p-5 rounded-lg hover:bg-bnb-green2 h-40 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">Vatican City</h3>
-                <p className="text-sm mb-2 text-white">Home to St. Peter's Basilica and the Vatican Museums with the Sistine Chapel.</p>
+                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">{t('about.poi.vatican')}</h3>
+                <p className="text-sm mb-2 text-white">{t('about.poi.vatican.desc')}</p>
               </div>
               <div className="flex items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -86,8 +87,8 @@ const About: React.FC = () => {
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Fontana+di+Trevi,+Piazza+di+Trevi,+Roma,+RM/@41.8292617,12.3859549,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x132f6053278340d5:0xf676f1e1cc02bbb6!2m2!1d12.483313!2d41.9009325!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
             <div className="bg-bnb-dark_gray p-5 rounded-lg hover:bg-bnb-green2 h-40 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">Trevi Fountain</h3>
-                <p className="text-sm mb-2 text-white">Baroque masterpiece and one of the most famous fountains in the world.</p>
+                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">{t('about.poi.trevi')}</h3>
+                <p className="text-sm mb-2 text-white">{t('about.poi.trevi.desc')}</p>
               </div>
               <div className="flex items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -101,8 +102,8 @@ const About: React.FC = () => {
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Torvaianica,+RM/@41.6909742,12.3786637,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x13259495b27fba5f:0xa364b19248f13614!2m2!1d12.4626387!2d41.6208388!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
             <div className="bg-bnb-dark_gray p-5 rounded-lg hover:bg-bnb-green2 h-40 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">Torvaianica - Marine Village</h3>
-                <p className="text-sm mb-2 text-white">Nearest seaside destination with sandy beaches and crystal clear waters.</p>
+                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">{t('about.poi.torvaianica')}</h3>
+                <p className="text-sm mb-2 text-white">{t('about.poi.torvaianica.desc')}</p>
               </div>
               <div className="flex items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -116,8 +117,8 @@ const About: React.FC = () => {
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Aeroporto+di+Roma+-+Fiumicino+Leonardo+da+Vinci+(FCO),+00054+Fiumicino+RM/@41.7882109,12.2713693,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x1325f0793898141f:0xafe513b4e358316f!2m2!1d12.2519211!2d41.8034632!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
             <div className="bg-bnb-dark_gray p-5 rounded-lg hover:bg-bnb-green2 h-40 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">Fiumicino Airport</h3>
-                <p className="text-sm mb-2 text-white">Main International airport in Rome.</p>
+                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">{t('about.poi.airport')}</h3>
+                <p className="text-sm mb-2 text-white">{t('about.poi.airport.desc')}</p>
               </div>
               <div className="flex items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -131,8 +132,8 @@ const About: React.FC = () => {
           <a href="https://www.google.it/maps/dir/Via+Clarice+Tartufari,+00128+Castel+di+Decima+RM/Castel+Romano+Designer+Outlet,+Via+del+Ponte+di+Piscina+Cupa,+Roma,+RM/@41.7388889,12.4197819,14z/data=!3m2!4b1!5s0x13258d566c32cfe1:0x1e54ca82e3967825!4m14!4m13!1m5!1m1!1s0x13258d2aab8598f9:0xd5d8baeb741056a2!2m2!1d12.4381951!2d41.7562463!1m5!1m1!1s0x13258d57b3d81535:0x946b0e95e6647303!2m2!1d12.4444627!2d41.7168651!3e0?hl=it&entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
             <div className="bg-bnb-dark_gray p-5 rounded-lg hover:bg-bnb-green2 h-40 flex flex-col justify-between">
               <div>
-                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">Castel Romano Designer Outlet</h3>
-                <p className="text-sm mb-2 text-white">Luxury apparel outlet by McArthurGlen.</p>
+                <h3 className="font-bold text-lg text-bnb-green2 hover:text-bnb-dark_gray">{t('about.poi.outlet')}</h3>
+                <p className="text-sm mb-2 text-white">{t('about.poi.outlet.desc')}</p>
               </div>
               <div className="flex items-center text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -2,9 +2,11 @@
 import React from 'react';
 import { resetCookieConsent } from '@/lib/cookieManager';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
   
   const handleResetCookieConsent = () => {
     resetCookieConsent();
@@ -17,25 +19,25 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Second and Third Columns */}
           <div>
-            <h4 className="text-lg text-white font-display font-medium mb-4">Quick Links</h4>
+            <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-bnb-green2 hover:text-white transition-colors">Home</a>
+                <a href="/" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.home')}</a>
               </li>
               <li>
-                <Link to="/gallery" className="text-bnb-green2 hover:text-white transition-colors">Gallery</Link>
+                <Link to="/gallery" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.gallery')}</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-bnb-green2 hover:text-white transition-colors">Contact</Link>
+                <Link to="/contact" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.contact')}</Link>
               </li>
               <li>
                 <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-bnb-green2 hover:text-white transition-colors">
-                  Book on Airbnb
+                  {t('footer.bookAirbnb')}
                 </a>
               </li>
               <li>
                 <a href="https://www.booking.com/hotel/it/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-bnb-green2 hover:text-white transition-colors">
-                  Book on Booking.com
+                  {t('footer.bookBooking')}
                 </a>
               </li>
               <li>
@@ -43,13 +45,13 @@ const Footer: React.FC = () => {
                   onClick={handleResetCookieConsent}
                   className="text-white hover:text-gray transition-colors cursor-pointer text-left"
                 >
-                  Cookie Settings
+                  {t('footer.cookieSettings')}
                 </button>
               </li>
             </ul>
-          </div>   
+          </div>
           <div>
-            <h4 className="text-lg text-white font-display font-medium mb-4">Contact</h4>
+            <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.contact')}</h4>
             <address className="not-italic">
               <p className="mb-2">
                 <a href="tel:+393358158411" className="text-bnb-green2 hover:text-white transition-colors">(+06) 5847332</a>
@@ -61,7 +63,7 @@ const Footer: React.FC = () => {
           </div>
           {/* Fourth Column: CIN e CIR */}
           <div>
-          <h4 className="text-lg text-white font-display font-medium mb-4">Identification Codes</h4>
+          <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.identification')}</h4>
               <p className="mb-2">
                 <a className="text-bnb-green2 hover:text-white transition-colors">CIN: IT058091C2NI2MQGQ5</a>
               </p>
@@ -72,7 +74,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-white/20 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} Green Woody Home. All rights reserved.</p>
+          <p>&copy; {currentYear} Green Woody Home. {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>
