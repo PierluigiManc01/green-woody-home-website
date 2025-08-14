@@ -188,7 +188,7 @@ const Services: React.FC = () => {
                 >
                   {/* Front of card */}
                   <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-lg overflow-hidden">
-                    <div className="w-full h-full bg-bnb-green2 flex flex-col items-center justify-center p-6 relative">
+                    <div className="w-full h-full bg-bnb-green2 flex flex-col items-center justify-center p-6 relative cursor-pointer">
                       <img 
                         src={partnership.image} 
                         alt={partnership.title}
@@ -197,29 +197,23 @@ const Services: React.FC = () => {
                       <h3 className="text-xl font-bold text-gray-600 text-center mb-6">
                         {partnership.title}
                       </h3>
-                      <Button 
+                      <span 
                         onClick={() => toggleCard(index)}
-                        variant="outline"
-                        className="bg-white/20 border-white/30 text-white hover:bg-white/30"
+                        className="absolute bottom-4 right-4 text-white/80 hover:text-white text-sm cursor-pointer underline"
                       >
                         More Info
-                      </Button>
+                      </span>
                     </div>
                   </div>
                   
                   {/* Back of card */}
-                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-lg overflow-hidden">
+                  <div 
+                    className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-lg overflow-hidden cursor-pointer"
+                    onClick={() => toggleCard(index)}
+                  >
                     <Card className="h-full border-2">
                       <CardHeader>
                         <CardTitle className="text-xl text-bnb-green2">{partnership.title}</CardTitle>
-                        <Button 
-                          onClick={() => toggleCard(index)}
-                          variant="outline"
-                          size="sm"
-                          className="w-fit self-end"
-                        >
-                          Back
-                        </Button>
                       </CardHeader>
                       <CardContent className="overflow-y-auto">
                         {partnership.content}
