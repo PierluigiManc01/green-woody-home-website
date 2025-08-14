@@ -140,10 +140,10 @@ const Services: React.FC = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/10 to-background py-16 section-container">
           <div className="container mx-auto px-4 text-center mb-4">
-            <h1 className="text-3xl md:text-2xl sm:text-xl font-bold text-bnb-green2 mb-4">
+            <h1 className="text-5xl md:text-5xl sm:text-3xl font-bold text-bnb-green2 mb-4">
               {t('services.title')}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
+            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto mb-6">
               {t('services.subtitle')}
             </p>
           </div>
@@ -166,7 +166,7 @@ const Services: React.FC = () => {
         {/* Partnerships Section */}
         <section className="section-container bg-accent">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-2xl sm:text-xlfont-bold text-bnb-green2 mb-4">
+            <h2 className="text-5xl md:text-5xl sm:text-3xl font-bold text-bnb-green2 mb-4">
               {t('services.partnerships.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
@@ -188,7 +188,7 @@ const Services: React.FC = () => {
                       <img 
                         src={partnership.image} 
                         alt={partnership.title}
-                        className="w-28 h-28 object-contain mb-4"
+                        className="w-40 h-40 object-contain mb-4"
                       />
                       <h3 className="text-3xl md:text-2xl sm:text-xl font-bold text-bnb-dark_gray text-center mb-6">
                         {partnership.title}
