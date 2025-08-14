@@ -138,7 +138,7 @@ const Services: React.FC = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/10 to-background py-16 section-container">
+        <section className="bg-gradient-to-b from-primary/10 to-background py-6 section-container">
           <div className="container mx-auto px-4 text-center mb-4">
             <h1 className="text-5xl md:text-5xl sm:text-3xl font-bold text-bnb-green2 mb-4">
               {t('services.title')}
@@ -165,7 +165,7 @@ const Services: React.FC = () => {
 
         {/* Partnerships Section */}
         <section className="section-container bg-accent">
-          <div className="text-center mb-12">
+          <div className="text-center mb-2">
             <h2 className="text-5xl md:text-5xl sm:text-3xl font-bold text-bnb-green2 mb-4">
               {t('services.partnerships.title')}
             </h2>
