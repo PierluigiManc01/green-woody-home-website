@@ -199,7 +199,7 @@ const Services: React.FC = () => {
                       </h3>
                       <span 
                         onClick={() => toggleCard(index)}
-                        className="absolute bottom-4 right-4 text-white/80 hover:text-white text-sm cursor-pointer underline"
+                        className="absolute bottom-4 right-4 text-white/80 hover:text-white text-lg cursor-pointer underline font-medium"
                       >
                         More Info
                       </span>
@@ -211,11 +211,11 @@ const Services: React.FC = () => {
                     className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-lg overflow-hidden cursor-pointer"
                     onClick={() => toggleCard(index)}
                   >
-                    <Card className="h-full border-2">
-                      <CardHeader>
-                        <CardTitle className="text-xl text-bnb-green2">{partnership.title}</CardTitle>
+                    <Card className="h-full border-2 flex flex-col">
+                      <CardHeader className="pb-2">
+                        <CardTitle className="text-lg text-bnb-green2">{partnership.title}</CardTitle>
                       </CardHeader>
-                      <CardContent className="overflow-y-auto">
+                      <CardContent className="flex-1 overflow-y-auto text-sm">
                         {partnership.content}
                       </CardContent>
                     </Card>
