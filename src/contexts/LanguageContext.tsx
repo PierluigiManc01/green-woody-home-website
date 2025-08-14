@@ -122,7 +122,30 @@ const translations = {
     // Services
     'services.title': 'Our Services & Amenities',
     'services.subtitle': 'Experience comfort and convenience with our comprehensive range of services designed to make your stay memorable and relaxing. Everything you need for a comfortable stay is provided.',
-    
+    //barazzutti
+    'services.barazzutti.description': 'We can arrange tennis lessons and court bookings at the renowned Barazzutti Tennis Academy, located in the same private area. Perfect for both beginners and experienced players, you can enjoy personalized coaching from a Davis Cup champion.',
+    'services.barazzutti.note1': 'Book private Tennis Lessons',
+    'services.barazzutti.note2': 'Court bookings available',
+    'services.barazzutti.note3': 'Explore more about the academy on their ',
+    'services.barazzutti.linkText': 'official website',
+    //local guide
+    'services.guide.description': 'Discover the beauty of the ancient city of Rome with our trusted local guide, available for personalized tours in different languages. Explore historical sites, hidden gems, and cultural experiences tailored to your interests.',
+    'services.guide.note1': 'Rome city tours in multiple languages',
+    'services.guide.note2': 'Customized itineraries based on your interests',
+    'services.guide.note3': "Contact us to arrange a tour and learn more about our guide's expertise.",
+    //private chef
+    'services.chef.description': 'Experience authentic local cuisine through the hands of Leonardo, a talented cooker. Enjoy personalized meal preparation in the comfort of your accommodation and to learn traditional recipes and culinary techniques.',
+    'services.chef.note1': 'Traditional cuisine: you will taste authentic roman pasta dishes , local wines, and seasonal ingredients',
+    'services.chef.note2': 'Contact us to book a private dinner experience.',
+    'services.chef.note3': 'Prices start from 30€ per person for 3 pasta tastes (Carbonara, Gricia, Amatriciana) and a bottle of wine. Every 3 people, one person is free.',
+    // castrum
+    'services.castrum.description': 'Step back into the history of the Gladiator of Rome and immerse yourself in the history of ancient Rome with a unique experience at Castrum Legionis. Just downhill from our property (200m away), you can experience a leap back in time becoming a gladiator for a day in a historical archeological setting where ancient civilization once lived. Wear authentic clothing and belts as you train on a field that could be the same as centuries ago.',
+    'services.castrum.note1': 'Practice sword fighting, archery, and marching like real soldiers',
+    'services.castrum.note2': 'Breathe in the history of the ancient Roman Empire for a day in a unique archeological setting',
+    'services.castrum.note3': 'Contact us for more information and to book a daily experience.',
+
+    'services.conclusion':'Interested in any of these services? Contact us to arrange bookings and get more information about our partnerships and special offers.',
+
     // Days
     'days.sun': 'Sun',
     'days.mon': 'Mon',
@@ -248,7 +271,30 @@ const translations = {
     // Services
     'services.title': 'I Nostri Servizi e Comfort',
     'services.subtitle': 'Vivi comfort e convenienza con la nostra gamma completa di servizi pensati per rendere il tuo soggiorno memorabile e rilassante. Tutto ciò di cui hai bisogno per un soggiorno confortevole è fornito.',
-    
+    //barazzutti
+    'services.barazzutti.description': 'Possiamo organizzare lezioni di tennis e prenotazioni di campi presso la rinomata Barazzutti Tennis Academy, situata nel nostro consorzio privato. Perfetto per principianti ed esperti, potrai godere di un coaching personalizzato da un campione di Coppa Davis.',
+    'services.barazzutti.note1': 'Prenota lezioni di tennis private',
+    'services.barazzutti.note2': 'Prenotazioni di campi disponibili',
+    'services.barazzutti.note3': 'Scopri di più sull\'accademia sul loro ',
+    'services.barazzutti.linkText': 'sito ufficiale',
+    //local guide
+    'services.guide.description': 'Scopri la bellezza dell\'antica città di Roma con la nostra guida turistica di fiducia, disponibile per tour personalizzati in diverse lingue. Esplora siti storici, gemme nascoste ed esperienze culturali su misura per i tuoi interessi.',
+    'services.guide.note1': 'Tour della città di Roma in più lingue',
+    'services.guide.note2': 'Itinerari personalizzati in base ai tuoi interessi',
+    'services.guide.note3': "Contattaci per organizzare un tour e scoprire di più sull'esperienza della nostra guida.",
+    //private chef
+    'services.chef.description': 'Scopri la cucina locale autentica attraverso le mani di Leonardo, un cuoco talentuoso. Goditi la preparazione di pasti personalizzati nel comfort del tuo alloggio e impara ricette tradizionali e tecniche culinarie.',
+    'services.chef.note1': 'Cucina tradizionale: assaporerai autentici piatti di pasta romana, vini locali e ingredienti di stagione',
+    'services.chef.note2': 'Contattaci per prenotare un\'esperienza di cena privata.',
+    'services.chef.note3': 'I prezzi partono da 30€ a persona per 3 assaggi di pasta (Carbonara, Gricia, Amatriciana) e una bottiglia di vino. Ogni 3 persone, una persona è gratuita.',
+    // castrum
+    'services.castrum.description': 'Fai un passo indietro nella storia del Gladiatore di Roma e immergiti nella storia dell\'antica Roma con un\'esperienza unica al Castrum Legionis. A soli 200 metri dalla nostra struttura, puoi vivere un salto indietro nel tempo diventando un gladiatore per un giorno in un contesto archeologico storico dove un tempo viveva la civiltà antica. Indossa abiti e cinture autentiche mentre ti alleni in un campo che potrebbe essere lo stesso di secoli fa.',
+    'services.castrum.note1': 'Pratica la scherma, il tiro con l\'arco e il marciare come veri soldati',
+    'services.castrum.note2': 'Respira la storia dell\'antico Impero Romano per un giorno in un contesto archeologico unico',
+    'services.castrum.note3': 'Contattaci per ulteriori informazioni e per prenotare una giornata dedicata.',
+
+    'services.conclusion':'Interessato a qualcuno di questi servizi? Contattaci per organizzare prenotazioni e ottenere ulteriori informazioni sulle nostre partnership e offerte speciali.',
+
     // Buttons
     'button.ctaAirbnb': 'Cerca la nostra inserzione su Airbnb',
     'button.ctaBooking': 'Controlla la disponibilità su Booking.com',

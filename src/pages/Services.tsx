@@ -5,9 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Wifi, Coffee, Car, Utensils, Bed, Snowflake, Tv, Bath, Waves, Flame, Trees, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import tennisCourtImg from '@/assets/tennis-court.png';
+import tennisCourtImg from '@/assets/tennis_court.jpg';
 import chefImg from '@/assets/chef.png';
-import tourGuideImg from '@/assets/tour-guide.png';
+import tourGuideImg from '@/assets/tour_guide.jpg';
 import gladiatorImg from '@/assets/gladiator.png';
 
 const Services: React.FC = () => {
@@ -28,24 +28,22 @@ const Services: React.FC = () => {
       content: (
         <div>
           <p className="text-muted-foreground mb-4">
-            We can arrange tennis lessons and court bookings at the renowned Barazzutti Tennis Academy, 
-            located in the same private area. Perfect for both beginners and experienced players, you 
-            can enjoy personalized coaching from a Davis Cup champion.
+            {t('services.barazzutti.description')}
           </p>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Private tennis lessons
+            {t('services.barazzutti.note1')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Court bookings available
+            {t('services.barazzutti.note2')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Explore more about the academy on their 
+            {t('services.barazzutti.note3')}
             <a href="https://scuolatenniscorradobarazzutti.it/" 
                className="text-bnb-green2 underline ml-1"
-               target="_blank" rel="noopener noreferrer">official website</a>. 
+               target="_blank" rel="noopener noreferrer">{t('services.barazzutti.linkText')}</a>.
           </div>
         </div>
       )
@@ -56,20 +54,19 @@ const Services: React.FC = () => {
       content: (
         <div>
           <p className="text-muted-foreground mb-4">
-            Discover the beauty of the ancient city of Rome with our trusted local guide, available for personalized tours  
-            in different languages. Explore historical sites, hidden gems, and cultural experiences tailored to your interests.
+            {t('services.tourGuide.description')}
           </p>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Rome city tours in multiple languages
+            {t('services.tourGuide.note1')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Customized itineraries based on your interests
+            {t('services.tourGuide.note2')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Contact us to arrange a tour and learn more about our guide's expertise.
+            {t('services.tourGuide.note3')}
           </div>
         </div>
       )
@@ -80,21 +77,19 @@ const Services: React.FC = () => {
       content: (
         <div>
           <p className="text-muted-foreground mb-4">
-            Experience authentic local cuisine through our partnerships with Cristina Amato, a talented private chef.
-            Enjoy personalized meal preparation in the comfort of your accommodation, or join her cooking classes to learn 
-            traditional recipes and culinary techniques.
+          {t('services.chef.description')}
           </p>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Traditional cuisine menu options available
+            {t('services.chef.note1')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Cooking classes available for all skill levels
+            {t('services.chef.note2')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Contact us to book a private chef experience or cooking class.
+            {t('services.chef.note3')}
           </div>
         </div>
       )
@@ -105,17 +100,19 @@ const Services: React.FC = () => {
       content: (
         <div>
           <p className="text-muted-foreground mb-4">
-            Step back into the history of the Gladiator of Rome and immerse yourself in the history of ancient Rome with a unique experience at Castrum Legionis. Just downhill from our property (200m away),
-            you can experience a leap back in time becoming a gladiator for a day in a historical archeological setting where ancient civilization once lived.
-            Wear authentic clothing and belts as you train on a field that could be the same as centuries ago.
+            {t('services.castrum.description')}
           </p>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Practice sword fighting, archery, and marching like real soldiers
+            {t('services.castrum.note1')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            Breathe in the history of the ancient Roman Empire for a day in a unique archeological setting
+            {t('services.castrum.note2')}
+          </div>
+          <div className="flex items-center text-sm text-bnb-green2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            {t('services.castrum.note3')}
           </div>
         </div>
       )
@@ -192,14 +189,14 @@ const Services: React.FC = () => {
                       <img 
                         src={partnership.image} 
                         alt={partnership.title}
-                        className="w-24 h-24 object-contain opacity-30 mb-4"
+                        className="w-28 h-28 object-contain mb-4"
                       />
-                      <h3 className="text-xl font-bold text-gray-600 text-center mb-6">
+                      <h3 className="text-xl font-bold text-bnb-dark text-center mb-6">
                         {partnership.title}
                       </h3>
                       <span 
                         onClick={() => toggleCard(index)}
-                        className="absolute bottom-4 right-4 text-white/80 hover:text-white text-lg cursor-pointer underline font-medium"
+                        className="absolute bottom-4 right-4 text-white hover:text-bnb-dark text-lg cursor-pointer underline font-medium"
                       >
                         More Info
                       </span>
@@ -227,8 +224,7 @@ const Services: React.FC = () => {
 
           <div className="text-center mt-12">
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-              Interested in any of these services? Contact us to arrange bookings and get more information 
-              about our partnerships and special offers.
+              {t('services.conclusion')}
             </p>
           </div>
         </section>
