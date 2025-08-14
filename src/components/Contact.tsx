@@ -303,7 +303,7 @@ const Contact: React.FC = () => {
                 <Phone size={20} />
               </div>
               <div>
-                <p className="font-medium">{t('contact.phone')}</p>
+                <p className="font-medium">{t('contact.phone2')}</p>
                 <p className="text-sm text-muted-foreground">(+06) 5847332</p>
               </div>
             </a>
@@ -410,7 +410,7 @@ const Contact: React.FC = () => {
             
             <div className="space-y-2">
               <label htmlFor="message" className="text-sm font-medium">{t('contact.message')}</label>
-              <Textarea id="message" name="message" rows={5} placeholder='Hi! I would like to book the house for...' className="placeholder:opacity-30"  required />
+              <Textarea id="message" name="message" rows={5} placeholder={t('contact.placeholder')} className="placeholder:opacity-30"  required />
             </div>
             
             <Button type="submit" className="w-full bg-bnb-green2 hover:bg-bnb-green2/70 text-dark_gray">

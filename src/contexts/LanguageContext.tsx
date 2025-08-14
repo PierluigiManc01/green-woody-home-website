@@ -70,6 +70,8 @@ const translations = {
     'contact.surname': 'Surname',
     'contact.email': 'Email',
     'contact.phone': 'Phone (optional)',
+    'contact.phone2': 'Phone',
+    'contact.placeholder': 'Hi! I would like to book the house for...',
     'contact.message': 'Message',
     'contact.send': 'Send Message',
     'contact.info.title': 'Contact Information',
@@ -110,7 +112,7 @@ const translations = {
 
     // Footer
     'footer.quickLinks': 'Quick Links',
-    'footer.contact': 'Contact',
+    'footer.contact': 'Contacts',
     'footer.identification': 'Identification Codes',
     'footer.cookieSettings': 'Cookie Settings',
     'footer.copyright': 'All rights reserved.',
@@ -199,6 +201,8 @@ const translations = {
     'contact.surname': 'Cognome',
     'contact.email': 'Email',
     'contact.phone': 'Telefono (opzionale)',
+    'contact.phone2': 'Telefono',
+    'contact.placeholder': 'Ciao! Vorrei prenotare la casa dal...',
     'contact.message': 'Messaggio',
     'contact.send': 'Invia Messaggio',
     'contact.info.title': 'Informazioni di Contatto',
@@ -234,7 +238,7 @@ const translations = {
 
     // Footer
     'footer.quickLinks': 'Link Rapidi',
-    'footer.contact': 'Contatto',
+    'footer.contact': 'Contatti',
     'footer.identification': 'Codici di Identificazione',
     'footer.cookieSettings': 'Impostazioni Cookie',
     'footer.copyright': 'Tutti i diritti riservati.',
