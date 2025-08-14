@@ -1,12 +1,126 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { CheckCircle, Wifi, Coffee, Car, Utensils, Bed, Snowflake, Tv, Bath, Waves, Flame, Trees, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import tennisCourtImg from '@/assets/tennis-court.png';
+import chefImg from '@/assets/chef.png';
+import tourGuideImg from '@/assets/tour-guide.png';
+import gladiatorImg from '@/assets/gladiator.png';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
+  const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
+
+  const toggleCard = (index: number) => {
+    setFlippedCards(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
+  const partnerships = [
+    {
+      title: "Barazzutti Tennis Academy",
+      image: tennisCourtImg,
+      content: (
+        <div>
+          <p className="text-muted-foreground mb-4">
+            We can arrange tennis lessons and court bookings at the renowned Barazzutti Tennis Academy, 
+            located in the same private area. Perfect for both beginners and experienced players, you 
+            can enjoy personalized coaching from a Davis Cup champion.
+          </p>
+          <div className="flex items-center text-sm text-bnb-green2 mb-2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Private tennis lessons
+          </div>
+          <div className="flex items-center text-sm text-bnb-green2 mb-2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Court bookings available
+          </div>
+          <div className="flex items-center text-sm text-bnb-green2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Explore more about the academy on their 
+            <a href="https://scuolatenniscorradobarazzutti.it/" 
+               className="text-bnb-green2 underline ml-1"
+               target="_blank" rel="noopener noreferrer">official website</a>. 
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Local Tour Guide",
+      image: tourGuideImg,
+      content: (
+        <div>
+          <p className="text-muted-foreground mb-4">
+            Discover the beauty of the ancient city of Rome with our trusted local guide, available for personalized tours  
+            in different languages. Explore historical sites, hidden gems, and cultural experiences tailored to your interests.
+          </p>
+          <div className="flex items-center text-sm text-bnb-green2 mb-2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Rome city tours in multiple languages
+          </div>
+          <div className="flex items-center text-sm text-bnb-green2 mb-2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Customized itineraries based on your interests
+          </div>
+          <div className="flex items-center text-sm text-bnb-green2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Contact us to arrange a tour and learn more about our guide's expertise.
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Private Chef",
+      image: chefImg,
+      content: (
+        <div>
+          <p className="text-muted-foreground mb-4">
+            Experience authentic local cuisine through our partnerships with Cristina Amato, a talented private chef.
+            Enjoy personalized meal preparation in the comfort of your accommodation, or join her cooking classes to learn 
+            traditional recipes and culinary techniques.
+          </p>
+          <div className="flex items-center text-sm text-bnb-green2 mb-2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Traditional cuisine menu options available
+          </div>
+          <div className="flex items-center text-sm text-bnb-green2 mb-2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Cooking classes available for all skill levels
+          </div>
+          <div className="flex items-center text-sm text-bnb-green2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Contact us to book a private chef experience or cooking class.
+          </div>
+        </div>
+      )
+    },
+    {
+      title: "Castrum Legionis",
+      image: gladiatorImg,
+      content: (
+        <div>
+          <p className="text-muted-foreground mb-4">
+            Step back into the history of the Gladiator of Rome and immerse yourself in the history of ancient Rome with a unique experience at Castrum Legionis. Just downhill from our property (200m away),
+            you can experience a leap back in time becoming a gladiator for a day in a historical archeological setting where ancient civilization once lived.
+            Wear authentic clothing and belts as you train on a field that could be the same as centuries ago.
+          </p>
+          <div className="flex items-center text-sm text-bnb-green2 mb-2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Practice sword fighting, archery, and marching like real soldiers
+          </div>
+          <div className="flex items-center text-sm text-bnb-green2">
+            <CheckCircle className="h-4 w-4 mr-2" />
+            Breathe in the history of the ancient Roman Empire for a day in a unique archeological setting
+          </div>
+        </div>
+      )
+    }
+  ];
   const amenities = [
     { icon: <Wifi className="h-5 w-5" />, title: "Free WiFi" },
     { icon: <Snowflake className="h-5 w-5" />, title: "Air Conditioning" },
@@ -65,105 +179,56 @@ const Services: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="text-xl text-bnb-green2">Barazzutti Tennis Academy</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  We can arrange tennis lessons and court bookings at the renowned Barazzutti Tennis Academy, 
-                  located in the same private area. Perfect for both beginners and experienced players, you 
-                  can enjoy personalized coaching from a Davis Cup champion.
-                </p>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Private tennis lessons
+            {partnerships.map((partnership, index) => (
+              <div key={index} className="relative h-80 [perspective:1000px]">
+                <div 
+                  className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${
+                    flippedCards[index] ? '[transform:rotateY(180deg)]' : ''
+                  }`}
+                >
+                  {/* Front of card */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-lg overflow-hidden">
+                    <div className="w-full h-full bg-bnb-green2 flex flex-col items-center justify-center p-6 relative">
+                      <img 
+                        src={partnership.image} 
+                        alt={partnership.title}
+                        className="w-24 h-24 object-contain opacity-30 mb-4"
+                      />
+                      <h3 className="text-xl font-bold text-gray-600 text-center mb-6">
+                        {partnership.title}
+                      </h3>
+                      <Button 
+                        onClick={() => toggleCard(index)}
+                        variant="outline"
+                        className="bg-white/20 border-white/30 text-white hover:bg-white/30"
+                      >
+                        More Info
+                      </Button>
+                    </div>
+                  </div>
+                  
+                  {/* Back of card */}
+                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-lg overflow-hidden">
+                    <Card className="h-full border-2">
+                      <CardHeader>
+                        <CardTitle className="text-xl text-bnb-green2">{partnership.title}</CardTitle>
+                        <Button 
+                          onClick={() => toggleCard(index)}
+                          variant="outline"
+                          size="sm"
+                          className="w-fit self-end"
+                        >
+                          Back
+                        </Button>
+                      </CardHeader>
+                      <CardContent className="overflow-y-auto">
+                        {partnership.content}
+                      </CardContent>
+                    </Card>
+                  </div>
                 </div>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Court bookings available
-                </div>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Explore more about the academy on their 
-                  <a href="https://scuolatenniscorradobarazzutti.it/" 
-                     className="text-bnb-green2 underline ml-1"
-                     target="_blank" rel="noopener noreferrer">official website</a>. 
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="text-xl text-bnb-green2">Local Tour Guide</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Discover the beauty of the ancient city of Rome with our trusted local guide, available for personalized tours  
-                  in different languages. Explore historical sites, hidden gems, and cultural experiences tailored to your interests.
-                </p>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Rome city tours in multiple languages
-                </div>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Customized itineraries based on your interests
-                </div>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Contact us to arrange a tour and learn more about our guide's expertise.
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="text-xl text-bnb-green2">Private Chef</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Experience authentic local cuisine through our partnerships with Cristina Amato, a talented private chef.
-                  Enjoy personalized meal preparation in the comfort of your accommodation, or join her cooking classes to learn 
-                  traditional recipes and culinary techniques.
-
-                </p>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Traditional cuisine menu options available
-                </div>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Cooking classes available for all skill levels
-                </div>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Contact us to book a private chef experience or cooking class.
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2">
-              <CardHeader>
-                <CardTitle className="text-xl text-bnb-green2">Castrum Legionis</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Step back into the history of the Gladiator of Rome and immerse yourself in the history of ancient Rome with a unique experience at Castrum Legionis. Just downhill from our property (200m away),
-                  you can experience a leap back in time becoming a gladiator for a day in a historical archeological setting where ancient civilization once lived.
-                  Wear authentic clothing and belts as you train on a field that could be the same as centuries ago.
-                </p>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Practice sword fighting, archery, and marching like real soldiers
-                </div>
-                <div className="flex items-center text-sm text-bnb-green2">
-                  <CheckCircle className="h-4 w-4 mr-2" />
-                  Breathe in the history of the ancient Roman Empire for a day in a unique archeological setting
-                </div>
-              </CardContent>
-            </Card>
-            
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-12">
