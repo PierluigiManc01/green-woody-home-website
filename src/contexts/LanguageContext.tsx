@@ -122,6 +122,8 @@ const translations = {
     // Services
     'services.title': 'Our Services & Amenities',
     'services.subtitle': 'Experience comfort and convenience with our comprehensive range of services designed to make your stay memorable and relaxing. Everything you need for a comfortable stay is provided.',
+    'services.partnerships.title': 'Our Partnerships',
+    'services.partnerships.subtitle': 'We have partnered with local businesses to offer you exclusive services and experiences during your stay. From tennis lessons to private chefs, explore our partnerships below.',
     //barazzutti
     'services.barazzutti.description': 'We can arrange tennis lessons and court bookings at the renowned Barazzutti Tennis Academy, located in the same private area. Perfect for both beginners and experienced players, you can enjoy personalized coaching from a Davis Cup champion.',
     'services.barazzutti.note1': 'Book private Tennis Lessons',
@@ -271,6 +273,8 @@ const translations = {
     // Services
     'services.title': 'I Nostri Servizi e Comfort',
     'services.subtitle': 'Vivi comfort e convenienza con la nostra gamma completa di servizi pensati per rendere il tuo soggiorno memorabile e rilassante. Tutto ciò di cui hai bisogno per un soggiorno confortevole è fornito.',
+    'services.partnerships.title': 'Le nostre Partnerships',
+    'services.partnerships.subtitle': 'We have partnered with local businesses to offer you exclusive services and experiences during your stay. From tennis lessons to private chefs, explore our partnerships below.',
     //barazzutti
     'services.barazzutti.description': 'Possiamo organizzare lezioni di tennis e prenotazioni di campi presso la rinomata Barazzutti Tennis Academy, situata nel nostro consorzio privato. Perfetto per principianti ed esperti, potrai godere di un coaching personalizzato da un campione di Coppa Davis.',
     'services.barazzutti.note1': 'Prenota lezioni di tennis private',

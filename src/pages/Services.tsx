@@ -139,8 +139,8 @@ const Services: React.FC = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-primary/10 to-background py-16 section-container">
-          <div className="container mx-auto px-4 text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-bnb-green2 mb-6">
+          <div className="container mx-auto px-4 text-center mb-4">
+            <h1 className="text-3xl md:text-2xl sm:text-xl font-bold text-bnb-green2 mb-4">
               {t('services.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
@@ -166,12 +166,11 @@ const Services: React.FC = () => {
         {/* Partnerships Section */}
         <section className="section-container bg-accent">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">
-              Our Partnerships
+            <h2 className="text-3xl md:text-2xl sm:text-xlfont-bold text-bnb-green2 mb-4">
+              {t('services.partnerships.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-              We collaborate with trusted partners to enhance your experience and provide 
-              additional services during your stay.
+              {t('services.partnerships.subtitle')}
             </p>
           </div>
 
@@ -191,12 +190,12 @@ const Services: React.FC = () => {
                         alt={partnership.title}
                         className="w-28 h-28 object-contain mb-4"
                       />
-                      <h3 className="text-xl font-bold text-bnb-dark text-center mb-6">
+                      <h3 className="text-3xl md:text-2xl sm:text-xl font-bold text-bnb-dark_gray text-center mb-6">
                         {partnership.title}
                       </h3>
                       <span 
                         onClick={() => toggleCard(index)}
-                        className="absolute bottom-4 right-4 text-white hover:text-bnb-dark text-lg cursor-pointer underline font-medium"
+                        className="absolute bottom-4 right-4 text-white hover:text-bnb-dark_gray text-lg cursor-pointer underline font-medium"
                       >
                         More Info
                       </span>
@@ -223,7 +222,7 @@ const Services: React.FC = () => {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
+            <p className="text-2xl md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
               {t('services.conclusion')}
             </p>
           </div>
