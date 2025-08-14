@@ -176,7 +176,7 @@ const Contact: React.FC = () => {
     <>
       {/* Calendar Availability Section */}
       <section className="section-container bg-bnb-green2/10">
-        <div className="text-center mb-8">
+        <div className="text-center mb-2">
           <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">{t('contact.availability')}</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             {t('contact.availability.check')}
@@ -199,7 +199,7 @@ const Contact: React.FC = () => {
                   <div className="bg-gray-50 rounded-lg p-4 w-full">
                     {isLoading ? (
                       <div className="text-center py-8">
-                      <p className="text-muted-foreground">Loading calendar...</p>
+                      <p className="text-muted-foreground">{t('calendar.loading')}</p>
                       </div>
                     ) : (
                       <div className="flex justify-center w-full">
@@ -245,11 +245,11 @@ const Contact: React.FC = () => {
                   <div className="flex items-center gap-4 text-sm">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 bg-primary rounded"></div>
-                      <span>Available</span>
+                      <span>{t('calendar.available')}</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 bg-red-500 rounded"></div>
-                      <span>Unavailable</span>
+                      <span>{t('calendar.unavailable')}</span>
                     </div>
                   </div>
                 </div>
@@ -258,25 +258,24 @@ const Contact: React.FC = () => {
               <div>
                 <h3 className="text-2xl font-display mb-4 text-bnb-dark flex items-center gap-2">
                   <Euro className="w-6 h-6" />
-                  Pricing Information
+                  {t('pricingInfo.title')}
                 </h3>
                 <div className="space-y-4">
                   <div className="bg-bnb-green2/10 rounded-lg p-4">
-                    <h4 className="font-semibold text-bnb-green2 mb-2">Starting Rate</h4>
-                    <p className="text-2xl font-bold text-bnb-dark">€120 <span className="text-sm font-normal">per night</span></p>
+                    <h4 className="font-semibold text-bnb-green2 mb-2">{t('pricingInfo.startingFrom')}</h4>
+                    <p className="text-2xl font-bold text-bnb-dark">€120 <span className="text-sm font-normal">{t('pricingInfo.perNight')}</span></p>
                   </div>
                   
                   <div className="space-y-2 text-sm text-muted-foreground">
-                    <p>• Prices vary by season and availability</p>
-                    <p>• Weekly discounts available</p>
-                    <p>• Final price includes all fees and taxes</p>
-                    <p>• Contact us for extended stays</p>
+                    <p>• {t('pricingInfo.note1')}</p>
+                    <p>• {t('pricingInfo.note2')}</p>
+                    <p>• {t('pricingInfo.note3')}</p>
+                    <p>• {t('pricingInfo.note4')}</p>
                   </div>
                   
                   <div className="pt-4">
                     <p className="text-sm text-muted-foreground">
-                      For the most up-to-date pricing and to make a reservation, 
-                      please use the contact form below or visit our Airbnb listing.
+                      {t('pricingInfo.disclaimer')}
                     </p>
                   </div>
                 </div>
@@ -296,15 +295,15 @@ const Contact: React.FC = () => {
       
       <div className="grid md:grid-cols-2 gap-12">
         <div>
-          <h3 className="text-2xl font-display mb-6 text-bnb-dark">Contact Methods</h3>
-          <h4 className="text-md text-muted-foreground"><strong>Click the buttons</strong> to contact us!</h4>
+          <h3 className="text-2xl font-display mb-6 text-bnb-dark">{t('contact.contactUs')}</h3>
+          <h4 className="text-md text-muted-foreground"><strong>{t('contact.contactUs2.1')}</strong> {t('contact.contactUs2.2')}</h4>
           <div className="space-y-4">
             <a href="tel:+393358158411" className="contact-method">
               <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-dark_gray">
                 <Phone size={20} />
               </div>
               <div>
-                <p className="font-medium">Phone</p>
+                <p className="font-medium">{t('contact.phone')}</p>
                 <p className="text-sm text-muted-foreground">(+06) 5847332</p>
               </div>
             </a>
@@ -314,7 +313,7 @@ const Contact: React.FC = () => {
                 <Mail size={20} />
               </div>
               <div>
-                <p className="font-medium">Email</p>
+                <p className="font-medium">{t('contact.email')}</p>
                 <p className="text-sm text-muted-foreground">info@greenwoody.home</p>
               </div>
             </a>
@@ -324,8 +323,8 @@ const Contact: React.FC = () => {
                 <MapPin size={20} />
               </div>
               <div>
-                <p className="font-medium">Location</p>
-                <p className="text-sm text-muted-foreground">View on Google Maps</p>
+                <p className="font-medium">{t('contact.loc')}</p>
+                <p className="text-sm text-muted-foreground">{t('contact.ctaLoc')}</p>
               </div>
             </a>
           </div>
@@ -341,7 +340,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="font-medium">Airbnb</p>
-                  <p className="text-sm text-muted-foreground">Visit our Airbnb listing</p>
+                  <p className="text-sm text-muted-foreground">{t('button.ctaAirbnb')}</p>
                 </div>
               </a>
               
@@ -358,7 +357,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="font-medium">Booking.com</p>
-                  <p className="text-sm text-muted-foreground">Check availability on Booking.com</p>
+                  <p className="text-sm text-muted-foreground">{t('button.ctaBooking')}</p>
                 </div>
               </a>
               
@@ -373,14 +372,14 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="font-medium">Instagram</p>
-                  <p className="text-sm text-muted-foreground">Follow us on Instagram</p>
+                  <p className="text-sm text-muted-foreground">{t('button.ctaInstagram')}</p>
                 </div>
               </a>
             </div>
           </div>
         </div>
         <div>
-          <h3 className="text-2xl font-display mb-6 text-bnb-dark">{t('contact.title')}</h3>
+          <h3 className="text-2xl font-display mb-6 text-bnb-dark">{t('contact.title2')}</h3>
           <form ref={form} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
@@ -405,7 +404,7 @@ const Contact: React.FC = () => {
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="phone" className="text-sm font-medium">Phone (optional)</label>
+              <label htmlFor="phone" className="text-sm font-medium">{t('contact.phone')}</label>
               <Input id="phone" name="phone" placeholder="3387392571" className="placeholder:opacity-30"  type="tel" />
             </div>
             

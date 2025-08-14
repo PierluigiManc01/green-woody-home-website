@@ -10,9 +10,12 @@ import {
   AlertDialogTitle 
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from '@/contexts/LanguageContext';
+
 
 const CookieConsent: React.FC = () => {
   const [showConsent, setShowConsent] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
   
   useEffect(() => {
     // Check if user has already accepted cookies
@@ -36,21 +39,16 @@ const CookieConsent: React.FC = () => {
     <AlertDialog open={showConsent}>
       <AlertDialogContent className="max-w-xl">
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-bnb-green2">Cookie Consent</AlertDialogTitle>
+          <AlertDialogTitle className="text-bnb-green2">{t('cookieConsent.title')}</AlertDialogTitle>
           <AlertDialogDescription>
             <p className="mb-4">
-              We use cookies to enhance your experience on our website. By clicking "Accept All", 
-              you consent to the use of ALL cookies. Alternatively, you can choose to only accept 
-              necessary cookies by clicking "Accept Necessary Cookies".
+              {t('cookieConsent.description')}
             </p>
             <p className="text-sm mb-2">
-              Necessary cookies help make a website usable by enabling basic functions like page 
-              navigation and access to secure areas of the website. The website cannot function 
-              properly without these cookies.
+              {t('cookieConsent.necessary')}
             </p>
             <p className="text-sm">
-              We also use analytics cookies that help us understand how visitors interact with our 
-              website, and marketing cookies that are used to track visitors across websites.
+              {t('cookieConsent.analytics')}
             </p>
           </AlertDialogDescription>
         </AlertDialogHeader>
@@ -60,13 +58,13 @@ const CookieConsent: React.FC = () => {
             onClick={handleAcceptNecessary}
             className="w-full sm:w-auto"
           >
-            Accept Necessary Cookies
+            {t('cookieConsent.acceptNecessary')}
           </Button>
           <Button 
             className="bg-bnb-green2 hover:bg-bnb-green2/90 text-gray w-full sm:w-auto"
             onClick={handleAcceptAll}
           >
-            Accept All Cookies
+            {t('cookieConsent.acceptAll')}
           </Button>
         </AlertDialogFooter>
       </AlertDialogContent>
