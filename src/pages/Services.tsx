@@ -2,21 +2,24 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, Wifi, Coffee, Car, Utensils, Bed, Snowflake, Tv, Bath, Waves } from 'lucide-react';
+import { CheckCircle, Wifi, Coffee, Car, Utensils, Bed, Snowflake, Tv, Bath, Waves, Flame, Trees, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
   const amenities = [
-    { icon: <Wifi className="h-6 w-6" />, title: "Free WiFi", description: "High-speed internet throughout the property" },
-    { icon: <Snowflake className="h-6 w-6" />, title: "Air Conditioning", description: "Climate control in all rooms" },
-    { icon: <Bed className="h-6 w-6" />, title: "Premium Bedding", description: "Fresh linens and comfortable mattresses" },
-    { icon: <Coffee className="h-6 w-6" />, title: "Coffee & Tea", description: "Complimentary coffee and tea selection" },
-    { icon: <Utensils className="h-6 w-6" />, title: "Fully Equipped Kitchen", description: "Everything you need to cook meals and clean up afterwards" },
-    { icon: <Car className="h-6 w-6" />, title: "Free Parking", description: "Dedicated private parking space available in courtyard" },
-    { icon: <Tv className="h-6 w-6" />, title: "Smart TV", description: "Entertainment system with streaming services" },
-    { icon: <Bath className="h-6 w-6" />, title: "Bathroom Essentials", description: "Towels, shampoo, and toiletries provided" },
-    { icon: <Waves className="h-6 w-6" />, title: "Washing Machine", description: "In-unit washing machine for your convenience" }
+    { icon: <Wifi className="h-5 w-5" />, title: "Free WiFi" },
+    { icon: <Snowflake className="h-5 w-5" />, title: "Air Conditioning" },
+    { icon: <Bed className="h-5 w-5" />, title: "Premium Bedding" },
+    { icon: <Coffee className="h-5 w-5" />, title: "Coffee & Tea" },
+    { icon: <Utensils className="h-5 w-5" />, title: "Fully Equipped Kitchen" },
+    { icon: <Car className="h-5 w-5" />, title: "Free Parking" },
+    { icon: <Tv className="h-5 w-5" />, title: "Smart TV" },
+    { icon: <Bath className="h-5 w-5" />, title: "Bathroom Essentials" },
+    { icon: <Waves className="h-5 w-5" />, title: "Washing Machine" },
+    { icon: <Flame className="h-5 w-5" />, title: "Barbecue" },
+    { icon: <Trees className="h-5 w-5" />, title: "Garden" },
+    { icon: <Zap className="h-5 w-5" />, title: "EV Charger" }
   ];
 
   return (
@@ -34,19 +37,17 @@ const Services: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {amenities.map((amenity, index) => (
-              <Card key={index} className="border-2 hover:border-primary/20 transition-colors">
-                <CardHeader className="text-center">
-                  <div className="mx-auto mb-2 text-bnb-green2">
-                    {amenity.icon}
-                  </div>
-                  <CardTitle className="text-lg">{amenity.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-center">{amenity.description}</p>
-                </CardContent>
-              </Card>
+              <div 
+                key={index} 
+                className="flex flex-col items-center gap-2 p-4 bg-background border-2 border-border rounded-xl hover:border-primary/20 transition-colors"
+              >
+                <div className="text-bnb-green2">
+                  {amenity.icon}
+                </div>
+                <span className="text-sm font-medium text-center">{amenity.title}</span>
+              </div>
             ))}
           </div>
         </section>
