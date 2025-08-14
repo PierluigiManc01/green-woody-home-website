@@ -169,7 +169,7 @@ const Services: React.FC = () => {
             <h2 className="text-5xl md:text-5xl sm:text-3xl font-bold text-bnb-green2 mb-4">
               {t('services.partnerships.title')}
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 whitespace-pre-line">
               {t('services.partnerships.subtitle')}
             </p>
           </div>

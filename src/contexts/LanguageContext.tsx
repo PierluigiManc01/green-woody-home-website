@@ -28,7 +28,7 @@ const translations = {
     
     // About
     'about.title': 'About Our Space',
-    'about.description': 'Green Woody Home is an eco-friendly retreat nestled in the serene countryside of Rome, perfectly balancing nature and convenience. <br /> Fully powered by solar energy, our villa offers a sustainable escape just 30 minutes from the historic city center and 15 minutes from the seaside. Experience rustic charm, modern comfort, and a unique connection to nature—all in one exclusive location.',
+    'about.description': 'Green Woody Home is an eco-friendly retreat nestled in the serene countryside of Rome, perfectly balancing nature and convenience. \nFully powered by solar energy, our villa offers a sustainable escape just 30 minutes from the historic city center and 15 minutes from the seaside. Experience rustic charm, modern comfort, and a unique connection to nature—all in one exclusive location.',
     'about.bedrooms': 'Bedrooms',
     'about.bathrooms': 'Bathrooms',
     'about.livingSpace': 'm² Living Space',
@@ -61,10 +61,11 @@ const translations = {
     'gallery.viewFull': 'View Full Gallery',
     
     // Contact
-    'contact.booking.title': "Do you like the Green Woody Home and you want to book it? Check our real-time availability through our calendar and get in touch with us for booking inquiries. This contact form is primarily used for booking Green Woody Home when available. We'll respond promptly with rates and booking details.",
+    'contact.booking.title': "Contact & Booking",
+    'contact.booking.subtitle': "Do you like the Green Woody Home and you want to book it? \nCheck our real-time availability through our calendar and get in touch with us for booking inquiries. This contact form is primarily used for booking Green Woody Home when available. We'll respond promptly with rates and booking details.",
     'contact.title': 'Get in Touch',
     'contact.title2': 'Contact Us',
-    'contact.subtitle': 'Have questions or want to book directly? Contact us using any of these methods',
+    'contact.subtitle': 'Have questions or want to book directly? \nContact us using any of these methods',
     'contact.availability': 'Availability & Pricing',
     'contact.name': 'Name',
     'contact.surname': 'Surname',
@@ -79,7 +80,6 @@ const translations = {
     'contact.info.phone': '(+06) 5847332',
     'contact.info.email': 'info@greenwoody.home',
     'contact.availability.check': 'Check our real-time availability through our calendar. Pricing starts from **€120 per night**, but rates may vary depending on the season and length of stay.',
-    'contact.booking.note': 'Have questions or want to book directly? Contact us using any of these methods',
     'contact.booking.airbnb': 'Book on Airbnb',
     'contact.booking.booking': 'Book on Booking.com',
     'contact.success': 'Message sent successfully!',
@@ -123,7 +123,7 @@ const translations = {
     'services.title': 'Our Services & Amenities',
     'services.subtitle': 'Experience comfort and convenience with our comprehensive range of services designed to make your stay memorable and relaxing. Everything you need for a comfortable stay is provided.',
     'services.partnerships.title': 'Our Partnerships',
-    'services.partnerships.subtitle': 'We have partnered with local businesses to offer you exclusive services and experiences during your stay. From tennis lessons to private chefs, explore our partnerships below.',
+    'services.partnerships.subtitle': 'We have partnered with local businesses to offer you exclusive services and experiences during your stay.\nFrom tennis lessons to private chefs, explore our partnerships below.',
     //barazzutti
     'services.barazzutti.description': 'We can arrange tennis lessons and court bookings at the renowned Barazzutti Tennis Academy, located in the same private area. Perfect for both beginners and experienced players, you can enjoy personalized coaching from a Davis Cup champion.',
     'services.barazzutti.note1': 'Book private Tennis Lessons',
@@ -184,7 +184,7 @@ const translations = {
     
     // About
     'about.title': 'Il Nostro Spazio',
-    'about.description': 'Green Woody Home è un rifugio eco-sostenibile immerso nella serena campagna di Roma, che bilancia perfettamente natura e convenienza. <br /> Completamente alimentata da energia solare, la nostra villa offre una fuga sostenibile a soli 30 minuti dal centro storico della città e 15 minuti dal mare. Vivi il fascino rustico, il comfort moderno e una connessione unica con la natura—tutto in un\'unica location esclusiva.',
+    'about.description': 'Green Woody Home è un rifugio eco-sostenibile immerso nella serena campagna di Roma, che bilancia perfettamente natura e convenienza. \n Completamente alimentata da energia solare, la nostra villa offre una fuga sostenibile a soli 30 minuti dal centro storico della città e 15 minuti dal mare. Vivi il fascino rustico, il comfort moderno e una connessione unica con la natura—tutto in un\'unica location esclusiva.',
     'about.bedrooms': 'Camere da Letto',
     'about.bathrooms': 'Bagni',
     'about.livingSpace': 'm² Spazio Abitabile',
@@ -217,10 +217,11 @@ const translations = {
     'gallery.viewFull': 'Visualizza Galleria Completa',
     
     // Contact
-    'contact.booking.title': "Ti piace Green Woody Home e vuoi prenotare? Controlla la nostra disponibilità in tempo reale attraverso il nostro calendario e mettiti in contatto con noi per richieste di prenotazione. Questo modulo di contatto viene utilizzato principalmente per prenotare Green Woody Home quando disponibile. Risponderemo prontamente con tariffe e dettagli sulla prenotazione.",
+    'contact.booking.title': "Contatti e Prenotazioni",
+    'contact.booking.subtitle': "Ti piace Green Woody Home e vuoi prenotare? \nControlla la nostra disponibilità in tempo reale attraverso il nostro calendario e mettiti in contatto con noi per richieste di prenotazione. Questo modulo di contatto viene utilizzato principalmente per prenotare Green Woody Home quando disponibile. Risponderemo prontamente con tariffe e dettagli sulla prenotazione.",
     'contact.title': 'Mettiti in Contatto',
     'contact.title2': 'Contattaci',
-    'contact.subtitle': 'Hai domande o vuoi prenotare direttamente? Contattaci utilizzando uno di questi metodi',
+    'contact.subtitle': 'Hai domande o vuoi prenotare direttamente? \nContattaci utilizzando uno di questi metodi',
     'contact.availability': 'Verifica Disponibilità',
     'contact.name': 'Nome',
     'contact.surname': 'Cognome',
@@ -235,7 +236,6 @@ const translations = {
     'contact.info.phone': '(+06) 5847332',
     'contact.info.email': 'info@greenwoody.home',
     'contact.availability.check': 'Controlla la nostra disponibilità selezionando le tue date preferite:',
-    'contact.booking.note': 'Pronto per prenotare? Prenota direttamente tramite i nostri partner di fiducia:',
     'contact.booking.airbnb': 'Prenota su Airbnb',
     'contact.booking.booking': 'Prenota su Booking.com',
     'contact.success': 'Messaggio inviato con successo!',
@@ -273,8 +273,8 @@ const translations = {
     // Services
     'services.title': 'I Nostri Servizi e Comfort',
     'services.subtitle': 'Vivi comfort e convenienza con la nostra gamma completa di servizi pensati per rendere il tuo soggiorno memorabile e rilassante. Tutto ciò di cui hai bisogno per un soggiorno confortevole è fornito.',
-    'services.partnerships.title': 'Le nostre Partnerships',
-    'services.partnerships.subtitle': 'We have partnered with local businesses to offer you exclusive services and experiences during your stay. From tennis lessons to private chefs, explore our partnerships below.',
+    'services.partnerships.title': 'Le nostre Partnership',
+    'services.partnerships.subtitle': 'Abbiamo stretto partnership con aziende locali per offrirti servizi ed esperienze esclusive durante il tuo soggiorno.\nDalle lezioni di tennis agli chef privati, esplora le nostre partnership qui sotto.',
     //barazzutti
     'services.barazzutti.description': 'Possiamo organizzare lezioni di tennis e prenotazioni di campi presso la rinomata Barazzutti Tennis Academy, situata nel nostro consorzio privato. Perfetto per principianti ed esperti, potrai godere di un coaching personalizzato da un campione di Coppa Davis.',
     'services.barazzutti.note1': 'Prenota lezioni di tennis private',

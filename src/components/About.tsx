@@ -12,9 +12,8 @@ const About: React.FC = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">{t('about.title')}</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
-            <p className="text-lg leading-relaxed text-bnb-dark_gray" dangerouslySetInnerHTML={{ __html: t('about.description') }}>
-            </p>
-            
+            <p className="text-lg leading-relaxed text-bnb-dark_gray whitespace-pre-line">{t('about.description')}</p>
+
             <div className="grid grid-cols-2 gap-6 my-8">
               <div className="text-center p-4 bg-bnb-green2 rounded-lg shadow-sm">
                 <span className="block text-3xl font-bold text-bnb-dark_gray">3</span>
