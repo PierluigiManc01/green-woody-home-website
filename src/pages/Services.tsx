@@ -49,7 +49,7 @@ const Services: React.FC = () => {
       )
     },
     {
-      title: "{t('services.guide.title')}",
+      title: t('services.guide.title'),
       image: tourGuideImg,
       content: (
         <div>
@@ -72,7 +72,7 @@ const Services: React.FC = () => {
       )
     },
     {
-      title: "{t('services.chef.title')}",
+      title: t('services.chef.title'),
       image: chefImg,
       content: (
         <div>
