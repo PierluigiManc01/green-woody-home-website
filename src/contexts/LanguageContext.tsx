@@ -131,11 +131,13 @@ const translations = {
     'services.barazzutti.note3': 'Explore more about the academy on their ',
     'services.barazzutti.linkText': 'official website',
     //local guide
+    'services.guide.title': 'Local Tour Guide',
     'services.guide.description': 'Discover the beauty of the ancient city of Rome with our trusted local guide, available for personalized tours in different languages. Explore historical sites, hidden gems, and cultural experiences tailored to your interests.',
     'services.guide.note1': 'Rome city tours in multiple languages',
     'services.guide.note2': 'Customized itineraries based on your interests',
     'services.guide.note3': "Contact us to arrange a tour and learn more about our guide's expertise.",
     //private chef
+    'services.chef.title': 'Traditional Cuisine',
     'services.chef.description': 'Experience authentic local cuisine through the hands of Leonardo, a talented cooker. Enjoy personalized meal preparation in the comfort of your accommodation and to learn traditional recipes and culinary techniques.',
     'services.chef.note1': 'Traditional cuisine: you will taste authentic roman pasta dishes , local wines, and seasonal ingredients',
     'services.chef.note2': 'Contact us to book a private dinner experience.',
@@ -282,11 +284,13 @@ const translations = {
     'services.barazzutti.note3': 'Scopri di più sull\'accademia sul loro ',
     'services.barazzutti.linkText': 'sito ufficiale',
     //local guide
+    'services.guide.title': 'Guida Turistica Locale',
     'services.guide.description': 'Scopri la bellezza dell\'antica città di Roma con la nostra guida turistica di fiducia, disponibile per tour personalizzati in diverse lingue. Esplora siti storici, gemme nascoste ed esperienze culturali su misura per i tuoi interessi.',
     'services.guide.note1': 'Tour della città di Roma in più lingue',
     'services.guide.note2': 'Itinerari personalizzati in base ai tuoi interessi',
     'services.guide.note3': "Contattaci per organizzare un tour e scoprire di più sull'esperienza della nostra guida.",
     //private chef
+    'services.chef.title': 'Cucina Tradizionale',
     'services.chef.description': 'Scopri la cucina locale autentica attraverso le mani di Leonardo, un cuoco talentuoso. Goditi la preparazione di pasti personalizzati nel comfort del tuo alloggio e impara ricette tradizionali e tecniche culinarie.',
     'services.chef.note1': 'Cucina tradizionale: assaporerai autentici piatti di pasta romana, vini locali e ingredienti di stagione',
     'services.chef.note2': 'Contattaci per prenotare un\'esperienza di cena privata.',

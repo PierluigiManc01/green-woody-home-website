@@ -49,7 +49,7 @@ const Services: React.FC = () => {
       )
     },
     {
-      title: "Local Tour Guide",
+      title: "{t('services.guide.title')}",
       image: tourGuideImg,
       content: (
         <div>
@@ -72,7 +72,7 @@ const Services: React.FC = () => {
       )
     },
     {
-      title: "Private Chef",
+      title: "{t('services.chef.title')}",
       image: chefImg,
       content: (
         <div>
@@ -87,7 +87,7 @@ const Services: React.FC = () => {
             <CheckCircle className="h-4 w-4 mr-2" />
             {t('services.chef.note2')}
           </div>
-          <div className="flex items-center text-sm text-bnb-green2">
+          <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
             {t('services.chef.note3')}
           </div>
