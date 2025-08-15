@@ -276,7 +276,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
         {Object.entries(galleryCategories).map(([key, category]) => (
           <div key={key} className="space-y-6">
             <h2 className="text-2xl md:text-3xl font-bold text-bnb-green2 text-center">
-              {t(`gallery.categories.${key}`)}
+              {t(`gallery.${key}`)}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {category.images.map((image) => (

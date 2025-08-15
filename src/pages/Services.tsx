@@ -54,19 +54,19 @@ const Services: React.FC = () => {
       content: (
         <div>
           <p className="text-muted-foreground mb-4">
-            {t('services.tourGuide.description')}
+            {t('services.guide.description')}
           </p>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.tourGuide.note1')}
+            {t('services.guide.note1')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2 mb-2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.tourGuide.note2')}
+            {t('services.guide.note2')}
           </div>
           <div className="flex items-center text-sm text-bnb-green2">
             <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.tourGuide.note3')}
+            {t('services.guide.note3')}
           </div>
         </div>
       )
