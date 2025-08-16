@@ -234,7 +234,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
       <section id="gallery" className="section-container bg-accent">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">{t('gallery.title')}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto whitespace-pre-line">
+          <p className="text-xl md:text-2xl sm:text-lg max-w-2xl mx-auto whitespace-pre-line">
             {t('gallery.subtitle')}
           </p>
         </div>
