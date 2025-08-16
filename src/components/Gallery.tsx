@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -240,13 +241,26 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
         
         <div className="grid grid-cols-3 md:grid-cols-3 gap-4 mb-8">
             {previewImages.map((image) => (
-              <div key={image.id} className="overflow-hidden rounded-lg">
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  className="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
+              <Dialog key={image.id}>
+                <DialogTrigger asChild>
+                  <div className="overflow-hidden rounded-lg cursor-pointer group">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt} 
+                      className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh] p-0 bg-black/95 border-0">
+                  <div className="relative">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt} 
+                      className="w-full h-auto max-h-[85vh] object-contain"
+                    />
+                  </div>
+                </DialogContent>
+              </Dialog>
             ))}
           </div>
           
@@ -280,13 +294,26 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {category.images.map((image) => (
-                <div key={image.id} className="overflow-hidden rounded-lg shadow-lg">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt} 
-                    className="w-full h-80 md:h-96 object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
+                <Dialog key={image.id}>
+                  <DialogTrigger asChild>
+                    <div className="overflow-hidden rounded-lg shadow-lg cursor-pointer group">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-80 md:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-[90vh] p-0 bg-black/95 border-0">
+                    <div className="relative">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-auto max-h-[85vh] object-contain"
+                      />
+                    </div>
+                  </DialogContent>
+                </Dialog>
               ))}
             </div>
           </div>
