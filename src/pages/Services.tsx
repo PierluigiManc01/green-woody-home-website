@@ -138,93 +138,106 @@ const Services: React.FC = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-primary/10 to-background py-6 section-container">
-          <div className="container mx-auto px-4 text-center mb-4">
-            <h1 className="text-5xl md:text-5xl sm:text-3xl font-bold text-bnb-green2 mb-4">
-              {t('services.title')}
-            </h1>
-            <p className="text-2xl text-muted-foreground max-w-3xl mx-auto mb-6">
-              {t('services.subtitle')}
-            </p>
-          </div>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10"></div>
+          <div className="relative section-container">
+            <div className="container mx-auto px-4 text-center mb-12">
+              <h1 className="text-6xl md:text-5xl sm:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
+                {t('services.title')}
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+                {t('services.subtitle')}
+              </p>
+            </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {amenities.map((amenity, index) => (
-              <div 
-                key={index} 
-                className="flex flex-col items-center gap-2 p-4 bg-background border-2 border-border rounded-xl hover:border-primary/20 transition-colors"
-              >
-                <div className="text-bnb-green2">
-                  {amenity.icon}
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {amenities.map((amenity, index) => (
+                <div 
+                  key={index} 
+                  className="group relative flex flex-col items-center gap-3 p-6 bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    {amenity.icon}
+                  </div>
+                  <span className="text-sm font-medium text-center text-foreground/80 group-hover:text-foreground transition-colors">{amenity.title}</span>
                 </div>
-                <span className="text-sm font-medium text-center">{amenity.title}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
         {/* Partnerships Section */}
-        <section className="section-container bg-accent">
-          <div className="text-center mb-2">
-            <h2 className="text-5xl md:text-5xl sm:text-3xl font-bold text-bnb-green2 mb-4">
-              {t('services.partnerships.title')}
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 whitespace-pre-line">
-              {t('services.partnerships.subtitle')}
-            </p>
-          </div>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-accent/30 to-background"></div>
+          <div className="relative section-container">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-4xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
+                {t('services.partnerships.title')}
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed whitespace-pre-line">
+                {t('services.partnerships.subtitle')}
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {partnerships.map((partnership, index) => (
-              <div key={index} className="relative h-80 [perspective:1000px]">
-                <div 
-                  className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${
-                    flippedCards[index] ? '[transform:rotateY(180deg)]' : ''
-                  }`}
-                >
-                  {/* Front of card */}
-                  <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-lg overflow-hidden">
-                    <div className="w-full h-full bg-bnb-green2 flex flex-col items-center justify-center p-6 relative cursor-pointer">
-                      <img 
-                        src={partnership.image} 
-                        alt={partnership.title}
-                        className="w-40 h-40 object-contain mb-4"
-                      />
-                      <h3 className="text-3xl md:text-2xl sm:text-xl font-bold text-bnb-dark_gray text-center mb-6">
-                        {partnership.title}
-                      </h3>
-                      <span 
-                        onClick={() => toggleCard(index)}
-                        className="absolute bottom-4 right-4 text-white hover:text-bnb-dark_gray text-lg cursor-pointer underline font-medium"
-                      >
-                        More Info
-                      </span>
+            <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+              {partnerships.map((partnership, index) => (
+                <div key={index} className="relative h-96 [perspective:1000px] group">
+                  <div 
+                    className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${
+                      flippedCards[index] ? '[transform:rotateY(180deg)]' : ''
+                    }`}
+                  >
+                    {/* Front of card */}
+                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden shadow-xl">
+                      <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex flex-col items-center justify-center p-8 relative cursor-pointer hover:shadow-2xl transition-all duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        <div className="relative z-10 flex flex-col items-center">
+                          <div className="w-48 h-48 mb-6 flex items-center justify-center bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
+                            <img 
+                              src={partnership.image} 
+                              alt={partnership.title}
+                              className="w-32 h-32 object-contain filter drop-shadow-lg"
+                            />
+                          </div>
+                          <h3 className="text-2xl md:text-xl font-bold text-white text-center mb-8 leading-tight">
+                            {partnership.title}
+                          </h3>
+                        </div>
+                        <div 
+                          onClick={() => toggleCard(index)}
+                          className="absolute bottom-6 right-6 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/30 text-base cursor-pointer transition-all duration-300 font-medium"
+                        >
+                          More Info
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Back of card */}
+                    <div 
+                      className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl overflow-hidden cursor-pointer shadow-xl"
+                      onClick={() => toggleCard(index)}
+                    >
+                      <Card className="h-full border-0 bg-gradient-to-br from-card to-card/80 backdrop-blur-sm shadow-2xl">
+                        <CardHeader className="pb-4 border-b border-border/20">
+                          <CardTitle className="text-xl text-primary font-bold">{partnership.title}</CardTitle>
+                        </CardHeader>
+                        <CardContent className="flex-1 overflow-y-auto text-sm p-6 space-y-3">
+                          {partnership.content}
+                        </CardContent>
+                      </Card>
                     </div>
                   </div>
-                  
-                  {/* Back of card */}
-                  <div 
-                    className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-lg overflow-hidden cursor-pointer"
-                    onClick={() => toggleCard(index)}
-                  >
-                    <Card className="h-full border-2 flex flex-col">
-                      <CardHeader className="pb-2">
-                        <CardTitle className="text-lg text-bnb-green2">{partnership.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="flex-1 overflow-y-auto text-sm">
-                        {partnership.content}
-                      </CardContent>
-                    </Card>
-                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="text-center mt-12">
-            <p className="text-2xl md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-              {t('services.conclusion')}
-            </p>
+            <div className="text-center mt-20">
+              <div className="max-w-4xl mx-auto p-8 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl border border-border/20">
+                <p className="text-xl md:text-lg text-muted-foreground leading-relaxed">
+                  {t('services.conclusion')}
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
