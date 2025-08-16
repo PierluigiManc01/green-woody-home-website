@@ -121,16 +121,16 @@ const Services: React.FC = () => {
   const amenities = [
     { icon: <Wifi className="h-5 w-5" />, title: "Free WiFi" },
     { icon: <Snowflake className="h-5 w-5" />, title: "Air Conditioning" },
-    { icon: <Bed className="h-5 w-5" />, title: "Premium Bedding" },
     { icon: <Coffee className="h-5 w-5" />, title: "Coffee & Tea" },
     { icon: <Utensils className="h-5 w-5" />, title: "Fully Equipped Kitchen" },
     { icon: <Car className="h-5 w-5" />, title: "Free Parking" },
+    { icon: <Zap className="h-5 w-5" />, title: "EV Charger" },
     { icon: <Tv className="h-5 w-5" />, title: "Smart TV" },
+    { icon: <Bed className="h-5 w-5" />, title: "Premium Bedding" },
     { icon: <Bath className="h-5 w-5" />, title: "Bathroom Essentials" },
     { icon: <Waves className="h-5 w-5" />, title: "Washing Machine" },
     { icon: <Flame className="h-5 w-5" />, title: "Barbecue" },
     { icon: <Trees className="h-5 w-5" />, title: "Garden" },
-    { icon: <Zap className="h-5 w-5" />, title: "EV Charger" }
   ];
 
   return (
@@ -139,7 +139,7 @@ const Services: React.FC = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-bnb-green2/5 via-bnb-green2/3 to-bnb-green2/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-bnb-sand/2 via-bnb-sand/3 to-bnb-sand/10"></div>
           <div className="relative section-container">
             <div className="container mx-auto px-4 text-center mb-12">
               <h1 className="text-6xl md:text-5xl sm:text-4xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/80 bg-clip-text text-transparent mb-6">
