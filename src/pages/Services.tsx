@@ -27,23 +27,25 @@ const Services: React.FC = () => {
       image: tennisCourtImg,
       content: (
         <div>
-          <p className="text-muted-foreground mb-4">
+          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
             {t('services.barazzutti.description')}
           </p>
-          <div className="flex items-center text-sm text-bnb-green2 mb-2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.barazzutti.note1')}
+          <div className="flex items-start text-base text-bnb-green2 mb-3">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.barazzutti.note1')}</span>
           </div>
-          <div className="flex items-center text-sm text-bnb-green2 mb-2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.barazzutti.note2')}
+          <div className="flex items-start text-base text-bnb-green2 mb-3">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.barazzutti.note2')}</span>
           </div>
-          <div className="flex items-center text-sm text-bnb-green2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.barazzutti.note3')}
-            <a href="https://scuolatenniscorradobarazzutti.it/" 
-               className="text-bnb-green2 underline ml-1"
-               target="_blank" rel="noopener noreferrer">{t('services.barazzutti.linkText')}</a>.
+          <div className="flex items-start text-base text-bnb-green2">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>
+              {t('services.barazzutti.note3')}
+              <a href="https://www.scuolatenniscorradobarazzutti.it/" 
+                 className="text-bnb-green2 underline ml-1 hover:text-bnb-green2/80 transition-colors"
+                 target="_blank" rel="noopener noreferrer">{t('services.barazzutti.linkText')}</a>.
+            </span>
           </div>
         </div>
       )
@@ -53,20 +55,20 @@ const Services: React.FC = () => {
       image: tourGuideImg,
       content: (
         <div>
-          <p className="text-muted-foreground mb-4">
+          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
             {t('services.guide.description')}
           </p>
-          <div className="flex items-center text-sm text-bnb-green2 mb-2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.guide.note1')}
+          <div className="flex items-start text-base text-bnb-green2 mb-3">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.guide.note1')}</span>
           </div>
-          <div className="flex items-center text-sm text-bnb-green2 mb-2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.guide.note2')}
+          <div className="flex items-start text-base text-bnb-green2 mb-3">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.guide.note2')}</span>
           </div>
-          <div className="flex items-center text-sm text-bnb-green2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.guide.note3')}
+          <div className="flex items-start text-base text-bnb-green2">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.guide.note3')}</span>
           </div>
         </div>
       )
@@ -76,20 +78,20 @@ const Services: React.FC = () => {
       image: chefImg,
       content: (
         <div>
-          <p className="text-muted-foreground mb-4">
+          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
           {t('services.chef.description')}
           </p>
-          <div className="flex items-center text-sm text-bnb-green2 mb-2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.chef.note1')}
+          <div className="flex items-start text-base text-bnb-green2 mb-3">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.chef.note1')}</span>
           </div>
-          <div className="flex items-center text-sm text-bnb-green2 mb-2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.chef.note2')}
+          <div className="flex items-start text-base text-bnb-green2 mb-3">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.chef.note2')}</span>
           </div>
-          <div className="flex items-center text-sm text-bnb-green2 mb-2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.chef.note3')}
+          <div className="flex items-start text-base text-bnb-green2">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.chef.note3')}</span>
           </div>
         </div>
       )
@@ -99,20 +101,20 @@ const Services: React.FC = () => {
       image: gladiatorImg,
       content: (
         <div>
-          <p className="text-muted-foreground mb-4">
+          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
             {t('services.castrum.description')}
           </p>
-          <div className="flex items-center text-sm text-bnb-green2 mb-2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.castrum.note1')}
+          <div className="flex items-start text-base text-bnb-green2 mb-3">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.castrum.note1')}</span>
           </div>
-          <div className="flex items-center text-sm text-bnb-green2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.castrum.note2')}
+          <div className="flex items-start text-base text-bnb-green2 mb-3">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.castrum.note2')}</span>
           </div>
-          <div className="flex items-center text-sm text-bnb-green2">
-            <CheckCircle className="h-4 w-4 mr-2" />
-            {t('services.castrum.note3')}
+          <div className="flex items-start text-base text-bnb-green2">
+            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
+            <span>{t('services.castrum.note3')}</span>
           </div>
         </div>
       )
@@ -188,8 +190,8 @@ const Services: React.FC = () => {
                     }`}
                   >
                     {/* Front of card */}
-                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden shadow-xl">
-                      <div className="w-full h-full bg-gradient-to-br from-bnb-green2 to-bnb-green2/90 flex flex-col items-center justify-center p-8 relative cursor-pointer hover:shadow-2xl transition-all duration-300">
+                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-bnb-green2 to-bnb-green2/90">
+                      <div className="w-full h-full flex flex-col items-center justify-center p-8 relative cursor-pointer hover:shadow-2xl transition-all duration-300">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         <div className="relative z-10 flex flex-col items-center">
                           <div className="w-48 h-48 mb-6 flex items-center justify-center bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
@@ -214,14 +216,14 @@ const Services: React.FC = () => {
                     
                     {/* Back of card */}
                     <div 
-                      className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl overflow-hidden cursor-pointer shadow-xl"
+                      className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl overflow-hidden cursor-pointer shadow-xl bg-gradient-to-br from-card to-card/80 backdrop-blur-sm"
                       onClick={() => toggleCard(index)}
                     >
-                      <Card className="h-full border-0 bg-gradient-to-br from-card to-card/80 backdrop-blur-sm shadow-2xl">
+                      <Card className="h-full border-0 bg-transparent shadow-none">
                         <CardHeader className="pb-4 border-b border-border/20">
-                          <CardTitle className="text-xl text-bnb-green2 font-bold">{partnership.title}</CardTitle>
+                          <CardTitle className="text-2xl text-bnb-green2 font-bold">{partnership.title}</CardTitle>
                         </CardHeader>
-                        <CardContent className="flex-1 overflow-y-auto text-sm p-6 space-y-3">
+                        <CardContent className="flex-1 overflow-y-auto p-6 space-y-4">
                           {partnership.content}
                         </CardContent>
                       </Card>
