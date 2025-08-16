@@ -189,10 +189,10 @@ const Contact: React.FC = () => {
               <div>
                 <h3 className="text-2xl font-display mb-4 text-bnb-dark flex items-center gap-2">
                   <CalendarIcon className="w-6 h-6" />
-                  {t('contact.availability')}
+                  {t('contact.availability2')}
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  {t('contact.availability.check')}
+                  {t('contact.availability.check2')}
                 </p>
 
                 <div className="space-y-4">
