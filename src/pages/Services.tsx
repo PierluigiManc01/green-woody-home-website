@@ -139,7 +139,7 @@ const Services: React.FC = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-bnb-sand/2 via-bnb-sand/3 to-bnb-sand/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-bnb-dark_gray/10 via-bnb-dark_gray/5 to-bnb-dark_gray/30"></div>
           <div className="relative section-container">
             <div className="container mx-auto px-4 text-center mb-12">
               <h1 className="text-6xl md:text-5xl sm:text-4xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/80 bg-clip-text text-transparent mb-6">
