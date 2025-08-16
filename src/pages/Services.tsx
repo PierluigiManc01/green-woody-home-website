@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Wifi, Coffee, Car, Utensils, Bed, Snowflake, Tv, Bath, Waves, Flame, Trees, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import tennisCourtImg from '@/assets/tennis_court.jpg';
+import tennisCourtImg from '@/assets/tennis.jpg';
 import chefImg from '@/assets/chef.png';
 import tourGuideImg from '@/assets/tour_guide.jpg';
 import gladiatorImg from '@/assets/gladiator.png';
