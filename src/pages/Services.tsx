@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, Wifi, Coffee, Car, Utensils, Bed, Snowflake, Tv, Bath, Waves, Flame, Trees, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import tennisCourtImg from '@/assets/tennis.jpeg';
-import chefImg from '@/assets/chef.png';
+import chefImg from '@/assets/pasta.jpg';
 import tourGuideImg from '@/assets/tour_guide.jpg';
 import gladiatorImg from '@/assets/gladiator.png';
 
@@ -190,24 +190,24 @@ const Services: React.FC = () => {
                     }`}
                   >
                     {/* Front of card */}
-                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-bnb-green2 to-bnb-green2/90">
+                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-bnb-green2 to-bnb-green2/90 z-10">
                       <div className="w-full h-full flex flex-col items-center justify-center p-8 relative cursor-pointer hover:shadow-2xl transition-all duration-300">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         <div className="relative z-10 flex flex-col items-center">
-                          <div className="w-48 h-48 mb-6 flex items-center justify-center bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
+                          <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4 sm:mb-6 flex items-center justify-center bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
                             <img 
                               src={partnership.image} 
                               alt={partnership.title}
-                              className="w-32 h-32 object-contain filter drop-shadow-lg"
+                              className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain filter drop-shadow-lg"
                             />
                           </div>
-                          <h3 className="text-2xl md:text-xl font-bold text-bnb-dark_gray text-center mb-8 leading-tight">
+                          <h3 className="text-xl sm:text-2xl md:text-xl font-bold text-bnb-dark_gray text-center mb-4 sm:mb-8 leading-tight">
                             {partnership.title}
                           </h3>
                         </div>
                         <div 
                           onClick={() => toggleCard(index)}
-                          className="absolute bottom-6 right-6 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/30 text-base cursor-pointer transition-all duration-300 font-medium"
+                          className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 px-3 py-2 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/30 text-sm sm:text-base cursor-pointer transition-all duration-300 font-medium"
                         >
                           More Info
                         </div>
@@ -216,15 +216,26 @@ const Services: React.FC = () => {
                     
                     {/* Back of card */}
                     <div 
-                      className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl overflow-hidden cursor-pointer shadow-xl bg-gradient-to-br from-card to-card/80 backdrop-blur-sm"
-                      onClick={() => toggleCard(index)}
+                      className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl overflow-hidden shadow-xl bg-white dark:bg-card border border-border/20 z-20"
                     >
-                      <Card className="h-full border-0 bg-transparent shadow-none">
-                        <CardHeader className="pb-4 border-b border-border/20">
-                          <CardTitle className="text-2xl text-bnb-green2 font-bold">{partnership.title}</CardTitle>
+                      <Card className="h-full border-0 bg-transparent shadow-none flex flex-col">
+                        <CardHeader className="pb-3 border-b border-border/20 flex-shrink-0">
+                          <div className="flex justify-between items-start">
+                            <CardTitle className="text-lg sm:text-xl md:text-2xl text-bnb-green2 font-bold pr-2">{partnership.title}</CardTitle>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => toggleCard(index)}
+                              className="text-muted-foreground hover:text-foreground p-1 h-8 w-8 rounded-full flex-shrink-0"
+                            >
+                              ×
+                            </Button>
+                          </div>
                         </CardHeader>
-                        <CardContent className="flex-1 overflow-y-auto p-6 space-y-4">
-                          {partnership.content}
+                        <CardContent className="flex-1 overflow-y-auto p-4 sm:p-6 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 hover:scrollbar-thumb-gray-500 dark:scrollbar-thumb-gray-600 dark:scrollbar-track-gray-800 dark:hover:scrollbar-thumb-gray-500">
+                          <div className="space-y-4 text-sm sm:text-base">
+                            {partnership.content}
+                          </div>
                         </CardContent>
                       </Card>
                     </div>
