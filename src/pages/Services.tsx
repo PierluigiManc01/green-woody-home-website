@@ -139,10 +139,10 @@ const Services: React.FC = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-bnb-green2/5 via-bnb-green2/3 to-bnb-green2/10"></div>
           <div className="relative section-container">
             <div className="container mx-auto px-4 text-center mb-12">
-              <h1 className="text-6xl md:text-5xl sm:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
+              <h1 className="text-6xl md:text-5xl sm:text-4xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/80 bg-clip-text text-transparent mb-6">
                 {t('services.title')}
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -154,9 +154,9 @@ const Services: React.FC = () => {
               {amenities.map((amenity, index) => (
                 <div 
                   key={index} 
-                  className="group relative flex flex-col items-center gap-3 p-6 bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
+                  className="group relative flex flex-col items-center gap-3 p-6 bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl hover:border-bnb-green2/30 hover:shadow-lg hover:shadow-bnb-green2/10 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-bnb-green2/10 text-bnb-green2 group-hover:bg-bnb-green2 group-hover:text-white transition-all duration-300">
                     {amenity.icon}
                   </div>
                   <span className="text-sm font-medium text-center text-foreground/80 group-hover:text-foreground transition-colors">{amenity.title}</span>
@@ -168,10 +168,10 @@ const Services: React.FC = () => {
 
         {/* Partnerships Section */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-accent/30 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-bnb-green2/10 to-background"></div>
           <div className="relative section-container">
             <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-4xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
+              <h2 className="text-5xl md:text-4xl sm:text-3xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/70 bg-clip-text text-transparent mb-6">
                 {t('services.partnerships.title')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed whitespace-pre-line">
@@ -189,7 +189,7 @@ const Services: React.FC = () => {
                   >
                     {/* Front of card */}
                     <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden shadow-xl">
-                      <div className="w-full h-full bg-gradient-to-br from-primary to-secondary flex flex-col items-center justify-center p-8 relative cursor-pointer hover:shadow-2xl transition-all duration-300">
+                      <div className="w-full h-full bg-gradient-to-br from-bnb-green2 to-bnb-green2/90 flex flex-col items-center justify-center p-8 relative cursor-pointer hover:shadow-2xl transition-all duration-300">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         <div className="relative z-10 flex flex-col items-center">
                           <div className="w-48 h-48 mb-6 flex items-center justify-center bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
@@ -199,7 +199,7 @@ const Services: React.FC = () => {
                               className="w-32 h-32 object-contain filter drop-shadow-lg"
                             />
                           </div>
-                          <h3 className="text-2xl md:text-xl font-bold text-white text-center mb-8 leading-tight">
+                          <h3 className="text-2xl md:text-xl font-bold text-bnb-dark_gray text-center mb-8 leading-tight">
                             {partnership.title}
                           </h3>
                         </div>
@@ -219,7 +219,7 @@ const Services: React.FC = () => {
                     >
                       <Card className="h-full border-0 bg-gradient-to-br from-card to-card/80 backdrop-blur-sm shadow-2xl">
                         <CardHeader className="pb-4 border-b border-border/20">
-                          <CardTitle className="text-xl text-primary font-bold">{partnership.title}</CardTitle>
+                          <CardTitle className="text-xl text-bnb-green2 font-bold">{partnership.title}</CardTitle>
                         </CardHeader>
                         <CardContent className="flex-1 overflow-y-auto text-sm p-6 space-y-3">
                           {partnership.content}
@@ -232,7 +232,7 @@ const Services: React.FC = () => {
             </div>
 
             <div className="text-center mt-20">
-              <div className="max-w-4xl mx-auto p-8 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl border border-border/20">
+              <div className="max-w-4xl mx-auto p-8 bg-gradient-to-r from-bnb-green2/5 to-bnb-green2/10 rounded-2xl border border-border/20">
                 <p className="text-xl md:text-lg text-muted-foreground leading-relaxed">
                   {t('services.conclusion')}
                 </p>
