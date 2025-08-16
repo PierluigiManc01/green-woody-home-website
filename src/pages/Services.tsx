@@ -226,7 +226,7 @@ const Services: React.FC = () => {
                               variant="ghost"
                               size="sm"
                               onClick={() => toggleCard(index)}
-                              className="text-muted-foreground hover:text-foreground p-1 h-8 w-8 rounded-full flex-shrink-0"
+                              className="text-muted-foreground bg-bnb-green2 hover:text-foreground p-1 h-8 w-8 rounded-full flex-shrink-0"
                             >
                               ×
                             </Button>
