@@ -15,7 +15,7 @@ const translations = {
     'nav.about': 'About',
     'nav.gallery': 'Gallery',
     'nav.services': 'Services',
-    'nav.contact': 'Contact',
+    'nav.contact': 'Contacts',
     'nav.menu': 'Open Menu',
     
     // Hero
@@ -52,6 +52,7 @@ const translations = {
     // Gallery
     'gallery.title': 'Gallery',
     'gallery.subtitle': 'Take a virtual tour through our beautiful space and imagine your stay in our nature retreat.',
+    'gallery.conclusion': 'Explore the full gallery to see more!',
     'gallery.bedrooms': 'Bedrooms',
     'gallery.bathrooms': 'Bathrooms',
     'gallery.livingRoom': 'Living Room',
@@ -67,6 +68,7 @@ const translations = {
     'contact.title2': 'Contact Us',
     'contact.subtitle': 'Have questions or want to book directly? \nContact us using any of these methods',
     'contact.availability': 'Availability & Pricing',
+    'contact.availability2': 'Availability',
     'contact.name': 'Name',
     'contact.surname': 'Surname',
     'contact.email': 'Email',
@@ -79,16 +81,18 @@ const translations = {
     'contact.info.address': 'Via Clarice Tartufari, Castel di Decima, Rome',
     'contact.info.phone': '(+06) 5847332',
     'contact.info.email': 'info@greenwoody.home',
-    'contact.availability.check': 'Check our real-time availability through our calendar. Pricing starts from **€120 per night**, but rates may vary depending on the season and length of stay.',
+    'contact.availability.check': 'Check our real-time availability through our calendar. Pricing starts from €120 per night, but rates may vary depending on the season and length of stay.',
     'contact.booking.airbnb': 'Book on Airbnb',
     'contact.booking.booking': 'Book on Booking.com',
     'contact.success': 'Message sent successfully!',
     'contact.error': 'Failed to send message. Please try again.',
     'contact.contactUs': 'Contact Us',
+    'contact.form.title': 'Fill the form to book',
     'contact.contactUs2.1': 'Click the buttons',
     'contact.contactUs2.2': ' to contact us!',
     'contact.loc': 'Location',
     'contact.ctaLoc': 'Find us on Google Maps',
+    'contact.finduUs': 'Find Us Online',
 
     // Calendar
     'calendar.loading': 'Loading calendar...',
@@ -210,6 +214,7 @@ const translations = {
     // Gallery
     'gallery.title': 'Galleria',
     'gallery.subtitle': 'Fai un tour virtuale del nostro bellissimo rifugio eco-sostenibile',
+    'gallery.conclusion': 'Esplora tutta la nostra galleria per vedere di più!',
     'gallery.bedrooms': 'Camere da Letto',
     'gallery.bathrooms': 'Bagni',
     'gallery.livingRoom': 'Soggiorno',
@@ -222,9 +227,11 @@ const translations = {
     'contact.booking.title': "Contatti e Prenotazioni",
     'contact.booking.subtitle': "Ti piace Green Woody Home e vuoi prenotare? \nControlla la nostra disponibilità in tempo reale attraverso il nostro calendario e mettiti in contatto con noi per richieste di prenotazione. Questo modulo di contatto viene utilizzato principalmente per prenotare Green Woody Home quando disponibile. Risponderemo prontamente con tariffe e dettagli sulla prenotazione.",
     'contact.title': 'Mettiti in Contatto',
-    'contact.title2': 'Contattaci',
     'contact.subtitle': 'Hai domande o vuoi prenotare direttamente? \nContattaci utilizzando uno di questi metodi',
-    'contact.availability': 'Verifica Disponibilità',
+    'contact.availability': 'Disponibilità & Prezzi',
+    'contact.availability2': 'Verifica Disponibilità',
+    // Form
+    'contact.form.title': 'Compila il modulo per prenotare',
     'contact.name': 'Nome',
     'contact.surname': 'Cognome',
     'contact.email': 'Email',
@@ -233,11 +240,12 @@ const translations = {
     'contact.placeholder': 'Ciao! Vorrei prenotare la casa dal...',
     'contact.message': 'Messaggio',
     'contact.send': 'Invia Messaggio',
+
     'contact.info.title': 'Informazioni di Contatto',
     'contact.info.address': 'Via Clarice Tartufari, Castel di Decima, Roma',
     'contact.info.phone': '(+06) 5847332',
     'contact.info.email': 'info@greenwoody.home',
-    'contact.availability.check': 'Controlla la nostra disponibilità selezionando le tue date preferite:',
+    'contact.availability.check': 'Controlla la nostra disponibilità selezionando le tue date preferite. I prezzi partono da €120 a notte, ma le tariffe possono variare a seconda della stagione e della durata del soggiorno.',
     'contact.booking.airbnb': 'Prenota su Airbnb',
     'contact.booking.booking': 'Prenota su Booking.com',
     'contact.success': 'Messaggio inviato con successo!',
@@ -247,6 +255,7 @@ const translations = {
     'contact.contactUs2.2': ' qui sotto per contattarci!',
     'contact.loc': 'Posizione',
     'contact.ctaLoc': 'Trovaci su Google Maps',
+    'contact.finduUs': 'Cercaci Online',
 
     // Calendar
     'calendar.loading': 'Caricando il calendario...',

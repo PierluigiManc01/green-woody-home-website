@@ -160,15 +160,15 @@ const Contact: React.FC = () => {
     const last = localStorage.getItem('last-calendar-update');
     if (last) setLastUpdated(new Date(last));
 
-    // If more than 12 hours elapsed since last update, refresh
+    // If more than 2 hours elapsed since last update, refresh
     const now = Date.now();
     const lastUpdate = last ? new Date(last).getTime() : 0;
-    if (!lastUpdate || now - lastUpdate > 12 * 60 * 60 * 1000) {
+    if (!lastUpdate || now - lastUpdate > 2 * 60 * 60 * 1000) {
       refreshData();
     }
 
-    // Set refresh interval every 12 hours while component is mounted
-    const interval = setInterval(refreshData, 12 * 60 * 60 * 1000);
+    // Set refresh interval every 2 hours while component is mounted
+    const interval = setInterval(refreshData, 2 * 60 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -330,7 +330,7 @@ const Contact: React.FC = () => {
           </div>
           
           <div className="mt-10">
-            <h3 className="text-2xl font-display mb-4 text-bnb-dark">Find Us Online</h3>
+            <h3 className="text-2xl font-display mb-4 text-bnb-dark">{t('contact.finduUs')}</h3>
             <div className="space-y-3">
               <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="contact-method">
                 <div>
@@ -379,7 +379,7 @@ const Contact: React.FC = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-2xl font-display mb-6 text-bnb-dark">{t('contact.title2')}</h3>
+          <h3 className="text-2xl font-display mb-6 text-bnb-dark">{t('contact.form.title')}</h3>
           <form ref={form} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">

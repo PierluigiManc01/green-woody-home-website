@@ -252,7 +252,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
           
           <div className="text-center">
             <p className="text-lg leading-relaxed text-bnb-dark_gray mb-4">
-              {t('gallery.subtitle')}
+              {t('gallery.conclusion')}
             </p>
             <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-bnb-dark_gray font-medium px-6 py-3">
               <Link to="/gallery">{t('gallery.viewFull')}</Link>
