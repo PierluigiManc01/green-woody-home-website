@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
             <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.contact')}</h4>
             <address className="not-italic">
               <p className="mb-2">
-                <a href="tel:+393358158411" className="text-bnb-green2 hover:text-white transition-colors">(+06) 5847332</a>
+                <a href="tel:+393358158411" className="text-bnb-green2 hover:text-white transition-colors">(+39) 3358158411</a>
               </p>
               <p>
                 <a href="mailto:gigi.mancinelli@gmail.com" className="text-bnb-green2 hover:text-white transition-colors">info@greenwoody.home</a>
