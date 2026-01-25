@@ -121,18 +121,18 @@ const Services: React.FC = () => {
     }
   ];
   const amenities = [
-    { icon: <Wifi className="h-5 w-5" />, title: "Free WiFi" },
-    { icon: <Snowflake className="h-5 w-5" />, title: "Air Conditioning" },
-    { icon: <Coffee className="h-5 w-5" />, title: "Coffee & Tea" },
-    { icon: <Utensils className="h-5 w-5" />, title: "Fully Equipped Kitchen" },
-    { icon: <Car className="h-5 w-5" />, title: "Free Parking" },
-    { icon: <Zap className="h-5 w-5" />, title: "EV Charger" },
-    { icon: <Tv className="h-5 w-5" />, title: "Smart TV" },
-    { icon: <Bed className="h-5 w-5" />, title: "Premium Bedding" },
-    { icon: <Bath className="h-5 w-5" />, title: "Bathroom Essentials" },
-    { icon: <Waves className="h-5 w-5" />, title: "Washing Machine" },
+    { icon: <Wifi className="h-5 w-5" />, title: t('services.freewifi') },
+    { icon: <Snowflake className="h-5 w-5" />, title: t('services.air') },
+    { icon: <Coffee className="h-5 w-5" />, title: t('services.breakfast') },
+    { icon: <Utensils className="h-5 w-5" />, title: t('services.kitchen') },
+    { icon: <Car className="h-5 w-5" />, title: t('services.parking') },
+    { icon: <Zap className="h-5 w-5" />, title: t('services.charger') },
+    { icon: <Tv className="h-5 w-5" />, title: t('services.tv') },
+    { icon: <Bed className="h-5 w-5" />, title: t('services.bed') },
+    { icon: <Bath className="h-5 w-5" />, title: t('services.bathroom') },
+    { icon: <Waves className="h-5 w-5" />, title: t('services.washingmachine') },
     { icon: <Flame className="h-5 w-5" />, title: "Barbecue" },
-    { icon: <Trees className="h-5 w-5" />, title: "Garden" },
+    { icon: <Trees className="h-5 w-5" />, title: t('services.garden') },
   ];
 
   return (
