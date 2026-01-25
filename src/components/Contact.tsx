@@ -308,7 +308,7 @@ const Contact: React.FC = () => {
               </div>
             </a>
             
-            <a href="mailto:gigi.mancinelli@gmail.com" className="contact-method">
+            <a href="mailto:greenwoodyhome@gmail.com" className="contact-method">
               <div className="w-10 h-10 rounded-full bg-bnb-green2 flex items-center justify-center text-dark_gray">
                 <Mail size={20} />
               </div>
