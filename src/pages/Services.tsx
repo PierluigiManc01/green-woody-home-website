@@ -144,10 +144,10 @@ const Services: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-bnb-dark_gray/10 via-bnb-dark_gray/5 to-bnb-dark_gray/30"></div>
           <div className="relative section-container">
             <div className="container mx-auto px-4 text-center mb-12">
-              <h1 className="text-6xl md:text-5xl sm:text-4xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/80 bg-clip-text text-transparent mb-6">
+              <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/80 bg-clip-text text-transparent mb-6">
                 {t('services.title')}
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+              <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
                 {t('services.subtitle')}
               </p>
             </div>
@@ -173,10 +173,10 @@ const Services: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-bnb-green2/10 to-background"></div>
           <div className="relative section-container">
             <div className="text-center mb-16">
-              <h2 className="text-5xl md:text-4xl sm:text-3xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/70 bg-clip-text text-transparent mb-6">
+              <h2 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/70 bg-clip-text text-transparent mb-6">
                 {t('services.partnerships.title')}
               </h2>
-              <p className="text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed whitespace-pre-line">
+              <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed whitespace-pre-line">
                 {t('services.partnerships.subtitle')}
               </p>
             </div>
@@ -191,14 +191,14 @@ const Services: React.FC = () => {
                   >
                     {/* Front of card */}
                     <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-bnb-green2 to-bnb-green2/90 z-10">
-                      <div className="w-full h-full flex flex-col items-center justify-center p-8 relative cursor-pointer hover:shadow-2xl transition-all duration-300">
+                      <div className="w-full h-full flex flex-col items-center justify-center relative cursor-pointer hover:shadow-2xl transition-all duration-300">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         <div className="relative z-10 flex flex-col items-center">
-                          <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mb-4 sm:mb-6 flex items-center justify-center bg-white/10 rounded-full backdrop-blur-sm border border-white/20">
+                          <div className="w-40 h-40 sm:w-50 sm:h-50 md:w-60 md:h-60 flex items-center justify-center mb-4 sm:mb-6">
                             <img 
                               src={partnership.image} 
                               alt={partnership.title}
-                              className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain filter drop-shadow-lg"
+                              className="h-40 sm:h-50 md:h-60 w-full object-contain filter drop-shadow-lg rounded-full bg-white/10 border border-white/20"
                             />
                           </div>
                           <h3 className="text-xl sm:text-2xl md:text-xl font-bold text-bnb-dark_gray text-center mb-4 sm:mb-8 leading-tight">

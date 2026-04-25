@@ -233,8 +233,8 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
     return (
       <section id="gallery" className="section-container bg-accent">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-4">{t('gallery.title')}</h2>
-          <p className="text-xl md:text-2xl sm:text-lg max-w-2xl mx-auto whitespace-pre-line">
+          <h2 className="text-3xl md:text-6xl font-bold text-bnb-green2 mb-4 md:mb-8">{t('gallery.title')}</h2>
+          <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-4 md:mb-8">
             {t('gallery.subtitle')}
           </p>
         </div>
@@ -265,10 +265,10 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
           </div>
           
           <div className="text-center">
-            <p className="text-lg leading-relaxed text-bnb-dark_gray mb-4">
+            <p className="text-xl leading-relaxed text-bnb-dark_gray mb-4 md:mb-8">
               {t('gallery.conclusion')}
             </p>
-            <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-bnb-dark_gray font-medium px-6 py-3">
+            <Button asChild className="bg-bnb-green2 hover:bg-bnb-green2/90 text-bnb-dark_gray font-large px-6 py-3 w-full md:w-auto">
               <Link to="/gallery">{t('gallery.viewFull')}</Link>
             </Button>
           </div>
@@ -281,7 +281,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
     <section className="section-container bg-accent">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-bnb-green2 mb-4">{t('gallery.title')}</h1>
-        <p className="text-bnb-green2 text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-lg md:text-2xl text-bnb-green2 text-muted-foreground max-w-2xl mx-auto">
           {t('gallery.subtitle')}
         </p>
       </div>

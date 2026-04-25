@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const About: React.FC = () => {
@@ -8,8 +7,8 @@ const About: React.FC = () => {
   
   return (
     <section id="about" className="section-container bg-gray/80">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">{t('about.title')}</h2>
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-6xl font-bold text-bnb-green2 mb-6 text-center">{t('about.title')}</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <p className="text-lg leading-relaxed text-bnb-dark_gray whitespace-pre-line">{t('about.description')}</p>
@@ -47,8 +46,8 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      <div id= "PoI" className="mt-20 pt-10 max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-bnb-green2 mb-6 text-center">{t('about.poi.title')}</h2> 
+      <div id= "PoI" className="mt-10 pt-10 max-w-7xl mx-auto">
+        <h2 className="text-3xl md:text-6xl font-bold text-bnb-green2 mb-6 md:mb-8 text-center">{t('about.poi.title')}</h2> 
         <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl mx-auto">
           {t('about.poi.description')}
         </p>

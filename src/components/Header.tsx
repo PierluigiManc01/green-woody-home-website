@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const isMobile = useIsMobile();
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -22,7 +24,9 @@ const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-bnb-dark_gray backdrop-blur-sm border-b">
       <div className="container mx-auto flex items-center justify-between h-16 lg:h-20 xl:h-24 px-4">
-        <Link to="/" className="flex items-center">
+        <Link to="/" 
+              onClick={() => window.scrollTo(0, 0)} 
+              className="flex items-center">
           {/* Logo */}
           <img
             src="/logo.png" 
@@ -32,19 +36,19 @@ const Header: React.FC = () => {
         </Link>
         
         <nav className="hidden md:flex space-x-6 lg:space-x-8 xl:space-x-10">
-          <Link to="/" className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
+          <Link to="/" onClick={() => window.scrollTo(0, 0)} className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
             {t('nav.home')}
           </Link>
-          <a href="#about" className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
+          <Link to="/" onClick={() => {window.scrollTo(0, 800); <a href="#about"></a>}} className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
             {t('nav.about')}
-          </a>
-          <Link to="/gallery" className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
+          </Link>
+          <Link to="/gallery" onClick={() => window.scrollTo(0, 0)} className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
             {t('nav.gallery')}
           </Link>
-          <Link to="/services" className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
+          <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
             {t('nav.services')}
           </Link>
-          <Link to="/contact" className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
+          <Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="font-medium lg:text-lg xl:text-xl text-bnb-green2 hover:text-white transition-colors">
             {t('nav.contact')}
           </Link>
         </nav>
@@ -83,27 +87,45 @@ const Header: React.FC = () => {
           {isMenuOpen && (
             <div className="mobile-menu-container absolute top-12 right-0 bg-bnb-dark_gray border border-gray-700 rounded-md shadow-lg py-2 w-40">
               <Link to="/" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.scrollTo(0, 0);
+                }}
               >
                 {t('nav.home')}
               </Link>
-              <a href="#about" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
+
+              <Link to="/" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  const scrollPosition = isMobile ? 600 : 800;
+                  window.scrollTo(0, scrollPosition);
+                }}
               >
                 {t('nav.about')}
-              </a>
+              </Link>
+
               <Link to="/gallery" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                  setIsMenuOpen(false);
+                  window.scrollTo(0, 0);
+                }}
               > 
                 {t('nav.gallery')}
               </Link>
               <Link to="/services" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.scrollTo(0, 0);
+                }}
               >
                 {t('nav.services')}
               </Link>
               <Link to="/contact" className="block px-4 py-2 text-bnb-green2 hover:text-white hover:bg-gray-800"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.scrollTo(0, 0);
+                }}
               >
                 {t('nav.contact')}
               </Link>
