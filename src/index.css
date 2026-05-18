@@ -102,7 +102,7 @@
 }
 
 .section-container {
-  @apply container mx-auto px-4 py-6 md:py-8;
+  @apply container mx-auto px-4 py-14 md:py-20;
 }
 
 .image-gallery {
@@ -114,6 +114,5 @@
 }
 
 .contact-method {
-  @apply flex items-center gap-3 mb-4 p-4 bg-background rounded-md hover:bg-bnb-green2 transition-colors;
+  @apply flex items-center gap-3 rounded-md border border-bnb-sand/30 bg-background p-4 text-bnb-dark transition-all duration-300 hover:border-bnb-green/40 hover:bg-bnb-stone;
 }
-

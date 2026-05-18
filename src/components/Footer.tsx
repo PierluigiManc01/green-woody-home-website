@@ -16,19 +16,35 @@ const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-bnb-dark_gray">
       <div className="container mx-auto py-12 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Second and Third Columns */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.home')}</a>
+                <Link to="/" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.home')}</Link>
               </li>
               <li>
                 <Link to="/gallery" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.gallery')}</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.contact')}</Link>
+                <Link to="/services" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.services')}</Link>
+              </li>
+              <li>
+                <button 
+                  onClick={handleResetCookieConsent}
+                  className="text-bnb-green2 hover:text-white transition-colors cursor-pointer text-left"
+                >
+                  {t('footer.cookieSettings')}
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.reservations')}</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/reservations" className="text-bnb-green2 hover:text-white transition-colors">{t('footer.privateReservation')}</Link>
               </li>
               <li>
                 <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-bnb-green2 hover:text-white transition-colors">
@@ -40,16 +56,9 @@ const Footer: React.FC = () => {
                   {t('footer.bookBooking')}
                 </a>
               </li>
-              <li>
-                <button 
-                  onClick={handleResetCookieConsent}
-                  className="text-white hover:text-gray transition-colors cursor-pointer text-left"
-                >
-                  {t('footer.cookieSettings')}
-                </button>
-              </li>
             </ul>
           </div>
+
           <div>
             <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.contact')}</h4>
             <address className="not-italic">
@@ -61,15 +70,11 @@ const Footer: React.FC = () => {
               </p>
             </address>
           </div>
-          {/* Fourth Column: CIN e CIR */}
+
           <div>
-          <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.identification')}</h4>
-              <p className="mb-2">
-                <a className="text-bnb-green2 hover:text-white transition-colors">CIN: IT058091C2NI2MQGQ5</a>
-              </p>
-              <p>
-                <a className="text-bnb-green2 hover:text-white transition-colors">CIR: 058091-ALT-09921</a>
-              </p>
+            <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.identification')}</h4>
+            <p className="mb-2 break-words text-bnb-green2">CIN: IT058091C2NI2MQGQ5</p>
+            <p className="break-words text-bnb-green2">CIR: 058091-ALT-09921</p>
           </div>
         </div>
         

@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, Wifi, Coffee, Car, Utensils, Bed, Snowflake, Tv, Bath, Waves, Flame, Trees, Zap } from 'lucide-react';
+import {
+  ArrowRight,
+  Bath,
+  Bed,
+  Car,
+  CheckCircle,
+  Coffee,
+  Flame,
+  Snowflake,
+  Trees,
+  Tv,
+  Utensils,
+  Waves,
+  Wifi,
+  Zap,
+} from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import tennisCourtImg from '@/assets/tennis.jpeg';
 import chefImg from '@/assets/pasta.jpg';
@@ -12,114 +27,7 @@ import gladiatorImg from '@/assets/gladiator.png';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
-  const [flippedCards, setFlippedCards] = useState<{ [key: number]: boolean }>({});
 
-  const toggleCard = (index: number) => {
-    setFlippedCards(prev => ({
-      ...prev,
-      [index]: !prev[index]
-    }));
-  };
-
-  const partnerships = [
-    {
-      title: "Barazzutti Tennis Academy",
-      image: tennisCourtImg,
-      content: (
-        <div>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            {t('services.barazzutti.description')}
-          </p>
-          <div className="flex items-start text-base text-bnb-green2 mb-3">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.barazzutti.note1')}</span>
-          </div>
-          <div className="flex items-start text-base text-bnb-green2 mb-3">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.barazzutti.note2')}</span>
-          </div>
-          <div className="flex items-start text-base text-bnb-green2">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>
-              {t('services.barazzutti.note3')}
-              <a href="https://www.scuolatenniscorradobarazzutti.it/" 
-                 className="text-bnb-green2 underline ml-1 hover:text-bnb-green2/80 transition-colors"
-                 target="_blank" rel="noopener noreferrer">{t('services.barazzutti.linkText')}</a>.
-            </span>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: t('services.guide.title'),
-      image: tourGuideImg,
-      content: (
-        <div>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            {t('services.guide.description')}
-          </p>
-          <div className="flex items-start text-base text-bnb-green2 mb-3">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.guide.note1')}</span>
-          </div>
-          <div className="flex items-start text-base text-bnb-green2 mb-3">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.guide.note2')}</span>
-          </div>
-          <div className="flex items-start text-base text-bnb-green2">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.guide.note3')}</span>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: t('services.chef.title'),
-      image: chefImg,
-      content: (
-        <div>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-          {t('services.chef.description')}
-          </p>
-          <div className="flex items-start text-base text-bnb-green2 mb-3">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.chef.note1')}</span>
-          </div>
-          <div className="flex items-start text-base text-bnb-green2 mb-3">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.chef.note2')}</span>
-          </div>
-          <div className="flex items-start text-base text-bnb-green2">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.chef.note3')}</span>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: "Castrum Legionis",
-      image: gladiatorImg,
-      content: (
-        <div>
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            {t('services.castrum.description')}
-          </p>
-          <div className="flex items-start text-base text-bnb-green2 mb-3">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.castrum.note1')}</span>
-          </div>
-          <div className="flex items-start text-base text-bnb-green2 mb-3">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.castrum.note2')}</span>
-          </div>
-          <div className="flex items-start text-base text-bnb-green2">
-            <CheckCircle className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-            <span>{t('services.castrum.note3')}</span>
-          </div>
-        </div>
-      )
-    }
-  ];
   const amenities = [
     { icon: <Wifi className="h-5 w-5" />, title: t('services.freewifi') },
     { icon: <Snowflake className="h-5 w-5" />, title: t('services.air') },
@@ -131,125 +39,151 @@ const Services: React.FC = () => {
     { icon: <Bed className="h-5 w-5" />, title: t('services.bed') },
     { icon: <Bath className="h-5 w-5" />, title: t('services.bathroom') },
     { icon: <Waves className="h-5 w-5" />, title: t('services.washingmachine') },
-    { icon: <Flame className="h-5 w-5" />, title: "Barbecue" },
+    { icon: <Flame className="h-5 w-5" />, title: 'Barbecue' },
     { icon: <Trees className="h-5 w-5" />, title: t('services.garden') },
   ];
 
+  const partnerships = [
+    {
+      title: 'Barazzutti Tennis Academy',
+      image: tennisCourtImg,
+      description: t('services.barazzutti.description'),
+      notes: [
+        t('services.barazzutti.note1'),
+        t('services.barazzutti.note2'),
+        t('services.barazzutti.note3'),
+      ],
+      link: {
+        href: 'https://www.scuolatenniscorradobarazzutti.it/',
+        label: t('services.barazzutti.linkText'),
+      },
+    },
+    {
+      title: t('services.guide.title'),
+      image: tourGuideImg,
+      description: t('services.guide.description'),
+      notes: [t('services.guide.note1'), t('services.guide.note2'), t('services.guide.note3')],
+    },
+    {
+      title: t('services.chef.title'),
+      image: chefImg,
+      description: t('services.chef.description'),
+      notes: [t('services.chef.note1'), t('services.chef.note2'), t('services.chef.note3')],
+    },
+    {
+      title: 'Castrum Legionis',
+      image: gladiatorImg,
+      description: t('services.castrum.description'),
+      notes: [t('services.castrum.note1'), t('services.castrum.note2'), t('services.castrum.note3')],
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Header />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-bnb-dark_gray/10 via-bnb-dark_gray/5 to-bnb-dark_gray/30"></div>
-          <div className="relative section-container">
-            <div className="container mx-auto px-4 text-center mb-12">
-              <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/80 bg-clip-text text-transparent mb-6">
+        <section className="section-container bg-bnb-stone">
+          <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-end">
+            <div>
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-bnb-wood">
+                Green Woody Home
+              </p>
+              <h1 className="text-5xl font-semibold leading-tight text-bnb-dark md:text-7xl">
                 {t('services.title')}
               </h1>
-              <p className="text-lg md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-                {t('services.subtitle')}
-              </p>
             </div>
+            <p className="text-lg leading-relaxed text-bnb-dark_gray md:text-xl">
+              {t('services.subtitle')}
+            </p>
+          </div>
+        </section>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              {amenities.map((amenity, index) => (
-                <div 
-                  key={index} 
-                  className="group relative flex flex-col items-center gap-3 p-6 bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl hover:border-bnb-green2/30 hover:shadow-lg hover:shadow-bnb-green2/10 transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-bnb-green2/10 text-bnb-green2 group-hover:bg-bnb-green2 group-hover:text-white transition-all duration-300">
+        <section className="section-container bg-background">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-3 lg:grid-cols-4">
+              {amenities.map((amenity) => (
+                <div key={amenity.title} className="flex items-center gap-3 border-b border-bnb-sand/40 pb-4">
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-bnb-green/10 text-bnb-green">
                     {amenity.icon}
-                  </div>
-                  <span className="text-sm font-medium text-center text-foreground/80 group-hover:text-foreground transition-colors">{amenity.title}</span>
+                  </span>
+                  <span className="text-sm font-medium leading-snug text-bnb-dark md:text-base">{amenity.title}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Partnerships Section */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-bnb-green2/10 to-background"></div>
-          <div className="relative section-container">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-bnb-green2 to-bnb-green2/70 bg-clip-text text-transparent mb-6">
+        <section className="section-container bg-bnb-stone2">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-14 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+              <h2 className="text-4xl font-semibold leading-tight text-bnb-dark md:text-6xl">
                 {t('services.partnerships.title')}
               </h2>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-8 leading-relaxed whitespace-pre-line">
+              <p className="text-lg leading-relaxed text-bnb-dark_gray whitespace-pre-line">
                 {t('services.partnerships.subtitle')}
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div className="space-y-16">
               {partnerships.map((partnership, index) => (
-                <div key={index} className="relative h-96 [perspective:1000px] group">
-                  <div 
-                    className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] ${
-                      flippedCards[index] ? '[transform:rotateY(180deg)]' : ''
-                    }`}
-                  >
-                    {/* Front of card */}
-                    <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-bnb-green2 to-bnb-green2/90 z-10">
-                      <div className="w-full h-full flex flex-col items-center justify-center relative cursor-pointer hover:shadow-2xl transition-all duration-300">
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                        <div className="relative z-10 flex flex-col items-center">
-                          <div className="w-40 h-40 sm:w-50 sm:h-50 md:w-60 md:h-60 flex items-center justify-center mb-4 sm:mb-6">
-                            <img 
-                              src={partnership.image} 
-                              alt={partnership.title}
-                              className="h-40 sm:h-50 md:h-60 w-full object-contain filter drop-shadow-lg rounded-full bg-white/10 border border-white/20"
-                            />
-                          </div>
-                          <h3 className="text-xl sm:text-2xl md:text-xl font-bold text-bnb-dark_gray text-center mb-4 sm:mb-8 leading-tight">
-                            {partnership.title}
-                          </h3>
-                        </div>
-                        <div 
-                          onClick={() => toggleCard(index)}
-                          className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 px-3 py-2 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 text-white hover:bg-white/30 text-sm sm:text-base cursor-pointer transition-all duration-300 font-medium"
-                        >
-                          More Info
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Back of card */}
-                    <div 
-                      className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl overflow-hidden shadow-xl bg-white dark:bg-card border border-border/20 z-20"
-                    >
-                      <Card className="h-full border-0 bg-transparent shadow-none flex flex-col">
-                        <CardHeader className="pb-3 border-b border-border/20 flex-shrink-0">
-                          <div className="flex justify-between items-start">
-                            <CardTitle className="text-lg sm:text-xl md:text-2xl text-bnb-green2 font-bold pr-2">{partnership.title}</CardTitle>
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              onClick={() => toggleCard(index)}
-                              className="text-muted-foreground bg-bnb-green2 hover:text-foreground p-1 h-8 w-8 rounded-full flex-shrink-0"
-                            >
-                              ×
-                            </Button>
-                          </div>
-                        </CardHeader>
-                        <CardContent className="flex-1 overflow-y-auto p-4 sm:p-6 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 hover:scrollbar-thumb-gray-500 dark:scrollbar-thumb-gray-600 dark:scrollbar-track-gray-800 dark:hover:scrollbar-thumb-gray-500">
-                          <div className="space-y-4 text-sm sm:text-base">
-                            {partnership.content}
-                          </div>
-                        </CardContent>
-                      </Card>
+                <article
+                  key={partnership.title}
+                  className="grid gap-8 border-t border-bnb-sand/50 pt-10 lg:grid-cols-2 lg:items-center"
+                >
+                  <div className={index % 2 === 1 ? 'lg:order-2' : undefined}>
+                    <div className="overflow-hidden rounded-md bg-bnb-dark">
+                      <img
+                        src={partnership.image}
+                        alt={partnership.title}
+                        className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-105"
+                      />
                     </div>
                   </div>
-                </div>
+                  <div className="max-w-xl">
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-bnb-wood">
+                      0{index + 1}
+                    </p>
+                    <h3 className="font-display text-3xl font-semibold text-bnb-dark md:text-5xl">
+                      {partnership.title}
+                    </h3>
+                    <p className="mt-5 text-lg leading-relaxed text-bnb-dark_gray">
+                      {partnership.description}
+                    </p>
+                    <div className="mt-6 space-y-3">
+                      {partnership.notes.map((note) => (
+                        <p key={note} className="flex gap-3 text-bnb-dark_gray">
+                          <CheckCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-bnb-green" />
+                          <span>
+                            {note}
+                            {partnership.link && note === t('services.barazzutti.note3') && (
+                              <a
+                                href={partnership.link.href}
+                                className="ml-1 font-medium text-bnb-green underline-offset-4 hover:underline"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {partnership.link.label}
+                              </a>
+                            )}
+                          </span>
+                        </p>
+                      ))}
+                    </div>
+                    <Button asChild className="mt-8 bg-bnb-green text-bnb-dark hover:bg-bnb-dark_green hover:text-bnb-dark">
+                      <Link to="/reservations" onClick={() => window.scrollTo(0, 0)}>
+                        {t('services.reserveService')}
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </article>
               ))}
             </div>
 
-            <div className="text-center mt-20">
-              <div className="max-w-4xl mx-auto p-8 bg-gradient-to-r from-bnb-green2/5 to-bnb-green2/10 rounded-2xl border border-border/20">
-                <p className="text-xl md:text-lg text-muted-foreground leading-relaxed">
-                  {t('services.conclusion')}
-                </p>
-              </div>
+            <div className="mt-16 border-t border-bnb-sand/50 pt-8 text-center">
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-bnb-dark_gray">
+                {t('services.conclusion')}
+              </p>
             </div>
           </div>
         </section>
