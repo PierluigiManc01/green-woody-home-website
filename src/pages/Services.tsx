@@ -20,10 +20,10 @@ import {
   Zap,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import tennisCourtImg from '@/assets/tennis.jpeg';
+import tennisCourtImg from '@/assets/tennis.jpg';
 import chefImg from '@/assets/pasta.jpg';
 import tourGuideImg from '@/assets/tour_guide.jpg';
-import gladiatorImg from '@/assets/gladiator.png';
+import gladiatorImg from '@/assets/castrum_logo.jpg';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();

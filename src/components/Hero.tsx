@@ -16,7 +16,6 @@ const Hero: React.FC = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bnb-dark/75 via-bnb-dark/35 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
       </div>
       <div className="container relative z-10 mx-auto px-4">
         <div className="max-w-3xl animate-fade-in">
