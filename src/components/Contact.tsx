@@ -336,7 +336,7 @@ const Contact: React.FC = () => {
               <div className="mt-5 flex flex-wrap items-center gap-4 text-sm text-bnb-dark_gray">
                 {lastUpdated && (
                   <span>
-                    Last updated: {lastUpdated.toLocaleDateString()} at {lastUpdated.toLocaleTimeString()}
+                    {t('calendar.update')}: {lastUpdated.toLocaleDateString()} - {lastUpdated.toLocaleTimeString()}
                   </span>
                 )}
                 <span className="flex items-center gap-2">
@@ -484,7 +484,7 @@ const Contact: React.FC = () => {
                     </span>
                     <span>
                       <span className="block font-medium">{t('contact.email')}</span>
-                      <span className="text-sm text-muted-foreground">info@greenwoody.home</span>
+                      <span className="text-sm text-muted-foreground">greenwoodyhome@gmail.com</span>
                     </span>
                   </a>
                   <a href="https://maps.app.goo.gl/X9LD4aB8ZLAtTfGK8" target="_blank" rel="noopener noreferrer" className="contact-method">
