@@ -26,7 +26,7 @@ const translations = {
     'hero.pointsOfInterest': 'Points of Interest',
     'hero.contactUs': 'Reserve Direct',
     'booking.cta': 'Reserve Direct',
-    'booking.valueProp': 'Best Rate Guaranteed • Flexible Cancellation • Local Welcome Amenity',
+    'booking.valueProp': 'Best Rate Guaranteed • Plan your stay directly with us',
     
     // About
     'about.title': 'About Our Space',
@@ -213,9 +213,9 @@ const translations = {
     'hero.subtitle': 'Il vostro rifugio perfetto nella natura, che unisce comfort moderno e fascino rustico',
     'hero.viewGallery': 'Visualizza Galleria',
     'hero.pointsOfInterest': 'Punti di Interesse',
-    'hero.contactUs': 'Prenota Diretto',
-    'booking.cta': 'Prenota Diretto',
-    'booking.valueProp': 'Miglior Tariffa Garantita • Cancellazione Flessibile • Omaggio Locale',
+    'hero.contactUs': 'Prenota Subito',
+    'booking.cta': 'Prenota Subito',
+    'booking.valueProp': 'Miglior Tariffa Garantita • Organizza il soggiorno direttamente con noi',
     
     // About
     'about.title': 'Il Nostro Spazio',
@@ -300,7 +300,7 @@ const translations = {
     'calendar.loading': 'Caricando il calendario...',
     'calendar.available': 'Disponibile',
     'calendar.unavailable': 'Non Disponibile',
-    'calendar.update': 'Ultimo aggiornamento',
+    'calendar.update': 'Aggiornato al',
 
     // Pricing Info
     'pricingInfo.title': 'Vantaggi della prenotazione diretta',
