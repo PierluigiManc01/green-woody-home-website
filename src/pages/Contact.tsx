@@ -2,12 +2,19 @@ import React from 'react';
 import Header from '@/components/Header';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactPage: React.FC = () => {
   const { t } = useLanguage();
   return (
     <div className="min-h-screen flex flex-col">
+      {/* /contact and /reservations render the same page; /reservations is canonical. */}
+      <Seo
+        title="Reservations | Green Woody Home, Eco Villa Near Rome"
+        description="Request a direct booking at Green Woody Home. Check availability for the 3-bedroom eco villa near Rome that sleeps up to 8 guests."
+        path="/reservations"
+      />
       <Header />
       <main className="flex-grow">
         <section className="section-container bg-bnb-stone">

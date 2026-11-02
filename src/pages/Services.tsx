@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import {
   ArrowRight,
@@ -80,6 +81,11 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Seo
+        title="Services & Amenities | Green Woody Home"
+        description="Free Wi-Fi, free parking, EV charger and air conditioning, plus local experiences: tennis lessons, traditional Roman cooking, guided tours of Rome and a gladiator day."
+        path="/services"
+      />
       <Header />
       <main className="flex-grow">
         <section className="section-container bg-bnb-stone">

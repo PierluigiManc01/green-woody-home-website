@@ -90,7 +90,7 @@ const translations = {
     'contact.directBenefits': 'Best Rate Guaranteed • Flexible Cancellation • Local Welcome Amenity',
     'contact.info.title': 'Contact Information',
     'contact.info.address': 'Via Clarice Tartufari, Castel di Decima, Rome',
-    'contact.info.phone': '(+06) 5847332',
+    'contact.info.phone': '(+39) 3358158411',
     'contact.info.email': 'greenwoodyhome@gmail.com',
     'contact.availability.check': 'Review open dates, then send a private reservation request for a tailored direct rate.',
     'contact.availability.check2': 'Select your preferred stay window:',
@@ -281,7 +281,7 @@ const translations = {
 
     'contact.info.title': 'Informazioni di Contatto',
     'contact.info.address': 'Via Clarice Tartufari, Castel di Decima, Roma',
-    'contact.info.phone': '(+06) 5847332',
+    'contact.info.phone': '(+39) 3358158411',
     'contact.info.email': 'greenwoodyhome@gmail.com',
     'contact.availability.check': 'Consulta le date disponibili, poi invia una richiesta privata per ricevere la tariffa diretta su misura.',
     'contact.availability.check2': 'Seleziona il periodo preferito:',
