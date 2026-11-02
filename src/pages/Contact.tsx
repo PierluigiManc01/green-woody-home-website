@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/Header';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Faq from '@/components/Faq';
 import Seo from '@/components/Seo';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -29,6 +30,7 @@ const ContactPage: React.FC = () => {
           </div>
         </section>
         <Contact />
+        <Faq />
       </main>
       <Footer />
     </div>

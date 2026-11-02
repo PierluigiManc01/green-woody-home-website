@@ -106,6 +106,19 @@ const translations = {
     'contact.ctaLoc': 'Find us on Google Maps',
     'contact.finduUs': 'Other platforms',
 
+    // FAQ
+    'faq.title': 'Good to know before you book',
+    'faq.q1': 'How far is Green Woody Home from Rome?',
+    'faq.a1': 'Green Woody Home is in Castel di Decima, about 30 minutes by car from the historic centre of Rome and 15 minutes from the seaside at Torvaianica. The Colosseum is 19 km away (28 minutes) and the Vatican 21 km (32 minutes).',
+    'faq.q2': 'How many guests can stay?',
+    'faq.a2': 'The villa has 3 bedrooms, 3 bathrooms and 120 m² of living space, and hosts up to 8 guests in total.',
+    'faq.q3': 'Is the villa really solar-powered?',
+    'faq.a3': 'Yes. The villa runs fully on solar energy. There is also an EV charger on site and free parking.',
+    'faq.q4': 'What is included in the stay?',
+    'faq.a4': 'Free Wi-Fi, air conditioning, a fully equipped kitchen, coffee and tea, bed linen, bath amenities, a washing machine, a barbecue and a 1,500 m² private garden.',
+    'faq.q5': 'How do I book?',
+    'faq.a5': 'Send a reservation request on this page with your dates and guest details, and we will reply with a direct booking proposal. The villa is also listed on Airbnb and Booking.com.',
+
     // Calendar
     'calendar.loading': 'Loading calendar...',
     'calendar.available': 'Available',
@@ -295,6 +308,19 @@ const translations = {
     'contact.loc': 'Posizione',
     'contact.ctaLoc': 'Trovaci su Google Maps',
     'contact.finduUs': 'Altre piattaforme',
+
+    // FAQ
+    'faq.title': 'Da sapere prima di prenotare',
+    'faq.q1': 'Quanto dista Green Woody Home da Roma?',
+    'faq.a1': 'Green Woody Home si trova a Castel di Decima, a circa 30 minuti in auto dal centro storico di Roma e a 15 minuti dal mare di Torvaianica. Il Colosseo dista 19 km (28 minuti) e il Vaticano 21 km (32 minuti).',
+    'faq.q2': 'Quanti ospiti possono soggiornare?',
+    'faq.a2': 'La villa ha 3 camere da letto, 3 bagni e 120 m² di spazio abitabile, e ospita fino a 8 persone in totale.',
+    'faq.q3': 'La villa è davvero alimentata a energia solare?',
+    'faq.a3': 'Sì. La villa funziona interamente a energia solare. In loco ci sono anche una colonnina per veicoli elettrici e il parcheggio gratuito.',
+    'faq.q4': 'Cosa è incluso nel soggiorno?',
+    'faq.a4': 'Wi-Fi gratuito, aria condizionata, cucina completa, caffè e tè, biancheria da letto, essenziali per il bagno, lavatrice, barbecue e un giardino privato di 1.500 m².',
+    'faq.q5': 'Come si prenota?',
+    'faq.a5': 'Invia una richiesta di prenotazione da questa pagina con le date e i dettagli degli ospiti, e ti risponderemo con una proposta di prenotazione diretta. La villa è disponibile anche su Airbnb e Booking.com.',
 
     // Calendar
     'calendar.loading': 'Caricando il calendario...',
