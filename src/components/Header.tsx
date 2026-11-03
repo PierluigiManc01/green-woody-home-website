@@ -49,6 +49,9 @@ const Header: React.FC = () => {
           <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.services')}
           </Link>
+          <Link to="/events" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
+            {t('nav.events')}
+          </Link>
           <Link to="/reservations" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.contact')}
           </Link>
@@ -122,6 +125,14 @@ const Header: React.FC = () => {
                 }}
               >
                 {t('nav.services')}
+              </Link>
+              <Link to="/events" className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                {t('nav.events')}
               </Link>
               <Link to="/reservations" className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
                 onClick={() => {

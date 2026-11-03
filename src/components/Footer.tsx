@@ -30,6 +30,9 @@ const Footer: React.FC = () => {
                 <Link to="/services" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.services')}</Link>
               </li>
               <li>
+                <Link to="/events" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.events')}</Link>
+              </li>
+              <li>
                 <button 
                   onClick={handleResetCookieConsent}
                   className="text-bnb-green2 hover:text-white transition-colors cursor-pointer text-left"
