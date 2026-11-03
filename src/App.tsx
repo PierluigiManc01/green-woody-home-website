@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Gallery from "./pages/Gallery";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ export const routes: RouteRecord[] = [
       { index: true, element: <Index />, entry: "src/pages/Index.tsx" },
       { path: "gallery", element: <Gallery />, entry: "src/pages/Gallery.tsx" },
       { path: "services", element: <Services />, entry: "src/pages/Services.tsx" },
+      { path: "events", element: <Events />, entry: "src/pages/Events.tsx" },
       { path: "contact", element: <Contact />, entry: "src/pages/Contact.tsx" },
       { path: "reservations", element: <Contact />, entry: "src/pages/Contact.tsx" },
       // Rendered to 404.html, which Vercel serves for unknown URLs.

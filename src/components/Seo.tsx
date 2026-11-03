@@ -8,9 +8,10 @@ interface SeoProps {
   description: string;
   path: string;
   noindex?: boolean;
+  jsonLd?: Record<string, unknown>;
 }
 
-const Seo: React.FC<SeoProps> = ({ title, description, path, noindex = false }) => {
+const Seo: React.FC<SeoProps> = ({ title, description, path, noindex = false, jsonLd }) => {
   const url = `${SITE_URL}${path}`;
 
   return (
@@ -22,6 +23,7 @@ const Seo: React.FC<SeoProps> = ({ title, description, path, noindex = false }) 
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
+      {jsonLd && <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>}
     </Head>
   );
 };
