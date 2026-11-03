@@ -1,10 +1,9 @@
 import React from 'react';
-import { ArrowDown, Check, Minus } from 'lucide-react';
+import { Check, Minus } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import Contact from '@/components/Contact';
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const venueSchema = {
@@ -28,15 +27,15 @@ const venueSchema = {
 };
 
 const OCCASIONS = [1, 2, 3, 4, 5, 6, 7];
-const INCLUDED = [1, 2, 3, 4, 5, 6, 7, 8];
+const INCLUDED = [1, 3, 4, 5, 7, 8];
 const EXCLUDED = [1, 2, 3];
 
+// Two rows that alternate wide and narrow on desktop.
 const SPACES = [
-  { key: 'courtyard', src: '/photos/GREEN WOODY HOME-04.jpg' },
-  { key: 'lawn', src: '/photos/GREEN WOODY HOME-02.jpg' },
-  { key: 'terrace', src: '/photos/GREEN WOODY HOME-05.jpg' },
-  { key: 'garden', src: '/photos/GREEN WOODY HOME-03.jpg' },
-  { key: 'villa', src: '/photos/GREEN WOODY HOME-36.jpg' },
+  { key: 'courtyard', src: '/photos/GREEN WOODY HOME-04.jpg', span: 'md:col-span-8' },
+  { key: 'lawn', src: '/photos/GREEN WOODY HOME-02.jpg', span: 'md:col-span-4 object-[75%_50%]' },
+  { key: 'terrace', src: '/photos/GREEN WOODY HOME-05.jpg', span: 'md:col-span-4' },
+  { key: 'villa', src: '/photos/GREEN WOODY HOME-36.jpg', span: 'md:col-span-8' },
 ];
 
 const EventsPage: React.FC = () => {
@@ -65,61 +64,27 @@ const EventsPage: React.FC = () => {
                 {t('events.h1')}
               </h1>
               <p className="mt-5 text-xl text-bnb-stone md:text-2xl">{t('events.sub')}</p>
-              <ul className="mt-6 flex max-w-3xl flex-wrap gap-2">
-                {OCCASIONS.map((n) => (
-                  <li key={n} className="rounded-full border border-bnb-stone/70 px-4 py-1.5 text-sm text-bnb-stone md:text-base">
-                    {t(`events.occ${n}`)}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button
-                  asChild
-                  size="md"
-                  className="bg-bnb-green text-bnb-dark shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-bnb-dark_green hover:text-bnb-dark hover:shadow-md"
-                >
-                  <a href="#data">
-                    {t('events.hero.cta')}
-                    <ArrowDown />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  size="md"
-                  variant="outline"
-                  className="border-bnb-stone/80 bg-transparent text-bnb-stone hover:bg-bnb-stone hover:text-bnb-dark"
-                >
-                  <a href="#spaces">{t('events.cta.spaces')}</a>
-                </Button>
-              </div>
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-bnb-stone/85 md:text-lg">
+                {OCCASIONS.map((n) => t(`events.occ${n}`)).join(' · ')}
+              </p>
             </div>
           </div>
         </section>
 
-        <section id="spaces" className="scroll-mt-20 bg-bnb-stone pb-6 pt-16 md:pt-24">
-          <div className="mx-auto max-w-6xl px-4">
+        <section className="bg-bnb-stone px-4 pt-16 md:pt-24">
+          <div className="mx-auto max-w-6xl">
             <h2 className="text-4xl font-semibold text-bnb-dark md:text-5xl">{t('events.spaces.title')}</h2>
-          </div>
-          <div
-            tabIndex={0}
-            role="region"
-            aria-label={t('events.spaces.title')}
-            style={{ '--pad': 'max(1rem, calc((100vw - 72rem) / 2 + 1rem))' } as React.CSSProperties}
-            className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-[var(--pad)] pb-4 scroll-pl-[var(--pad)] md:gap-6 [scrollbar-color:#BFAE8F_transparent] [scrollbar-width:thin]"
-          >
-            {SPACES.map(({ key, src }) => (
-              <figure key={key} className="w-[82vw] shrink-0 snap-start sm:w-[46vw] lg:w-[34rem]">
-                <div className="overflow-hidden rounded-md">
-                  <img
-                    src={src}
-                    alt={t(`events.space.${key}`)}
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <figcaption className="mt-3 font-display text-xl text-bnb-dark">{t(`events.space.${key}`)}</figcaption>
-              </figure>
-            ))}
+            <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-6">
+              {SPACES.map(({ key, src, span }) => (
+                <img
+                  key={key}
+                  src={src}
+                  alt={t(`events.space.${key}`)}
+                  className={`aspect-[4/3] w-full rounded-md object-cover md:aspect-auto md:h-[22rem] ${span}`}
+                  loading="lazy"
+                />
+              ))}
+            </div>
           </div>
         </section>
 
