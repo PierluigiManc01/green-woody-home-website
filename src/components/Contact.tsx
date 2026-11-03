@@ -94,11 +94,17 @@ interface ContactProps {
 
 const MAX_EVENT_GUESTS = 100;
 
+const clampGuests = (value: string) => {
+  const next = Math.round(Number(value));
+  return Number.isFinite(next) ? Math.min(MAX_EVENT_GUESTS, Math.max(1, next)) : 1;
+};
+
 const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
   const isEvent = variant === 'event';
   const form = useRef<HTMLFormElement>(null);
-  const [eventGuests, setEventGuests] = useState(30);
+  const [eventGuestsInput, setEventGuestsInput] = useState('30');
   const [eventType, setEventType] = useState('');
+  const eventGuests = clampGuests(eventGuestsInput);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [unavailableDates, setUnavailableDates] = useState<Date[]>([]);
   const [selectedRange, setSelectedRange] = useState<DateRange | undefined>();
@@ -154,7 +160,7 @@ const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
             setCheckOut('');
             setAdults(2);
             setChildren(0);
-            setEventGuests(30);
+            setEventGuestsInput('30');
             setEventType('');
             setGuestMessage('');
           },
@@ -363,11 +369,11 @@ const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
               <div className="grid gap-5 md:grid-cols-2">
                 <div className="space-y-2">
                   <label htmlFor="firstname" className="text-sm font-medium text-bnb-dark">{t('contact.name')}</label>
-                  <Input id="firstname" name="firstname" placeholder="Mario" className="placeholder:opacity-40" required />
+                  <Input id="firstname" name="firstname" placeholder="Mario" className="placeholder:text-[#757c74]" required />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="lastname" className="text-sm font-medium text-bnb-dark">{t('contact.surname')}</label>
-                  <Input id="lastname" name="lastname" placeholder="Rossi" className="placeholder:opacity-40" required />
+                  <Input id="lastname" name="lastname" placeholder="Rossi" className="placeholder:text-[#757c74]" required />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="checkin" className="text-sm font-medium text-bnb-dark">{isEvent ? t('eventForm.date') : t('contact.checkin')}</label>
@@ -386,7 +392,7 @@ const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
                         value={eventType}
                         onChange={event => setEventType(event.target.value)}
                         placeholder={t('eventForm.typePlaceholder')}
-                        className="placeholder:opacity-40"
+                        className="placeholder:text-[#757c74]"
                         required
                       />
                     </div>
@@ -398,11 +404,9 @@ const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
                         inputMode="numeric"
                         min={1}
                         max={MAX_EVENT_GUESTS}
-                        value={eventGuests}
-                        onChange={event => {
-                          const next = Math.round(Number(event.target.value));
-                          setEventGuests(Number.isFinite(next) ? Math.min(MAX_EVENT_GUESTS, Math.max(1, next)) : 1);
-                        }}
+                        value={eventGuestsInput}
+                        onChange={event => setEventGuestsInput(event.target.value)}
+                        onBlur={() => setEventGuestsInput(String(clampGuests(eventGuestsInput)))}
                         required
                       />
                     </div>
@@ -423,11 +427,11 @@ const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
                 )}
                 <div className="space-y-2 md:col-span-2">
                   <label htmlFor="email" className="text-sm font-medium text-bnb-dark">{t('contact.email')}</label>
-                  <Input id="email" name="email" type="email" placeholder="mario.rossi@gmail.com" className="placeholder:opacity-40" required />
+                  <Input id="email" name="email" type="email" placeholder="mario.rossi@gmail.com" className="placeholder:text-[#757c74]" required />
                 </div>
                 <div className="space-y-2 md:col-span-2">
                   <label htmlFor="phone" className="text-sm font-medium text-bnb-dark">{t('contact.phone')}</label>
-                  <Input id="phone" name="phone" placeholder="+39 335 815 8411" className="placeholder:opacity-40" type="tel" />
+                  <Input id="phone" name="phone" placeholder="+39 335 815 8411" className="placeholder:text-[#757c74]" type="tel" />
                 </div>
                 <div className="space-y-2 md:col-span-2">
                   <label htmlFor="message" className="text-sm font-medium text-bnb-dark">{t('contact.message')}</label>
@@ -438,7 +442,7 @@ const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
                     value={guestMessage}
                     onChange={event => setGuestMessage(event.target.value)}
                     placeholder={t('contact.placeholder')}
-                    className="placeholder:opacity-40"
+                    className="placeholder:text-[#757c74]"
                   />
                 </div>
               </div>
@@ -451,7 +455,7 @@ const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
 
   if (isEvent) {
     return (
-      <section className="section-container bg-background">
+      <section className="bg-bnb-stone px-4 py-16 md:py-20">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-10 text-center text-4xl font-semibold text-bnb-dark md:text-5xl">{t('eventForm.title')}</h2>
           <div className="grid items-start gap-8 lg:grid-cols-2">

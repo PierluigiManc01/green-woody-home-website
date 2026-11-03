@@ -85,25 +85,25 @@ const EventsPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="bg-background px-4 pb-20 pt-4 md:pb-28">
+        <section className="bg-bnb-stone px-4 pb-20 pt-2 md:pb-24">
           <div className="mx-auto grid max-w-6xl grid-cols-12 gap-4 md:gap-8">
             <figure className="col-span-12 md:col-span-8">
               <img
-                src="/photos/GREEN WOODY HOME-03.jpg"
-                alt={t('events.photo.courtyard')}
+                src="/photos/GREEN WOODY HOME-04.jpg"
+                alt={t('events.photo.villa')}
                 className="aspect-[3/2] w-full rounded-md object-cover"
                 loading="lazy"
               />
-              <figcaption className="mt-3 text-sm text-bnb-dark_gray">{t('events.photo.courtyard')}</figcaption>
+              <figcaption className="mt-3 text-sm text-bnb-dark_gray">{t('events.photo.villa')}</figcaption>
             </figure>
             <figure className="col-span-12 md:col-span-4 md:mt-24">
               <img
-                src="/photos/GREEN WOODY HOME-05.jpg"
-                alt={t('events.photo.villa')}
-                className="aspect-[4/5] w-full rounded-md object-cover object-[75%_50%]"
+                src="/photos/GREEN WOODY HOME-03.jpg"
+                alt={t('events.photo.courtyard')}
+                className="aspect-[4/5] w-full rounded-md object-cover object-[30%_50%]"
                 loading="lazy"
               />
-              <figcaption className="mt-3 text-sm text-bnb-dark_gray">{t('events.photo.villa')}</figcaption>
+              <figcaption className="mt-3 text-sm text-bnb-dark_gray">{t('events.photo.courtyard')}</figcaption>
             </figure>
           </div>
         </section>
