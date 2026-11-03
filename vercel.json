@@ -1,9 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+  "redirects": [
+    { "source": "/gallery", "destination": "/en/gallery", "permanent": true },
+    { "source": "/services", "destination": "/en/services", "permanent": true },
+    { "source": "/events", "destination": "/en/events", "permanent": true },
+    { "source": "/reservations", "destination": "/en/reservations", "permanent": true },
+    { "source": "/contact", "destination": "/en/reservations", "permanent": true }
   ]
 }

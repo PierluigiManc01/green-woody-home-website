@@ -3,15 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Green Woody Home | Private Eco Villa Near Rome</title>
-    <meta name="description" content="Book Green Woody Home, a private eco-friendly villa in the Roman countryside with a 1,500 m² garden, modern comfort, and easy access to Rome and the sea." />
-
-    <meta property="og:title" content="Green Woody Home | Private Eco Villa Near Rome" />
-    <meta property="og:description" content="A solar-powered countryside retreat with 3 bedrooms, 3 bathrooms, a private garden, and easy access to Rome and the sea." />
-    <meta property="og:type" content="website" />
-
+    <!-- title, description, canonical and og:* are set per route in src/components/Seo.tsx -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@GreenWoodyHome" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Green Woody Home",
+      "description": "Private eco-friendly villa in the Roman countryside, fully solar-powered, with a 1,500 m² garden, 3 bedrooms and 3 bathrooms. About 30 minutes from central Rome and 15 minutes from the sea.",
+      "url": "https://www.greenwoodyhome.com/",
+      "image": "https://www.greenwoodyhome.com/photos/GREEN%20WOODY%20HOME-02.jpg",
+      "email": "greenwoodyhome@gmail.com",
+      "telephone": "+393358158411",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Clarice Tartufari",
+        "addressLocality": "Castel di Decima, Rome",
+        "postalCode": "00128",
+        "addressCountry": "IT"
+      },
+      "numberOfRooms": 3,
+      "floorSize": { "@type": "QuantitativeValue", "value": 120, "unitCode": "MTK" },
+      "occupancy": { "@type": "QuantitativeValue", "maxValue": 8 },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Free parking", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "EV charger", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Air conditioning", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Private garden (1,500 m²)", "value": true }
+      ],
+      "sameAs": [
+        "https://www.airbnb.it/h/green-woody-home",
+        "https://www.booking.com/hotel/it/green-woody-home"
+      ]
+    }
+    </script>
   </head>
 
   <body>

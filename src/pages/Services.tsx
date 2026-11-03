@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import {
   ArrowRight,
@@ -20,6 +21,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalizedPath } from '@/lib/routes';
 import tennisCourtImg from '@/assets/tennis.jpg';
 import chefImg from '@/assets/pasta.jpg';
 import tourGuideImg from '@/assets/tour_guide.jpg';
@@ -27,6 +29,7 @@ import gladiatorImg from '@/assets/castrum_logo.jpg';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
+  const pathTo = useLocalizedPath();
 
   const amenities = [
     { icon: <Wifi className="h-5 w-5" />, title: t('services.freewifi') },
@@ -80,6 +83,7 @@ const Services: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Seo title={t('seo.services.title')} description={t('seo.services.description')} page="services" />
       <Header />
       <main className="flex-grow">
         <section className="section-container bg-bnb-stone">
@@ -170,7 +174,7 @@ const Services: React.FC = () => {
                       ))}
                     </div>
                     <Button asChild className="mt-8 bg-bnb-green text-bnb-dark hover:bg-bnb-dark_green hover:text-bnb-dark">
-                      <Link to="/reservations" onClick={() => window.scrollTo(0, 0)}>
+                      <Link to={pathTo('reservations')} onClick={() => window.scrollTo(0, 0)}>
                         {t('services.reserveService')}
                         <ArrowRight className="h-4 w-4" />
                       </Link>

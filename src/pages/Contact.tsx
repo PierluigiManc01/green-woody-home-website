@@ -2,12 +2,15 @@ import React from 'react';
 import Header from '@/components/Header';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Faq from '@/components/Faq';
+import Seo from '@/components/Seo';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactPage: React.FC = () => {
   const { t } = useLanguage();
   return (
     <div className="min-h-screen flex flex-col">
+      <Seo title={t('seo.reservations.title')} description={t('seo.reservations.description')} page="reservations" />
       <Header />
       <main className="flex-grow">
         <section className="section-container bg-bnb-stone">
@@ -22,6 +25,7 @@ const ContactPage: React.FC = () => {
           </div>
         </section>
         <Contact />
+        <Faq />
       </main>
       <Footer />
     </div>

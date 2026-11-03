@@ -2,12 +2,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalizedPath, useSwitchLanguage } from '@/lib/routes';
 import { useIsMobile } from '@/hooks/use-mobile';
 import DirectBookingCTA from '@/components/DirectBookingCTA';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { language, t } = useLanguage();
+  const pathTo = useLocalizedPath();
+  const switchLanguage = useSwitchLanguage();
   const isMobile = useIsMobile();
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -25,7 +28,7 @@ const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-bnb-sand/30 bg-bnb-stone/95 backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between h-16 lg:h-20 px-4">
-        <Link to="/" 
+        <Link to={pathTo('home')} 
               onClick={() => window.scrollTo(0, 0)} 
               className="flex items-center">
           {/* Logo */}
@@ -37,19 +40,22 @@ const Header: React.FC = () => {
         </Link>
         
         <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-          <Link to="/" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
+          <Link to={pathTo('home')} onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.home')}
           </Link>
-          <Link to="/" onClick={() => {window.scrollTo(0, 800); <a href="#about"></a>}} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
+          <Link to={pathTo('home')} onClick={() => {window.scrollTo(0, 800); <a href="#about"></a>}} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.about')}
           </Link>
-          <Link to="/gallery" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
+          <Link to={pathTo('gallery')} onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.gallery')}
           </Link>
-          <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
+          <Link to={pathTo('services')} onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.services')}
           </Link>
-          <Link to="/reservations" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
+          <Link to={pathTo('events')} onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
+            {t('nav.events')}
+          </Link>
+          <Link to={pathTo('reservations')} onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.contact')}
           </Link>
         </nav>
@@ -57,7 +63,7 @@ const Header: React.FC = () => {
         {/* Language Toggle Button */}
         <div className="hidden md:flex items-center space-x-4">
           <button
-            onClick={() => setLanguage(language === 'en' ? 'it' : 'en')}
+            onClick={() => switchLanguage(language === 'en' ? 'it' : 'en')}
             className="flex items-center space-x-1 lg:space-x-2 text-bnb-dark hover:text-bnb-green transition-colors p-2"
             title={language === 'en' ? 'Switch to Italian' : 'Cambia in Inglese'}
           >
@@ -88,7 +94,7 @@ const Header: React.FC = () => {
           {/* Mobile menu dropdown */}
           {isMenuOpen && (
             <div className="mobile-menu-container absolute top-12 right-0 w-56 rounded-md border border-bnb-sand/40 bg-bnb-stone shadow-xl py-2">
-              <Link to="/" className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
+              <Link to={pathTo('home')} className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
                 onClick={() => {
                   setIsMenuOpen(false);
                   window.scrollTo(0, 0);
@@ -97,7 +103,7 @@ const Header: React.FC = () => {
                 {t('nav.home')}
               </Link>
 
-              <Link to="/" className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
+              <Link to={pathTo('home')} className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
                 onClick={() => {
                   setIsMenuOpen(false);
                   const scrollPosition = isMobile ? 600 : 800;
@@ -107,7 +113,7 @@ const Header: React.FC = () => {
                 {t('nav.about')}
               </Link>
 
-              <Link to="/gallery" className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
+              <Link to={pathTo('gallery')} className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
                   onClick={() => {
                   setIsMenuOpen(false);
                   window.scrollTo(0, 0);
@@ -115,7 +121,7 @@ const Header: React.FC = () => {
               > 
                 {t('nav.gallery')}
               </Link>
-              <Link to="/services" className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
+              <Link to={pathTo('services')} className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
                 onClick={() => {
                   setIsMenuOpen(false);
                   window.scrollTo(0, 0);
@@ -123,7 +129,15 @@ const Header: React.FC = () => {
               >
                 {t('nav.services')}
               </Link>
-              <Link to="/reservations" className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
+              <Link to={pathTo('events')} className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  window.scrollTo(0, 0);
+                }}
+              >
+                {t('nav.events')}
+              </Link>
+              <Link to={pathTo('reservations')} className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
                 onClick={() => {
                   setIsMenuOpen(false);
                   window.scrollTo(0, 0);
@@ -134,7 +148,7 @@ const Header: React.FC = () => {
               <div className="border-t border-bnb-sand/40 my-2"></div>
               <button
                 onClick={() => {
-                  setLanguage(language === 'en' ? 'it' : 'en');
+                  switchLanguage(language === 'en' ? 'it' : 'en');
                   setIsMenuOpen(false);
                 }}
                 className="flex items-center space-x-2 px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70 w-full"
