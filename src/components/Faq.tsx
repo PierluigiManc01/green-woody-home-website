@@ -2,7 +2,7 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const FAQ_KEYS = [1, 2, 3, 4, 5];
+const FAQ_KEYS = [1, 2, 3, 4, 5, 6];
 
 // Native <details> keeps the answers in the pre-rendered HTML while staying collapsed for visitors.
 const Faq: React.FC = () => {
