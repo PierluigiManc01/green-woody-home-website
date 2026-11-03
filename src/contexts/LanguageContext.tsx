@@ -109,8 +109,8 @@ const translations = {
     // FAQ
     'faq.title': 'Good to know before you book',
     'faq.q1': 'How do I book?',
-    'faq.a1': 'To book, simply complete the reservation form on this page and we will reply as soon as possible. To confirm the reservation we require a 25% down payment, which blocks your dates on all platforms. The remaining balance is split at check-in, or in 2 instalments if there is more than 1 month before the check-in date.',
-    'faq.q2': 'How far is Green Woody Home from Rome?',
+    'faq.a1': 'To book, simply complete the reservation form on this page and we will reply as soon as possible. To confirm the reservation we require a 25% down payment, which blocks your dates on all platforms. The remaining balance is paid at check-in, or in 2 instalments if there is more than 1 month before the check-in date.',
+    'faq.q2': 'How far is Green Woody Home from the centre of Rome?',
     'faq.a2': 'Green Woody Home is in Castel di Decima, about 30 minutes by car from the historic centre of Rome and 15 minutes from the seaside at Torvaianica. The Colosseum is 19 km away (28 minutes) and the Vatican 21 km (32 minutes).',
     'faq.q3': 'How many guests can stay?',
     'faq.a3': 'The villa has 3 bedrooms, 3 bathrooms and 120 m² of living space, and hosts up to 8 guests in total. We can also add an extra bed, and, depending on availability, offer an additional annex (dépendance) for up to 3 more people.',
@@ -314,8 +314,8 @@ const translations = {
     // FAQ
     'faq.title': 'Da sapere prima di prenotare',
     'faq.q1': 'Come si prenota?',
-    'faq.a1': 'Per prenotare basta compilare il modulo di prenotazione in questa pagina e ti risponderemo il prima possibile. Per confermare la prenotazione richiediamo una caparra del 25%, che blocca le date su tutte le piattaforme. Il saldo viene diviso al check-in, oppure in 2 rate se mancano più di 1 mese alla data di check-in.',
-    'faq.q2': 'Quanto dista Green Woody Home da Roma?',
+    'faq.a1': 'Per prenotare basta compilare il modulo di prenotazione in questa pagina e ti risponderemo il prima possibile. Per confermare la prenotazione richiediamo una caparra del 25%, che blocca le date su tutte le piattaforme. Il saldo viene pagato al check-in, oppure in 2 rate se mancano più di 1 mese alla data di check-in.',
+    'faq.q2': 'Quanto dista Green Woody Home dal centro di Roma?',
     'faq.a2': 'Green Woody Home si trova a Castel di Decima, a circa 30 minuti in auto dal centro storico di Roma e a 15 minuti dal mare di Torvaianica. Il Colosseo dista 19 km (28 minuti) e il Vaticano 21 km (32 minuti).',
     'faq.q3': 'Quanti ospiti possono soggiornare?',
     'faq.a3': 'La villa ha 3 camere da letto, 3 bagni e 120 m² di spazio abitabile, e ospita fino a 8 persone in totale. Possiamo aggiungere anche un letto extra e, in base alla disponibilità, offrire una dépendance aggiuntiva per altre 3 persone al massimo.',
