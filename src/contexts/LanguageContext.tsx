@@ -1,6 +1,9 @@
 import React, { createContext, useContext, useState } from 'react';
 
-type Language = 'en' | 'it';
+export type Language = 'en' | 'it';
+
+// The events page has one URL per language so each version is indexed on its own.
+export const EVENTS_PATH: Record<Language, string> = { en: '/events', it: '/eventi' };
 
 interface LanguageContextType {
   language: Language;
@@ -124,7 +127,7 @@ const translations = {
 
     // Events
     'events.teaser.title': 'Parties & events at Green Woody Home',
-    'events.teaser.text': 'Birthdays, graduations, christenings, corporate events, photo shoots and more. Host up to 100 guests in a 1,500 m² private garden near Rome, with the option to stay overnight.',
+    'events.teaser.text': 'Birthdays, graduations, christenings, corporate events, photo shoots and more. Up to 100 guests in a 1,500 m² private garden inside the Decima Malafede Nature Reserve, in Rome.',
     'events.teaser.cta': 'Discover events',
     'events.eyebrow': 'Parties & events',
     'events.cta.title': 'Request a quote',
@@ -139,7 +142,7 @@ const translations = {
     'eventForm.typePlaceholder': 'Communion, birthday, graduation...',
     'eventForm.reach': 'Prefer to talk?',
     'events.h1': 'Your event, surrounded by nature',
-    'events.sub': 'A private villa with a 1,500 m² garden, inside the Decima Malafede Nature Reserve.',
+    'events.sub': 'A private villa with a 1,500 m² garden, inside the Decima Malafede Nature Reserve, in Rome.',
     'events.occasions.title': 'For every occasion',
     'events.price.title': 'Prices',
     'events.price.base': 'Up to 50 guests',
@@ -382,7 +385,7 @@ const translations = {
 
     // Events
     'events.teaser.title': 'Feste ed eventi a Green Woody Home',
-    'events.teaser.text': 'Compleanni, lauree, battesimi, eventi aziendali, shooting e molto altro. Ospita fino a 100 persone in un giardino privato di 1.500 m² vicino a Roma, con possibilità di pernottamento.',
+    'events.teaser.text': 'Compleanni, lauree, battesimi, eventi aziendali, shooting e molto altro. Fino a 100 ospiti in un giardino privato di 1.500 m² nella Riserva Naturale di Decima Malafede, a Roma.',
     'events.teaser.cta': 'Scopri gli eventi',
     'events.eyebrow': 'Feste ed eventi',
     'events.cta.title': 'Richiedi un preventivo',
@@ -397,7 +400,7 @@ const translations = {
     'eventForm.typePlaceholder': 'Comunione, compleanno, laurea...',
     'eventForm.reach': 'Preferisci parlarci?',
     'events.h1': 'Il tuo evento, immerso nella natura',
-    'events.sub': 'Villa privata con 1.500 m² di giardino, nella Riserva Naturale di Decima Malafede.',
+    'events.sub': 'Villa privata con 1.500 m² di giardino, nella Riserva Naturale di Decima Malafede, a Roma.',
     'events.occasions.title': 'Per ogni occasione',
     'events.price.title': 'Prezzi',
     'events.price.base': 'Fino a 50 ospiti',
@@ -528,8 +531,11 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLanguage?: Language }> = ({
+  children,
+  initialLanguage = 'en',
+}) => {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations['en']] || key;

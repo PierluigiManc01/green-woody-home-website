@@ -2,11 +2,11 @@
 import React from 'react';
 import { resetCookieConsent } from '@/lib/cookieManager';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { EVENTS_PATH, useLanguage } from '@/contexts/LanguageContext';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const handleResetCookieConsent = () => {
     resetCookieConsent();
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
                 <Link to="/services" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.services')}</Link>
               </li>
               <li>
-                <Link to="/events" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.events')}</Link>
+                <Link to={EVENTS_PATH[language]} className="text-bnb-green2 hover:text-white transition-colors">{t('nav.events')}</Link>
               </li>
               <li>
                 <button 

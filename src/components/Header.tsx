@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { EVENTS_PATH, useLanguage } from '@/contexts/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import DirectBookingCTA from '@/components/DirectBookingCTA';
 
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           <Link to="/services" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.services')}
           </Link>
-          <Link to="/events" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
+          <Link to={EVENTS_PATH[language]} onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
             {t('nav.events')}
           </Link>
           <Link to="/reservations" onClick={() => window.scrollTo(0, 0)} className="text-sm lg:text-base font-medium text-bnb-dark hover:text-bnb-green transition-colors">
@@ -126,7 +126,7 @@ const Header: React.FC = () => {
               >
                 {t('nav.services')}
               </Link>
-              <Link to="/events" className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
+              <Link to={EVENTS_PATH[language]} className="block px-4 py-2 text-bnb-dark hover:text-bnb-green hover:bg-white/70"
                 onClick={() => {
                   setIsMenuOpen(false);
                   window.scrollTo(0, 0);

@@ -1,18 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Check, Minus } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import Contact from '@/components/Contact';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { EVENTS_PATH, type Language, useLanguage } from '@/contexts/LanguageContext';
 
-const venueSchema = {
+const SEO: Record<Language, { title: string; description: string; alt: string }> = {
+  it: {
+    title: 'Villa per eventi e feste a Roma | Green Woody Home',
+    description:
+      'Villa privata con giardino di 1.500 m² nella Riserva Naturale di Decima Malafede, a Roma. Comunioni, battesimi, compleanni, lauree ed eventi aziendali fino a 100 ospiti, da 500 €.',
+    alt: 'Villa con giardino privato per eventi e feste a Roma, nella Riserva di Decima Malafede',
+  },
+  en: {
+    title: 'Villa for Events and Parties in Rome | Green Woody Home',
+    description:
+      'Private villa with a 1,500 m² garden inside the Decima Malafede Nature Reserve, Rome. Communions, christenings, birthdays, graduations and corporate events for up to 100 guests, from €500.',
+    alt: 'Villa with a private garden for events and parties in Rome, inside the Decima Malafede reserve',
+  },
+};
+
+const venueSchema = (language: Language) => ({
   '@context': 'https://schema.org',
   '@type': 'EventVenue',
   name: 'Green Woody Home',
-  description:
-    'Private villa with a 1,500 m² garden near Rome for parties and events: birthdays, graduations, corporate events, photo shoots and more.',
-  url: 'https://www.greenwoodyhome.com/events',
+  description: SEO[language].description,
+  url: `https://www.greenwoodyhome.com${EVENTS_PATH[language]}`,
   image: 'https://www.greenwoodyhome.com/photos/DSC_0238%20copy.jpg',
   telephone: '+393358158411',
   email: 'greenwoodyhome@gmail.com',
@@ -20,11 +35,17 @@ const venueSchema = {
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Via Clarice Tartufari',
-    addressLocality: 'Castel di Decima, Rome',
+    addressLocality: 'Roma',
+    addressRegion: 'RM',
     postalCode: '00128',
     addressCountry: 'IT',
   },
-};
+  geo: { '@type': 'GeoCoordinates', latitude: 41.7562463, longitude: 12.4381951 },
+  containedInPlace: { '@type': 'Place', name: 'Riserva Naturale di Decima Malafede' },
+  amenityFeature: ['Private garden 1,500 m²', 'Barbecue', 'Kitchen', 'Free parking', 'Wi-Fi', 'Air conditioning'].map(
+    (name) => ({ '@type': 'LocationFeatureSpecification', name, value: true }),
+  ),
+});
 
 const OCCASIONS = [1, 2, 3, 4, 5, 6, 7];
 const PRICES = ['base', 'extra', 'stay'];
@@ -40,22 +61,32 @@ const SPACES = [
 ];
 
 const EventsPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  // The URL decides the indexed language; the toggle moves to the other URL.
+  const pageLanguage: Language = pathname.startsWith(EVENTS_PATH.it) ? 'it' : 'en';
+
+  useEffect(() => {
+    if (language !== pageLanguage) navigate(EVENTS_PATH[language], { replace: true });
+  }, [language, pageLanguage, navigate]);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Seo
-        title="Parties & Events Venue Near Rome | Green Woody Home"
-        description="Host birthdays, graduations, corporate events, photo shoots and more at Green Woody Home: private villa with a 1,500 m² garden near Rome, up to 100 guests, overnight stay available."
-        path="/events"
-        jsonLd={venueSchema}
+        title={SEO[pageLanguage].title}
+        description={SEO[pageLanguage].description}
+        path={EVENTS_PATH[pageLanguage]}
+        lang={pageLanguage}
+        alternates={{ it: EVENTS_PATH.it, en: EVENTS_PATH.en }}
+        jsonLd={venueSchema(pageLanguage)}
       />
       <Header />
       <main className="flex-grow">
         <section className="relative flex min-h-[calc(100svh-5rem)] items-end overflow-hidden">
           <img
             src="/photos/DSC_0238 copy.jpg"
-            alt="Villa with a private garden near Rome, available for parties and events"
+            alt={SEO[pageLanguage].alt}
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bnb-dark/90 via-bnb-dark/50 to-bnb-dark/10" />

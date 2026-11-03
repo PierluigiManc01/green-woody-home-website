@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://www.greenwoodyhome.com/</loc></url>
   <url><loc>https://www.greenwoodyhome.com/gallery</loc></url>
   <url><loc>https://www.greenwoodyhome.com/services</loc></url>
-  <url><loc>https://www.greenwoodyhome.com/events</loc></url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/eventi</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/eventi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/eventi"/>
+  </url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/events</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/eventi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/events"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/eventi"/>
+  </url>
   <url><loc>https://www.greenwoodyhome.com/reservations</loc></url>
 </urlset>

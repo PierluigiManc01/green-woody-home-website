@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { EVENTS_PATH, useLanguage } from '@/contexts/LanguageContext';
 
 const EventsTeaser: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="events" className="section-container bg-bnb-stone">
@@ -24,7 +24,7 @@ const EventsTeaser: React.FC = () => {
             asChild
             className="group bg-bnb-green text-bnb-dark hover:bg-bnb-dark_green hover:text-bnb-dark shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
           >
-            <Link to="/events" onClick={() => window.scrollTo(0, 0)}>
+            <Link to={EVENTS_PATH[language]} onClick={() => window.scrollTo(0, 0)}>
               {t('events.teaser.cta')}
               <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
