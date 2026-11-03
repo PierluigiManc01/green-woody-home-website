@@ -27,6 +27,7 @@ const venueSchema = {
 };
 
 const OCCASIONS = [1, 2, 3, 4, 5, 6, 7];
+const PRICES = ['base', 'extra', 'stay'];
 const INCLUDED = [1, 3, 4, 5, 7, 8];
 const EXCLUDED = [1, 2, 3];
 
@@ -63,10 +64,33 @@ const EventsPage: React.FC = () => {
               <h1 className="text-balance text-4xl font-semibold leading-[1.08] text-bnb-stone sm:text-5xl md:text-7xl">
                 {t('events.h1')}
               </h1>
-              <p className="mt-5 text-xl text-bnb-stone md:text-2xl">{t('events.sub')}</p>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-bnb-stone/85 md:text-lg">
-                {OCCASIONS.map((n) => t(`events.occ${n}`)).join(' · ')}
-              </p>
+              <p className="mt-5 max-w-2xl text-xl leading-relaxed text-bnb-stone md:text-2xl">{t('events.sub')}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-bnb-stone px-4 pt-16 md:pt-24">
+          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-6">
+              <h2 className="text-4xl font-semibold text-bnb-dark md:text-5xl">{t('events.occasions.title')}</h2>
+              <ul className="mt-8 grid border-t border-bnb-sand/60 sm:grid-cols-2 sm:gap-x-8">
+                {OCCASIONS.map((n) => (
+                  <li key={n} className="border-b border-bnb-sand/60 py-3 font-display text-xl text-bnb-dark">
+                    {t(`events.occ${n}`)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="lg:col-span-5 lg:col-start-8">
+              <h2 className="text-4xl font-semibold text-bnb-dark md:text-5xl">{t('events.price.title')}</h2>
+              <dl className="mt-8 border-t border-bnb-sand/60">
+                {PRICES.map((key) => (
+                  <div key={key} className="flex items-baseline justify-between gap-6 border-b border-bnb-sand/60 py-4">
+                    <dt className="text-lg text-bnb-dark_gray">{t(`events.price.${key}`)}</dt>
+                    <dd className="shrink-0 font-display text-2xl text-bnb-dark">{t(`events.price.${key}.value`)}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </section>
