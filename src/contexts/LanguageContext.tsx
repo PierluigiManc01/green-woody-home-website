@@ -2,9 +2,6 @@ import React, { createContext, useContext, useState } from 'react';
 
 export type Language = 'en' | 'it';
 
-// The events page has one URL per language so each version is indexed on its own.
-export const EVENTS_PATH: Record<Language, string> = { en: '/events', it: '/eventi' };
-
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -20,6 +17,14 @@ const translations = {
     'nav.services': 'Services',
     'nav.contact': 'Reservations',
     'nav.events': 'Events',
+    'seo.home.title': 'Green Woody Home | Private Eco Villa Near Rome',
+    'seo.home.description': 'Book Green Woody Home, a private eco-friendly villa in the Roman countryside with a 1,500 m² garden, modern comfort, and easy access to Rome and the sea.',
+    'seo.gallery.title': 'Photo Gallery | Green Woody Home, Eco Villa Near Rome',
+    'seo.gallery.description': 'Photos of Green Woody Home: three bedrooms, three bathrooms, living room, kitchen and a 1,500 m² private garden in the Roman countryside.',
+    'seo.services.title': 'Services & Amenities | Green Woody Home',
+    'seo.services.description': 'Free Wi-Fi, free parking, EV charger and air conditioning, plus local experiences: tennis lessons, traditional Roman cooking, guided tours of Rome and a gladiator day.',
+    'seo.reservations.title': 'Reservations | Green Woody Home, Eco Villa Near Rome',
+    'seo.reservations.description': 'Request a direct booking at Green Woody Home. Check availability for the 3-bedroom eco villa near Rome that sleeps up to 8 guests.',
     'nav.menu': 'Open Menu',
     
     // Hero
@@ -277,6 +282,14 @@ const translations = {
     'nav.services': 'Servizi',
     'nav.contact': 'Prenotazioni',
     'nav.events': 'Eventi',
+    'seo.home.title': 'Villa con giardino in affitto a Roma | Green Woody Home',
+    'seo.home.description': 'Villa privata ed ecosostenibile con 3 camere, 3 bagni e giardino di 1.500 m², nella Riserva Naturale di Decima Malafede, a 30 minuti dal centro di Roma e 15 dal mare. Prenota direttamente.',
+    'seo.gallery.title': 'Foto della villa | Green Woody Home, Roma',
+    'seo.gallery.description': 'Le foto di Green Woody Home: tre camere, tre bagni, soggiorno, cucina e un giardino privato di 1.500 m² nella campagna romana.',
+    'seo.services.title': 'Servizi e comfort | Green Woody Home',
+    'seo.services.description': 'Wi-Fi gratuito, parcheggio, colonnina per auto elettriche e aria condizionata, più esperienze locali: tennis, cucina romana tradizionale, visite guidate di Roma e una giornata da gladiatore.',
+    'seo.reservations.title': 'Prenota la villa a Roma | Green Woody Home',
+    'seo.reservations.description': 'Prenota direttamente Green Woody Home: verifica la disponibilità della villa con 3 camere vicino a Roma, fino a 8 ospiti.',
     'nav.menu': 'Apri il Menu',
     
     // Hero
@@ -533,7 +546,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLanguage?: Language }> = ({
   children,
-  initialLanguage = 'en',
+  initialLanguage = 'it',
 }) => {
   const [language, setLanguage] = useState<Language>(initialLanguage);
 

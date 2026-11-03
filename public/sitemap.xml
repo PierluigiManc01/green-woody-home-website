@@ -1,19 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://www.greenwoodyhome.com/</loc></url>
-  <url><loc>https://www.greenwoodyhome.com/gallery</loc></url>
-  <url><loc>https://www.greenwoodyhome.com/services</loc></url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/"/>
+  </url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/"/>
+  </url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/galleria</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/galleria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/galleria"/>
+  </url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/en/gallery</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/galleria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/galleria"/>
+  </url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/servizi</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/servizi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/servizi"/>
+  </url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/servizi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/servizi"/>
+  </url>
   <url>
     <loc>https://www.greenwoodyhome.com/eventi</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/eventi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/events"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en/events"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/eventi"/>
   </url>
   <url>
-    <loc>https://www.greenwoodyhome.com/events</loc>
+    <loc>https://www.greenwoodyhome.com/en/events</loc>
     <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/eventi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/events"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en/events"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/eventi"/>
   </url>
-  <url><loc>https://www.greenwoodyhome.com/reservations</loc></url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/prenotazioni</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/prenotazioni"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en/reservations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/prenotazioni"/>
+  </url>
+  <url>
+    <loc>https://www.greenwoodyhome.com/en/reservations</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.greenwoodyhome.com/prenotazioni"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.greenwoodyhome.com/en/reservations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.greenwoodyhome.com/prenotazioni"/>
+  </url>
 </urlset>

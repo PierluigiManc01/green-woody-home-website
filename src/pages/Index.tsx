@@ -9,15 +9,14 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
 import Seo from '@/components/Seo';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen flex flex-col">
-      <Seo
-        title="Green Woody Home | Private Eco Villa Near Rome"
-        description="Book Green Woody Home, a private eco-friendly villa in the Roman countryside with a 1,500 m² garden, modern comfort, and easy access to Rome and the sea."
-        path="/"
-      />
+      <Seo title={t('seo.home.title')} description={t('seo.home.description')} page="home" />
       <Header />
       <main className="flex-grow">
         <Hero />

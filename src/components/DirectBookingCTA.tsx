@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalizedPath } from '@/lib/routes';
 
 interface DirectBookingCTAProps {
   className?: string;
@@ -17,6 +18,7 @@ const DirectBookingCTA: React.FC<DirectBookingCTAProps> = ({
   size = 'default',
 }) => {
   const { t } = useLanguage();
+  const pathTo = useLocalizedPath();
 
   return (
     <div className={cn('flex flex-col items-start gap-2', className)}>
@@ -25,7 +27,7 @@ const DirectBookingCTA: React.FC<DirectBookingCTAProps> = ({
         size={size}
         className="group bg-bnb-green text-bnb-dark hover:bg-bnb-dark_green hover:text-bnb-dark shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
       >
-        <Link to="/reservations" onClick={() => window.scrollTo(0, 0)}>
+        <Link to={pathTo('reservations')} onClick={() => window.scrollTo(0, 0)}>
           {t('booking.cta')}
           <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
         </Link>

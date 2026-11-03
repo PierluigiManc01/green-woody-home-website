@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
 import { Check, Minus } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Seo from '@/components/Seo';
 import Contact from '@/components/Contact';
-import { EVENTS_PATH, type Language, useLanguage } from '@/contexts/LanguageContext';
+import { type Language, useLanguage } from '@/contexts/LanguageContext';
+import { PAGE_PATHS } from '@/lib/routes';
 
 const SEO: Record<Language, { title: string; description: string; alt: string }> = {
   it: {
@@ -27,7 +27,7 @@ const venueSchema = (language: Language) => ({
   '@type': 'EventVenue',
   name: 'Green Woody Home',
   description: SEO[language].description,
-  url: `https://www.greenwoodyhome.com${EVENTS_PATH[language]}`,
+  url: `https://www.greenwoodyhome.com${PAGE_PATHS.events[language]}`,
   image: 'https://www.greenwoodyhome.com/photos/DSC_0238%20copy.jpg',
   telephone: '+393358158411',
   email: 'greenwoodyhome@gmail.com',
@@ -62,31 +62,21 @@ const SPACES = [
 
 const EventsPage: React.FC = () => {
   const { t, language } = useLanguage();
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
-  // The URL decides the indexed language; the toggle moves to the other URL.
-  const pageLanguage: Language = pathname.startsWith(EVENTS_PATH.it) ? 'it' : 'en';
-
-  useEffect(() => {
-    if (language !== pageLanguage) navigate(EVENTS_PATH[language], { replace: true });
-  }, [language, pageLanguage, navigate]);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Seo
-        title={SEO[pageLanguage].title}
-        description={SEO[pageLanguage].description}
-        path={EVENTS_PATH[pageLanguage]}
-        lang={pageLanguage}
-        alternates={{ it: EVENTS_PATH.it, en: EVENTS_PATH.en }}
-        jsonLd={venueSchema(pageLanguage)}
+        title={SEO[language].title}
+        description={SEO[language].description}
+        page="events"
+        jsonLd={venueSchema(language)}
       />
       <Header />
       <main className="flex-grow">
         <section className="relative flex min-h-[calc(100svh-5rem)] items-end overflow-hidden">
           <img
             src="/photos/DSC_0238 copy.jpg"
-            alt={SEO[pageLanguage].alt}
+            alt={SEO[language].alt}
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bnb-dark/90 via-bnb-dark/50 to-bnb-dark/10" />

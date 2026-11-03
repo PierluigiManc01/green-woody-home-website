@@ -1,22 +1,25 @@
 import React from 'react';
 import { Head } from 'vite-react-ssg';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { PAGE_PATHS, type PageKey } from '@/lib/routes';
 
 const SITE_URL = 'https://www.greenwoodyhome.com';
 
 interface SeoProps {
   title: string;
   description: string;
-  path: string;
+  // A site page gets its URL, language and hreflang alternates from the route table.
+  page?: PageKey;
+  path?: string;
   noindex?: boolean;
   jsonLd?: Record<string, unknown>;
-  lang?: string;
-  // Language versions of this page, e.g. { en: '/events', it: '/eventi' }; the first one is x-default.
-  alternates?: Record<string, string>;
 }
 
-const Seo: React.FC<SeoProps> = ({ title, description, path, noindex = false, jsonLd, lang = 'en', alternates }) => {
-  const url = `${SITE_URL}${path}`;
-  const alternateEntries = alternates ? Object.entries(alternates) : [];
+const Seo: React.FC<SeoProps> = ({ title, description, page, path = '/', noindex = false, jsonLd }) => {
+  const { language: lang } = useLanguage();
+  const url = `${SITE_URL}${page ? PAGE_PATHS[page][lang] : path}`;
+  // Italian first, so it is also the x-default.
+  const alternateEntries = page ? Object.entries({ it: PAGE_PATHS[page].it, en: PAGE_PATHS[page].en }) : [];
 
   return (
     <Head>

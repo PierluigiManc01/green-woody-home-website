@@ -4,6 +4,7 @@ import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalizedPath } from '@/lib/routes';
 import { cn } from '@/lib/utils';
 
 const galleryCategories = {
@@ -111,6 +112,7 @@ const getHomepageTileClass = (index: number) => homepageTileClasses[index % home
 
 const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
   const { t } = useLanguage();
+  const pathTo = useLocalizedPath();
 
   if (isHomepage) {
     const previewImages = [
@@ -148,7 +150,7 @@ const Gallery: React.FC<GalleryProps> = ({ isHomepage = false }) => {
           <div className="mt-8 flex flex-col items-start justify-between gap-5 border-t border-bnb-sand/40 pt-6 md:flex-row md:items-center">
             <p className="max-w-2xl text-base leading-relaxed text-bnb-dark_gray md:text-lg">{t('gallery.conclusion')}</p>
             <Button asChild className="w-full bg-bnb-green text-bnb-dark hover:bg-bnb-dark_green hover:text-bnb-dark md:w-auto">
-              <Link to="/gallery" onClick={() => window.scrollTo(0, 0)}>
+              <Link to={pathTo('gallery')} onClick={() => window.scrollTo(0, 0)}>
                 {t('gallery.viewFull')}
                 <ArrowRight className="h-4 w-4" />
               </Link>

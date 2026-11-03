@@ -10,12 +10,7 @@ const ContactPage: React.FC = () => {
   const { t } = useLanguage();
   return (
     <div className="min-h-screen flex flex-col">
-      {/* /contact and /reservations render the same page; /reservations is canonical. */}
-      <Seo
-        title="Reservations | Green Woody Home, Eco Villa Near Rome"
-        description="Request a direct booking at Green Woody Home. Check availability for the 3-bedroom eco villa near Rome that sleeps up to 8 guests."
-        path="/reservations"
-      />
+      <Seo title={t('seo.reservations.title')} description={t('seo.reservations.description')} page="reservations" />
       <Header />
       <main className="flex-grow">
         <section className="section-container bg-bnb-stone">

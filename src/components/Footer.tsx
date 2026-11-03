@@ -2,11 +2,13 @@
 import React from 'react';
 import { resetCookieConsent } from '@/lib/cookieManager';
 import { Link } from 'react-router-dom';
-import { EVENTS_PATH, useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { useLocalizedPath } from '@/lib/routes';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
+  const pathTo = useLocalizedPath();
   
   const handleResetCookieConsent = () => {
     resetCookieConsent();
@@ -21,16 +23,16 @@ const Footer: React.FC = () => {
             <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.home')}</Link>
+                <Link to={pathTo('home')} className="text-bnb-green2 hover:text-white transition-colors">{t('nav.home')}</Link>
               </li>
               <li>
-                <Link to="/gallery" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.gallery')}</Link>
+                <Link to={pathTo('gallery')} className="text-bnb-green2 hover:text-white transition-colors">{t('nav.gallery')}</Link>
               </li>
               <li>
-                <Link to="/services" className="text-bnb-green2 hover:text-white transition-colors">{t('nav.services')}</Link>
+                <Link to={pathTo('services')} className="text-bnb-green2 hover:text-white transition-colors">{t('nav.services')}</Link>
               </li>
               <li>
-                <Link to={EVENTS_PATH[language]} className="text-bnb-green2 hover:text-white transition-colors">{t('nav.events')}</Link>
+                <Link to={pathTo('events')} className="text-bnb-green2 hover:text-white transition-colors">{t('nav.events')}</Link>
               </li>
               <li>
                 <button 
@@ -47,7 +49,7 @@ const Footer: React.FC = () => {
             <h4 className="text-lg text-white font-display font-medium mb-4">{t('footer.reservations')}</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/reservations" className="text-bnb-green2 hover:text-white transition-colors">{t('footer.privateReservation')}</Link>
+                <Link to={pathTo('reservations')} className="text-bnb-green2 hover:text-white transition-colors">{t('footer.privateReservation')}</Link>
               </li>
               <li>
                 <a href="https://www.airbnb.it/h/green-woody-home" target="_blank" rel="noopener noreferrer" className="text-bnb-green2 hover:text-white transition-colors">
