@@ -88,8 +88,17 @@ const GuestStepper: React.FC<{
   </div>
 );
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  variant?: 'stay' | 'event';
+}
+
+const MAX_EVENT_GUESTS = 100;
+
+const Contact: React.FC<ContactProps> = ({ variant = 'stay' }) => {
+  const isEvent = variant === 'event';
   const form = useRef<HTMLFormElement>(null);
+  const [eventGuests, setEventGuests] = useState(30);
+  const [eventType, setEventType] = useState('');
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
   const [unavailableDates, setUnavailableDates] = useState<Date[]>([]);
   const [selectedRange, setSelectedRange] = useState<DateRange | undefined>();
@@ -145,6 +154,8 @@ const Contact: React.FC = () => {
             setCheckOut('');
             setAdults(2);
             setChildren(0);
+            setEventGuests(30);
+            setEventType('');
             setGuestMessage('');
           },
           (error) => {
@@ -259,44 +270,35 @@ const Contact: React.FC = () => {
     return () => clearInterval(interval);
   }, [fetchCalendarData]);
 
-  const reservationSummary = [
-    'Reservation request',
-    `Check-in: ${checkIn || '-'}`,
-    `Check-out: ${checkOut || '-'}`,
-    `Guests: ${adults} adults, ${children} children`,
-    '',
-    'Guest message:',
-    guestMessage || '-',
-  ].join('\n');
+  // The event fields travel inside the same message body so the email template stays unchanged.
+  const reservationSummary = (isEvent
+    ? [
+        'Event request',
+        `Event type: ${eventType || '-'}`,
+        `Event date: ${checkIn || '-'}`,
+        `End date: ${checkOut || '-'}`,
+        `Guests: ${eventGuests}`,
+      ]
+    : [
+        'Reservation request',
+        `Check-in: ${checkIn || '-'}`,
+        `Check-out: ${checkOut || '-'}`,
+        `Guests: ${adults} adults, ${children} children`,
+      ]
+  )
+    .concat(['', 'Guest message:', guestMessage || '-'])
+    .join('\n');
 
   const maxGuests = 8;
   const isMaxGuestsReached = adults + children >= maxGuests;
   const maxAdults = maxGuests - children;
   const maxChildren = maxGuests - adults;
 
-  return (
-    <>
-      <section className="section-container bg-background">
-        <div className="mx-auto max-w-6xl">
-          <div className="mb-10 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-bnb-wood">
-                {t('contact.availability')}
-              </p>
-              <h2 className="text-4xl font-semibold leading-tight text-bnb-dark md:text-6xl">
-                {t('contact.title')}
-              </h2>
-            </div>
-            <p className="text-lg leading-relaxed text-bnb-dark_gray md:text-xl">
-              {t('contact.availability.check')}
-            </p>
-          </div>
-
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+  const calendarCard = (
             <div className="rounded-md border border-bnb-sand/40 bg-white p-5 shadow-sm md:p-8">
               <div className="mb-6 flex items-center gap-3 text-bnb-dark">
                 <CalendarIcon className="h-5 w-5 text-bnb-green" />
-                <h3 className="font-display text-2xl">{t('contact.availability.check2')}</h3>
+                <h3 className="font-display text-2xl">{isEvent ? t('eventForm.pick') : t('contact.availability.check2')}</h3>
               </div>
 
               {isLoading ? (
@@ -349,6 +351,146 @@ const Contact: React.FC = () => {
                 </span>
               </div>
             </div>
+  );
+
+  const formCard = (
+            <form ref={form} onSubmit={handleSubmit} className="rounded-md border border-bnb-sand/40 bg-white p-5 shadow-sm md:p-8">
+              <input type="hidden" name="adults" value={isEvent ? eventGuests : adults} readOnly />
+              <input type="hidden" name="children" value={isEvent ? 0 : children} readOnly />
+              <input type="hidden" name="guests" value={isEvent ? `${eventGuests} guests` : `${adults} adults, ${children} children`} readOnly />
+              {isEvent && <input type="hidden" name="event_type" value={eventType} readOnly />}
+              <input type="hidden" name="message" value={reservationSummary} readOnly />
+              <div className="grid gap-5 md:grid-cols-2">
+                <div className="space-y-2">
+                  <label htmlFor="firstname" className="text-sm font-medium text-bnb-dark">{t('contact.name')}</label>
+                  <Input id="firstname" name="firstname" placeholder="Mario" className="placeholder:opacity-40" required />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="lastname" className="text-sm font-medium text-bnb-dark">{t('contact.surname')}</label>
+                  <Input id="lastname" name="lastname" placeholder="Rossi" className="placeholder:opacity-40" required />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="checkin" className="text-sm font-medium text-bnb-dark">{isEvent ? t('eventForm.date') : t('contact.checkin')}</label>
+                  <Input id="checkin" name="checkin" type="date" value={checkIn} onChange={event => setCheckIn(event.target.value)} required />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="checkout" className="text-sm font-medium text-bnb-dark">{isEvent ? t('eventForm.endDate') : t('contact.checkout')}</label>
+                  <Input id="checkout" name="checkout" type="date" value={checkOut} onChange={event => setCheckOut(event.target.value)} required={!isEvent} />
+                </div>
+                {isEvent ? (
+                  <>
+                    <div className="space-y-2">
+                      <label htmlFor="eventtype" className="text-sm font-medium text-bnb-dark">{t('eventForm.type')}</label>
+                      <Input
+                        id="eventtype"
+                        value={eventType}
+                        onChange={event => setEventType(event.target.value)}
+                        placeholder={t('eventForm.typePlaceholder')}
+                        className="placeholder:opacity-40"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="eventguests" className="text-sm font-medium text-bnb-dark">{t('eventForm.guests')}</label>
+                      <Input
+                        id="eventguests"
+                        type="number"
+                        inputMode="numeric"
+                        min={1}
+                        max={MAX_EVENT_GUESTS}
+                        value={eventGuests}
+                        onChange={event => {
+                          const next = Math.round(Number(event.target.value));
+                          setEventGuests(Number.isFinite(next) ? Math.min(MAX_EVENT_GUESTS, Math.max(1, next)) : 1);
+                        }}
+                        required
+                      />
+                    </div>
+                  </>
+                ) : (
+                <div className="space-y-2 md:col-span-2">
+                  <label htmlFor="guests" className="text-sm font-medium text-bnb-dark">{t('contact.guests')}</label>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <GuestStepper label={t('contact.adults')} value={adults} min={1} max={maxAdults} onChange={setAdults} />
+                    <GuestStepper label={t('contact.children')} value={children} min={0} max={maxChildren} onChange={setChildren} />
+                  </div>
+                  {isMaxGuestsReached && (
+                    <p className="rounded-md border border-bnb-wood/30 bg-bnb-beige/20 px-3 py-2 text-sm font-medium text-bnb-forest-brown">
+                      {t('contact.maxGuestsWarning')}
+                    </p>
+                  )}
+                </div>
+                )}
+                <div className="space-y-2 md:col-span-2">
+                  <label htmlFor="email" className="text-sm font-medium text-bnb-dark">{t('contact.email')}</label>
+                  <Input id="email" name="email" type="email" placeholder="mario.rossi@gmail.com" className="placeholder:opacity-40" required />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <label htmlFor="phone" className="text-sm font-medium text-bnb-dark">{t('contact.phone')}</label>
+                  <Input id="phone" name="phone" placeholder="+39 335 815 8411" className="placeholder:opacity-40" type="tel" />
+                </div>
+                <div className="space-y-2 md:col-span-2">
+                  <label htmlFor="message" className="text-sm font-medium text-bnb-dark">{t('contact.message')}</label>
+                  <Textarea
+                    id="message"
+                    name="guest_message"
+                    rows={5}
+                    value={guestMessage}
+                    onChange={event => setGuestMessage(event.target.value)}
+                    placeholder={t('contact.placeholder')}
+                    className="placeholder:opacity-40"
+                  />
+                </div>
+              </div>
+
+              <Button type="submit" size="md" className="mt-6 w-full bg-bnb-green text-bnb-dark hover:bg-bnb-dark_green hover:text-bnb-dark">
+                {isEvent ? t('events.cta.title') : t('contact.send')}
+              </Button>
+            </form>
+  );
+
+  if (isEvent) {
+    return (
+      <section className="section-container bg-background">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-10 text-center text-4xl font-semibold text-bnb-dark md:text-5xl">{t('eventForm.title')}</h2>
+          <div className="grid items-start gap-8 lg:grid-cols-2">
+            {calendarCard}
+            {formCard}
+          </div>
+          <p className="mt-8 text-center text-bnb-dark_gray">
+            {t('eventForm.reach')}{' '}
+            <a href="https://wa.me/393358158411" target="_blank" rel="noopener noreferrer" className="underline hover:text-bnb-green">{t('events.cta.whatsapp')}</a>
+            {' · '}
+            <a href="tel:+393358158411" className="underline hover:text-bnb-green">{t('events.cta.call')}</a>
+            {' · '}
+            <a href="mailto:greenwoodyhome@gmail.com" className="underline hover:text-bnb-green">{t('events.cta.email')}</a>
+          </p>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <>
+      <section className="section-container bg-background">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-10 grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-bnb-wood">
+                {t('contact.availability')}
+              </p>
+              <h2 className="text-4xl font-semibold leading-tight text-bnb-dark md:text-6xl">
+                {t('contact.title')}
+              </h2>
+            </div>
+            <p className="text-lg leading-relaxed text-bnb-dark_gray md:text-xl">
+              {t('contact.availability.check')}
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+            {calendarCard}
 
             <div className="rounded-md border border-bnb-sand/40 bg-bnb-stone p-6 md:p-8">
               <div className="mb-5 flex items-center gap-3 text-bnb-dark">
@@ -392,66 +534,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-            <form ref={form} onSubmit={handleSubmit} className="rounded-md border border-bnb-sand/40 bg-white p-5 shadow-sm md:p-8">
-              <input type="hidden" name="adults" value={adults} readOnly />
-              <input type="hidden" name="children" value={children} readOnly />
-              <input type="hidden" name="guests" value={`${adults} adults, ${children} children`} readOnly />
-              <input type="hidden" name="message" value={reservationSummary} readOnly />
-              <div className="grid gap-5 md:grid-cols-2">
-                <div className="space-y-2">
-                  <label htmlFor="firstname" className="text-sm font-medium text-bnb-dark">{t('contact.name')}</label>
-                  <Input id="firstname" name="firstname" placeholder="Mario" className="placeholder:opacity-40" required />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="lastname" className="text-sm font-medium text-bnb-dark">{t('contact.surname')}</label>
-                  <Input id="lastname" name="lastname" placeholder="Rossi" className="placeholder:opacity-40" required />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="checkin" className="text-sm font-medium text-bnb-dark">{t('contact.checkin')}</label>
-                  <Input id="checkin" name="checkin" type="date" value={checkIn} onChange={event => setCheckIn(event.target.value)} required />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="checkout" className="text-sm font-medium text-bnb-dark">{t('contact.checkout')}</label>
-                  <Input id="checkout" name="checkout" type="date" value={checkOut} onChange={event => setCheckOut(event.target.value)} required />
-                </div>
-                <div className="space-y-2 md:col-span-2">
-                  <label htmlFor="guests" className="text-sm font-medium text-bnb-dark">{t('contact.guests')}</label>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <GuestStepper label={t('contact.adults')} value={adults} min={1} max={maxAdults} onChange={setAdults} />
-                    <GuestStepper label={t('contact.children')} value={children} min={0} max={maxChildren} onChange={setChildren} />
-                  </div>
-                  {isMaxGuestsReached && (
-                    <p className="rounded-md border border-bnb-wood/30 bg-bnb-beige/20 px-3 py-2 text-sm font-medium text-bnb-forest-brown">
-                      {t('contact.maxGuestsWarning')}
-                    </p>
-                  )}
-                </div>
-                <div className="space-y-2 md:col-span-2">
-                  <label htmlFor="email" className="text-sm font-medium text-bnb-dark">{t('contact.email')}</label>
-                  <Input id="email" name="email" type="email" placeholder="mario.rossi@gmail.com" className="placeholder:opacity-40" required />
-                </div>
-                <div className="space-y-2 md:col-span-2">
-                  <label htmlFor="phone" className="text-sm font-medium text-bnb-dark">{t('contact.phone')}</label>
-                  <Input id="phone" name="phone" placeholder="+39 335 815 8411" className="placeholder:opacity-40" type="tel" />
-                </div>
-                <div className="space-y-2 md:col-span-2">
-                  <label htmlFor="message" className="text-sm font-medium text-bnb-dark">{t('contact.message')}</label>
-                  <Textarea
-                    id="message"
-                    name="guest_message"
-                    rows={5}
-                    value={guestMessage}
-                    onChange={event => setGuestMessage(event.target.value)}
-                    placeholder={t('contact.placeholder')}
-                    className="placeholder:opacity-40"
-                  />
-                </div>
-              </div>
-
-              <Button type="submit" size="md" className="mt-6 w-full bg-bnb-green text-bnb-dark hover:bg-bnb-dark_green hover:text-bnb-dark">
-                {t('contact.send')}
-              </Button>
-            </form>
+            {formCard}
 
             <div className="space-y-8">
               <div className="rounded-md border border-bnb-sand/40 bg-background p-6">
