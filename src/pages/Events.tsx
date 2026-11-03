@@ -69,33 +69,7 @@ const EventsPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="bg-bnb-stone px-4 pt-16 md:pt-24">
-          <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-6">
-              <h2 className="text-4xl font-semibold text-bnb-dark md:text-5xl">{t('events.occasions.title')}</h2>
-              <ul className="mt-8 grid border-t border-bnb-sand/60 sm:grid-cols-2 sm:gap-x-8">
-                {OCCASIONS.map((n) => (
-                  <li key={n} className="border-b border-bnb-sand/60 py-3 font-display text-xl text-bnb-dark">
-                    {t(`events.occ${n}`)}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="lg:col-span-5 lg:col-start-8">
-              <h2 className="text-4xl font-semibold text-bnb-dark md:text-5xl">{t('events.price.title')}</h2>
-              <dl className="mt-8 border-t border-bnb-sand/60">
-                {PRICES.map((key) => (
-                  <div key={key} className="flex items-baseline justify-between gap-6 border-b border-bnb-sand/60 py-4">
-                    <dt className="text-lg text-bnb-dark_gray">{t(`events.price.${key}`)}</dt>
-                    <dd className="shrink-0 font-display text-2xl text-bnb-dark">{t(`events.price.${key}.value`)}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-bnb-stone px-4 pt-16 md:pt-24">
+        <section className="bg-bnb-stone px-4 py-16 md:py-24">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-4xl font-semibold text-bnb-dark md:text-5xl">{t('events.spaces.title')}</h2>
             <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-6">
@@ -109,6 +83,33 @@ const EventsPage: React.FC = () => {
                 />
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="bg-bnb-dark px-4 py-16 md:py-24">
+          <div className="mx-auto max-w-5xl text-center">
+            <h2 className="font-display text-2xl text-bnb-green2 md:text-3xl">{t('events.occasions.title')}</h2>
+            <ul className="mt-8 flex flex-wrap items-baseline justify-center gap-x-6 gap-y-2 md:mt-10 md:gap-x-10 md:gap-y-4">
+              {OCCASIONS.map((n, i) => (
+                <li key={n} className={`font-display text-3xl md:text-5xl ${i % 2 ? 'text-bnb-green2' : 'text-bnb-stone'}`}>
+                  {t(`events.occ${n}`)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section className="bg-bnb-stone px-4 pt-16 md:pt-24">
+          <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-12">
+            <h2 className="text-4xl font-semibold text-bnb-dark md:text-5xl lg:col-span-4">{t('events.price.title')}</h2>
+            <dl className="border-t border-bnb-sand/60 lg:col-span-7 lg:col-start-6">
+              {PRICES.map((key) => (
+                <div key={key} className="flex items-baseline justify-between gap-6 border-b border-bnb-sand/60 py-4">
+                  <dt className="text-lg text-bnb-dark_gray">{t(`events.price.${key}`)}</dt>
+                  <dd className="shrink-0 font-display text-2xl text-bnb-dark">{t(`events.price.${key}.value`)}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
 
